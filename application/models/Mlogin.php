@@ -6,11 +6,18 @@
         $email = $this->input->post('email');
         $password = $this->input->post('password');
 
-        $sql = "select email,password from tb_user where email='" . $email . "' and password='" . $password . "'";
+        $sql = "select email,password,tipe_user from tb_user where email='" . $email . "' and password='" . $password . "'";
         $query = $this->db->query($sql);
         if ($query->num_rows() > 0) {
-            // ada data di database
-            // menuju dashboard
+            //ada ada di database
+            $data = $query->row();
+            $NamaLengkap = $data->NamaLengkap;
+            $tipe_user = $data->tipe_data;
+            $array = array(
+                'NamaLengkap' => $NamaLengkap,
+                'tipe_user' => $tipe_user
+            );
+            $this->session->set_userdata($array);
             redirect('cadmin/formadmin', 'refresh');
         } else {
             //tidak ada data

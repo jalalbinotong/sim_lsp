@@ -16,4 +16,11 @@ class Clogin extends CI_Controller
     {
         $this->mlogin->proseslogin();
     }
+
+    function logout()
+    {
+        $this->session->sess_destroy();
+        redirect('clogin/formlogin');	
+    }
+    
 }
