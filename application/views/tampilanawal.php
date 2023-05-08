@@ -32,6 +32,7 @@
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="<?php echo base_url('cdaftar/formdaftar') ?>">Pendaftaran</a></li>
                                 <li><a class="dropdown-item" href="<?php echo base_url('clogin/formlogin') ?>">Login</a></li>
+                                <li><a class="dropdown-item" href="javascript:void(0)" onClick="logout();">Logout</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -95,6 +96,17 @@
         // update posisi scroll sebelumnya
         prevScrollPos = currentScrollPos;
     });
+</script>
+
+<script language="javascript">
+	function logout()
+	{
+		if (confirm("Apakah yakin keluar sistem"))
+		{
+			//jalankan	
+			window.open("<?php echo base_url(); ?>clogin/logout","_self");
+		}	
+	}
 </script>
 
 <style>
