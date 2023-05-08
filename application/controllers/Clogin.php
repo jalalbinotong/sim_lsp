@@ -22,5 +22,4 @@ class Clogin extends CI_Controller
         $this->session->sess_destroy();
         redirect('clogin/formlogin');	
     }
-    
 }
