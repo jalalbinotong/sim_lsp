@@ -3,7 +3,6 @@
 
         var Nim = $('Nim').val();
         if (nim == "") {
-
             alert("Nim masih kosong");
             $('#Nim').focus();
             return false;
