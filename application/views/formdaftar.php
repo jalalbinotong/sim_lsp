@@ -25,6 +25,7 @@
         <div class="mb-3 mt-3">
             <div class="mb-3">
                 <input type="hidden" name="id_user" id="id_user" />
+                <input type="hidden" name="tipe_user" id="tipe_user" value="asesi"/>
             </div>
             <div class="mb-3">
                 <label class="form-label">NIM :</label>

@@ -41,11 +41,11 @@
         <form id="formlogin" name="formlogin" method="post" action="<?php echo base_url('clogin/proseslogin'); ?>">
             <div class="mb-3 mt-3">
                 <label class="form-label">Email:</label>
-                <input type="text" class="form-control" id="Email" placeholder="Masukkan email" name="Email">
+                <input type="text" class="form-control" id="email" placeholder="Masukkan email" name="email">
             </div>
             <div class="mb-3">
                 <label class="form-label">Password:</label>
-                <input type="password" class="form-control" id="Password" placeholder="Masukkan password" name="Password">
+                <input type="password" class="form-control" id="password" placeholder="Masukkan password" name="password">
             </div>
             <div class="form-check mb-3">
                 <label class="form-check-label">

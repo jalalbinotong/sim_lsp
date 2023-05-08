@@ -3,10 +3,10 @@
 
     function proseslogin()
     {
-        $Email = $this->input->post('Email');
-        $Password = $this->input->post('Password');
+        $email = $this->input->post('email');
+        $password = $this->input->post('password');
 
-        $sql = "select * from tb_user where email='" . $Email . "' and password='" . $Password . "'";
+        $sql = "select email,password from tb_user where email='" . $email . "' and password='" . $password . "'";
         $query = $this->db->query($sql);
         if ($query->num_rows() > 0) {
             // ada data di database
