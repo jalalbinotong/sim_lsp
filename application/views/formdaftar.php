@@ -68,16 +68,11 @@ if ($pesan == "") {
             </div>
             <div class="mb-3">
                 <label class="form-label">Email :</label>
-                <input type="nim" class="form-control" id="nim" placeholder="Masukkan Email" name="nim">
+                <input type="nim" class="form-control" id="email" placeholder="Masukkan Email" name="email">
             </div>
             <div class="mb-3">
-                <label class="form-label">nama_lengkap:</label>
-                <input type="nama_lengkap" class="form-control" id="nama_lengkap" placeholder="Masukkan nama_lengkap" name="nama_lengkap">
-            </div>
-            <div class="form-check mb-3">
-                <label class="form-check-label">
-                    <input class="form-check-input" type="checkbox" name="remember"> Remember me
-                </label>
+                <label class="form-label">Password:</label>
+                <input type="password" class="form-control" id="password" placeholder="Masukkan password" name="password">
             </div>
             <button type="submit" class="btn btn-primary" onclick="simpandata();">Submit</button>
     </form>

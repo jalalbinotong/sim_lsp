@@ -219,3 +219,7 @@
         text-align: left;
     } */
 </style>
+Selamat Datang : 
+<?php
+	echo $this->session->userdata('id_user');
+?>
