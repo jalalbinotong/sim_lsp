@@ -21,22 +21,21 @@
                 </button>
                 <div class="collapse navbar-collapse" id="collapsibleNavbar">
                     <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="<?php echo base_url('cutama/tampilberanda') ?>">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Profile</a>
-                        </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Proses Daftar</a>
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Akun</a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="<?php echo base_url('cdaftar/formdaftar') ?>">Pendaftaran</a></li>
                                 <li><a class="dropdown-item" href="<?php echo base_url('clogin/formlogin') ?>">Login</a></li>
                                 <li><a class="dropdown-item" href="javascript:void(0)" onClick="logout();">Logout</a></li>
                             </ul>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?php echo base_url('cutama/tampilberanda') ?>">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Profile</a>
+                        </li>
                     </ul>
-
                 </div>
             </form>
         </div>
@@ -99,14 +98,12 @@
 </script>
 
 <script language="javascript">
-	function logout()
-	{
-		if (confirm("Apakah yakin keluar sistem"))
-		{
-			//jalankan	
-			window.open("<?php echo base_url(); ?>clogin/logout","_self");
-		}	
-	}
+    function logout() {
+        if (confirm("Apakah yakin keluar sistem")) {
+            //jalankan	
+            window.open("<?php echo base_url(); ?>clogin/logout", "_self");
+        }
+    }
 </script>
 
 <style>
