@@ -60,6 +60,11 @@ if ($pesan == "") {
             </div>
             <div class="mb-3">
                 <label class="form-label">NIM :</label>
+                <input type="number" class="form-control" id="nim" placeholder="Masukkan NIM" name="nim">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Nama Lengkap :</label>
+                <input type="text" class="form-control" id="nama_lengkap" placeholder="Masukkan nama lengkap" name="nama_lengkap">
             </div>
             <div class="mb-3">
                 <label class="form-label">Email :</label>
