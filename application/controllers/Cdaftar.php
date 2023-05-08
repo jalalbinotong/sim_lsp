@@ -19,5 +19,6 @@ class Cdaftar extends CI_Controller
     function prosesdaftar()
     {
         $this->mdaftar->prosesdaftar();
+        redirect('cdaftar/formdaftar');
     }
 }

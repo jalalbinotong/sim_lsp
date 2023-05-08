@@ -36,22 +36,24 @@
     }
 </script>
 
-<?php
-$pesan = $this->session->flashdata('pesan');
-if ($pesan == "") {
-    echo "";
-} else {
-?>
-    <div class="alert alert-success alert-dismissible">
-        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-        <strong><?php echo $pesan; ?></strong>
-    </div>
-
-<?php
-}
-?>
-
 <div class="container">
+    <br />
+    <?php
+    $pesan = $this->session->flashdata('pesan');
+    if ($pesan == "") {
+        echo "";
+    } else {
+    ?>
+        <div class="alert alert-success alert-dismissible">
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            <strong><?php echo $pesan; ?></strong>
+        </div>
+
+    <?php
+    }
+    ?>
+
+
     <form id="formdaftar" name="formdaftar" method="post" action="<?php echo base_url('cdaftar/prosesdaftar'); ?>">
         <div class="mb-3 mt-3">
             <div class="mb-3">
