@@ -80,7 +80,8 @@
                     <input class="form-check-input" type="checkbox" name="remember"> Remember me
                 </label>
             </div>
-            <button type="submit" class="btn btn-primary" onclick="simpandata();">Submit</button>
+        </div>
+        <button type="button" class="btn btn-primary" onclick="simpandata();">Submit</button>
     </form>
 
 </div>

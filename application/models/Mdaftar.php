@@ -13,6 +13,7 @@
         $id_user = $data['id_user'];
         if ($id_user == "") {
             //simpan
+            echo "P";
             $this->db->insert('tb_user', $data);
             $this->session->set_flashdata('pesan', 'Data sudah disimpan');
             redirect('cdaftar/formdaftar', 'refresh');
