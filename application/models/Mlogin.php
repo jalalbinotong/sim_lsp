@@ -18,7 +18,7 @@
                 'tipe_user' => $tipe_user
             );
             $this->session->set_userdata($array);
-            redirect('cadmin/formadmin', 'refresh');
+            redirect('cdashboard/dashboard');
         } else {
             //tidak ada data
             $this->session->set_flashdata('pesan', 'Login Gagal');
