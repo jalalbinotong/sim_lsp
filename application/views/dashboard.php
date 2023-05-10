@@ -4,7 +4,7 @@
             <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
                 <div class="profile-info d-flex align-items-center">
                     <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" class="profile-img me-2">
-                    <h4 class="profile-name mb-0">$Username</h4>
+                    <h4 class="profile-name mb-0"><?php echo $this->session->userdata('nama_lengkap');?></h4>
                 </div>
                 <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
                     <span class="fs-5 d-none d-sm-inline">Menu</span>
@@ -78,7 +78,7 @@
 
             <div class="container">
                 <p class="title">
-                    Dashboard $Role
+                    Dashboard <?php echo $this->session->userdata('tipe_user');?>
                 </p>
                 <div class="row">
                     <div class="col-md-4">

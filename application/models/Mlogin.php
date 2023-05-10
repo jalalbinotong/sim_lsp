@@ -6,16 +6,18 @@
         $email = $this->input->post('email');
         $password = $this->input->post('password');
 
-        $sql = "select email,password,tipe_user,id_user from tb_user where email='" . $email . "' and password='" . $password . "'";
+        $sql = "select email,password,tipe_user,id_user,nama_lengkap from tb_user where email='" . $email . "' and password='" . $password . "'";
         $query = $this->db->query($sql);
         if ($query->num_rows() > 0) {
             //ada ada di database
             $data = $query->row();
             $id_user = $data->id_user;
             $tipe_user = $data->tipe_user;
+            $nama_lengkap = $data->nama_lengkap;
             $array = array(
                 'id_user' => $id_user,
-                'tipe_user' => $tipe_user
+                'tipe_user' => $tipe_user,
+                'nama_lengkap' => $nama_lengkap
             );
             $this->session->set_userdata($array);
             redirect('cdashboard/dashboard');
