@@ -3,7 +3,7 @@
         <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
             <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
                 <div class="profile-info d-flex align-items-center">
-                    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" class="profile-img me-2">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" class="profile-img me-2 img-fluid">
                     <h4 class="profile-name mb-0">
                         <?php echo $this->session->userdata('nama_lengkap'); ?>
                     </h4>
@@ -18,7 +18,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="nav-link px-0 align-middle">
+                        <a href="<?php echo base_url('Cdashboard/data_pegawai') ?>" class="nav-link px-0 align-middle">
                             <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">Data Pegawai</span></a>
                     </li>
                     <li>
@@ -76,3 +76,9 @@
                 </ul>
             </div>
         </div>
+
+<style>
+    .profile-img {
+        width: 50px;
+}
+</style>
