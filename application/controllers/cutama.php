@@ -12,11 +12,3 @@ class Cutama extends CI_Controller
         $this->load->view('tampilanawal', $data);
     }
 }
-
-// class Cutama extends CI_Controller
-// {
-//     function tampilview()
-//     {
-//         $this->load->view('berandagaji');
-//     }
-// }
