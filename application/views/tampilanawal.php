@@ -45,6 +45,12 @@
     </nav>
 
     <?php
+        if (empty($beranda)) {
+            echo @$sidebar;
+        } else {
+            echo '';
+        }
+    
     if (empty($konten)) {
         echo '';
         if (empty($beranda)) {
