@@ -16,7 +16,8 @@
             <a class="navbar-brand" href="#">LSP Politeknik Negeri Bali</a>
 
             <form class="d-flex" role="search">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapsibleNavbar">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="collapsibleNavbar">
@@ -25,11 +26,15 @@
                             <a class="nav-link" href="<?php echo base_url('cdashboard/dashboard') ?>">Dashboard</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Akun</a>
+                            <a class="nav-link dropdown-toggle" href="#" role="button"
+                                data-bs-toggle="dropdown">Akun</a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="<?php echo base_url('cdaftar/formdaftar') ?>">Pendaftaran</a></li>
-                                <li><a class="dropdown-item" href="<?php echo base_url('clogin/formlogin') ?>">Login</a></li>
-                                <li><a class="dropdown-item" href="javascript:void(0)" onClick="logout();">Logout</a></li>
+                                <li><a class="dropdown-item"
+                                        href="<?php echo base_url('cdaftar/formdaftar') ?>">Pendaftaran</a></li>
+                                <li><a class="dropdown-item" href="<?php echo base_url('clogin/formlogin') ?>">Login</a>
+                                </li>
+                                <li><a class="dropdown-item" href="javascript:void(0)" onClick="logout();">Logout</a>
+                                </li>
                             </ul>
                         </li>
                         <li class="nav-item">
@@ -44,38 +49,42 @@
         </div>
     </nav>
 
-    <?php
-        if (empty($beranda)) {
-            echo @$sidebar;
-        } else {
-            echo '';
-        }
-    
-    if (empty($konten)) {
-        echo '';
-        if (empty($beranda)) {
-            header("Location: cutama/tampilberanda");
-        } else {
-            echo $beranda;
-        }
-    } else {
-        echo $konten;
-    }
+    <div class="container-fluid">
+        <div class="row">
+            <?php
+            if (empty($beranda)) {
+                echo @$sidebar;
+            } else {
+                echo '';
+            }
 
-    if (empty($tabel)) {
-        echo '';
-    } else {
-        echo $tabel;
-    }
+            if (empty($konten)) {
+                echo '';
+                if (empty($beranda)) {
+                    header("Location: cutama/tampilberanda");
+                } else {
+                    echo $beranda;
+                }
+            } else {
+                echo $konten;
+            }
+
+            if (empty($tabel)) {
+                echo '';
+            } else {
+                echo $tabel;
+            }
 
 
-    ?>
+            ?>
+        </div>
+    </div>
 
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 
-<!-- AJAX -->
-<div id="script"></div>
+
+<!-- <div id="script"></div>
 <script src="<?php echo base_url(); ?>/jquery/app.js"></script>
 <script language="javascript">
     var site = "<?php echo base_url() ?>index.php/";
@@ -104,7 +113,7 @@
         // update posisi scroll sebelumnya
         prevScrollPos = currentScrollPos;
     });
-</script>
+</script> -->
 
 <script language="javascript">
     function logout() {
