@@ -1,4 +1,4 @@
-<div class="col">
+<div class="col-9">
   <table class="table table-responsive">
       <thead class="table-dark">
         <tr>
