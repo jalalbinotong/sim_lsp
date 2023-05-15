@@ -57,13 +57,10 @@
             } else {
                 echo '';
             }
-            ?>
-            <div class="d-flex justify-content-center  col mt-4">
-            <?php
             if (empty($konten)) {
                 echo '';
                 if (empty($beranda)) {
-                    header("Location: cutama/tampilberanda");
+                    // header("Location: cutama/tampilberanda");
                 } else {
                     echo $beranda;
                 }
@@ -71,14 +68,15 @@
                 echo $konten;
             }
             ?>
-            </div>
-            <?php
+            <div class="d-flex justify-content-center col mt-4">
+        <?php
             if (empty($tabel)) {
                 echo '';
             } else {
                 echo $tabel;
             }
             ?>
+            </div>
         </div>
     </div>
 

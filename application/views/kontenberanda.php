@@ -2,7 +2,8 @@
     <div class="container">
         <p class="title">LSP
         </p>
-        <p class="description">Halo ipsum dolor sit amet, consectetur adipiscing elit. Sed in elit id eros iaculis pulvinar sit amet non metus.
+        <p class="description">
+            Halo ipsum dolor sit amet, consectetur adipiscing elit. Sed in elit id eros iaculis pulvinar sit amet non metus.
             Phasellus auctor turpis vel ex tempor dictum. Curabitur vel quam tempor leo vehicula euismod. Nunc sagittis aliquet ante vitae rhoncus.
             Maecenas eget velit et turpis commodo gravida. Curabitur fermentum, erat vel vehicula faucibus, lectus lacus congue purus, eu rutrum sem odio in elit.
             Vivamus id odio finibus, blandit nunc sit amet, efficitur nunc. Aenean posuere erat ut dui convallis, at dignissim orci gravida.

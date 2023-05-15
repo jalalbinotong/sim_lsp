@@ -1,4 +1,5 @@
 <div class="col">
+    <div class="container fluid">
     <p class="title">
         Dashboard
         <?php echo $this->session->userdata('tipe_user'); ?>
@@ -44,7 +45,6 @@
             </div>
         </div>
     </div>
-
 </div>
 
 <style>

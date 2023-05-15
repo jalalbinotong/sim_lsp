@@ -1,4 +1,4 @@
-<div class="col-9">
+<div class="col-sm-auto col-lg-9 justify-content-center">
   <table class="table table-responsive">
       <thead class="table-dark">
         <tr>
@@ -25,5 +25,4 @@
         </tr>
       </tbody>
     </table>
-
 </div>

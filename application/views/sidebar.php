@@ -1,5 +1,5 @@
-<!-- <div class="container-fluid">
-    <div class="row flex-nowrap"> -->
+<div class="container-fluid">
+    <div class="row flex-nowrap">
         <div class="col-lg-2 col-md-2 px-sm-2 px-0 bg-dark  d-none d-md-none d-lg-block">
             <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
                 <div class="profile-info d-flex align-items-center">

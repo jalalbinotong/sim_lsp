@@ -11,7 +11,7 @@ class Cdashboard extends CI_Controller
     function data_pegawai()
     {   
         $data['sidebar'] = $this->load->view('sidebar', '', TRUE);
-        $data['konten'] = $this->load->view('data_pegawai', '', TRUE);
+        $data['tabel'] = $this->load->view('data_pegawai', '', TRUE);
         $this->load->view('tampilanawal', $data);
     }
 }
