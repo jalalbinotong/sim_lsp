@@ -3,17 +3,17 @@
 
     function prosesdaftar()
     {
-        $Nim = $this->input->post('nim');
-        $NamaLengkap = $this->input->post('nama_lengkap');
-        $Email = $this->input->post('email');
-        $Password = $this->input->post('password');
-        $tipe_user = $this->input->post('tipe_user');
+        $reg['nim'] = $this->input->post('nim');
+        $reg['nama_lengkap'] = $this->input->post('nama_lengkap');
+        $reg['email'] = $this->input->post('email');
+        $reg['password'] = $this->input->post('password');
+        $reg['tipe_user'] = $this->input->post('tipe_user');
 
         $data = $_POST;
         $id_user = $data['id_user'];
         if ($id_user == "") {
             //simpan
-            $this->db->insert('tb_user', $data);
+            $this->db->insert('tb_user', $reg);
             $this->session->set_flashdata('pesan', 'Data sudah disimpan');
             redirect('cdaftar/formdaftar', 'refresh');
         } else {

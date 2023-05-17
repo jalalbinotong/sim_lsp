@@ -3,10 +3,14 @@
         <p class="title">LSP
         </p>
         <p class="description">
-            Halo ipsum dolor sit amet, consectetur adipiscing elit. Sed in elit id eros iaculis pulvinar sit amet non metus.
-            Phasellus auctor turpis vel ex tempor dictum. Curabitur vel quam tempor leo vehicula euismod. Nunc sagittis aliquet ante vitae rhoncus.
-            Maecenas eget velit et turpis commodo gravida. Curabitur fermentum, erat vel vehicula faucibus, lectus lacus congue purus, eu rutrum sem odio in elit.
-            Vivamus id odio finibus, blandit nunc sit amet, efficitur nunc. Aenean posuere erat ut dui convallis, at dignissim orci gravida.
+            Halo ipsum dolor sit amet, consectetur adipiscing elit. Sed in elit id eros iaculis pulvinar sit amet non
+            metus.
+            Phasellus auctor turpis vel ex tempor dictum. Curabitur vel quam tempor leo vehicula euismod. Nunc sagittis
+            aliquet ante vitae rhoncus.
+            Maecenas eget velit et turpis commodo gravida. Curabitur fermentum, erat vel vehicula faucibus, lectus lacus
+            congue purus, eu rutrum sem odio in elit.
+            Vivamus id odio finibus, blandit nunc sit amet, efficitur nunc. Aenean posuere erat ut dui convallis, at
+            dignissim orci gravida.
         </p>
 
     </div>
@@ -16,11 +20,13 @@
     <div class="container">
         <div class="accordion-item">
             <h2 class="accordion-header" id="headingOne">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                    aria-expanded="true" aria-controls="collapseOne">
                     Bidang Administrasi Niaga
                 </button>
             </h2>
-            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                data-bs-parent="#accordionExample">
                 <div class="accordion-body">
                     <p class=title-skema>
                         Skema yang diajukan oleh LSP Politeknik Negeri Bali :
@@ -50,11 +56,13 @@
         </div>
         <div class="accordion-item">
             <h2 class="accordion-header" id="headingTwo">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                     Bidang Teknik Elektro
                 </button>
             </h2>
-            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                data-bs-parent="#accordionExample">
                 <div class="accordion-body">
                     <p class=title-skema>
                         Skema yang diajukan oleh LSP Politeknik Negeri Bali :
@@ -82,11 +90,13 @@
                                 <td>FR-Skema-10-TE-JWP</td>
                             </tr>
                             <tr>
-                                <td>Asisten Manajer Pembangunan dan Pemasangan Distribusi Tenaga Listrik Tegangan Menengah</td>
+                                <td>Asisten Manajer Pembangunan dan Pemasangan Distribusi Tenaga Listrik Tegangan
+                                    Menengah</td>
                                 <td>FR-Skema-11-TE-AMPPDTLTM</td>
                             </tr>
                             <tr>
-                                <td>Asisten Manajer Pembangunan dan Pemasangan Distribusi Tenaga Listrik Tegangan Rendah</td>
+                                <td>Asisten Manajer Pembangunan dan Pemasangan Distribusi Tenaga Listrik Tegangan Rendah
+                                </td>
                                 <td>FR-Skema-12-TE-AMPPPTR</td>
                             </tr>
                         </tbody>
@@ -96,11 +106,13 @@
         </div>
         <div class="accordion-item">
             <h2 class="accordion-header" id="headingThree">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                     Bidang Teknik Mesin
                 </button>
             </h2>
-            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                data-bs-parent="#accordionExample">
                 <div class="accordion-body">
                     <p class=title-skema>
                         Skema yang diajukan oleh LSP Politeknik Negeri Bali :
@@ -134,11 +146,13 @@
         </div>
         <div class="accordion-item">
             <h2 class="accordion-header" id="headingFour">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                     Bidang Akutansi
                 </button>
             </h2>
-            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                data-bs-parent="#accordionExample">
                 <div class="accordion-body">
                     <p class=title-skema>
                         Skema yang diajukan oleh LSP Politeknik Negeri Bali :

@@ -53,14 +53,14 @@
         <div class="row">
             <?php
             if (empty($beranda)) {
-                echo @$sidebar;
+                echo @ $sidebar;
             } else {
                 echo '';
             }
             if (empty($konten)) {
                 echo '';
                 if (empty($beranda)) {
-                    // header("Location: cutama/tampilberanda");
+                    header("Location: cutama/tampilberanda");
                 } else {
                     echo $beranda;
                 }
