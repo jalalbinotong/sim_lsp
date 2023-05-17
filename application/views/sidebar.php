@@ -77,8 +77,25 @@
             </div>
         </div>
 
-<style>
-    .profile-img {
-        width: 50px;
-}
-</style>
+        <style>
+            .profile-info {
+                margin-top: 15px;
+                margin-bottom: 25px;
+            }
+
+            .profile-img {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+            }
+
+            .profile-name {
+                margin-left: 15px;
+                font-size: 1.2rem;
+                font-weight: bold;
+            }
+
+            .profile-img {
+                width: 50px;
+            }
+        </style>
