@@ -10,6 +10,8 @@
             </h4>
         </div>
 
+        <li class="nav-heading">Menu</li>
+
         <li class="nav-item">
             <a class="nav-link collapsed" href="<?php echo base_url('Cdashboard/dashboard'); ?>">
                 <i class="bi bi-grid"></i>
