@@ -1,10 +1,12 @@
 <script language="javascript">
-    function simpandata() {
+    function prosesdaftar() {
 
-        var Nim = $('Nim').val();
+
+        var nim = $('#nim').val();
         if (nim == "") {
+
             alert("Nim masih kosong");
-            $('#Nim').focus();
+            $('#nim').focus();
             return false;
         }
 
@@ -16,7 +18,7 @@
             return false;
         }
 
-        var nama_lengkap = $('#email').val();
+        var email = $('#email').val();
         if (email == "") {
 
             alert("Email masih kosong");
@@ -24,7 +26,7 @@
             return false;
         }
 
-        var nama_lengkap = $('#password').val();
+        var password = $('#password').val();
         if (password == "") {
 
             alert("Password masih kosong");
@@ -35,53 +37,78 @@
     }
 </script>
 
-<div class="container">
-    <br />
-    <?php
-    $pesan = $this->session->flashdata('pesan');
-    if ($pesan == "") {
-        echo "";
-    } else {
-    ?>
-        <div class="alert alert-success alert-dismissible">
-            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-            <strong><?php echo $pesan; ?></strong>
+
+<body>
+    <main class="d-flex w-100">
+        <div class="container d-flex flex-column">
+            <div class="row vh-100">
+                <div class="col-sm-10 col-md-8 col-lg-6 mx-auto d-table h-100">
+                    <div class="d-table-cell align-middle">
+
+                        <div class="text-center mt-4">
+                            <h1 class="h2">Daftar akun</h1>
+                            <p class="lead">
+                                Silahkan daftar untuk membuat akun anda
+                            </p>
+                        </div>
+
+                        <div class="card">
+
+                            <div class="card-body">
+                                <div class="m-sm-4">
+                                    <br />
+                                    <?php
+                                    $pesan = $this->session->flashdata('pesan');
+                                    if ($pesan == "") {
+                                        echo "";
+                                    } else {
+                                    ?>
+                                        <div class="alert alert-success alert-dismissible">
+                                            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                                            <strong><?php echo $pesan; ?></strong>
+                                        </div>
+
+                                    <?php
+                                    }
+                                    ?>
+                                    <form id="formdaftar" name="formdaftar" method="post" action="<?php echo base_url('cdaftar/prosesdaftar'); ?>">
+                                        <div class="mb-3">
+                                            <input type="hidden" name="id_user" id="id_user" />
+                                            <input type="hidden" name="tipe_user" id="tipe_user" value="asesi" />
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">NIM :</label>
+                                            <input type="number" class="form-control" id="nim" placeholder="Masukkan NIM" name="nim">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Nama Lengkap :</label>
+                                            <input type="text" class="form-control" id="nama_lengkap" placeholder="Masukkan nama lengkap" name="nama_lengkap">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Email :</label>
+                                            <input type="email" class="form-control" id="email" placeholder="Masukkan Email" name="email">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Password:</label>
+                                            <input type="password" class="form-control" id="password" placeholder="Masukkan password" name="password">
+                                        </div>
+
+
+                                        <div class="text-center mt-3">
+                                            <!-- <a href="index.html" class="btn btn-lg btn-primary">Masuk</a> -->
+                                            <button type="button" class="btn btn-lg btn-primary" onclick="prosesdaftar();">Daftar</button>
+                                            <!-- <button type="submit" class="btn btn-lg btn-primary">Sign in</button> -->
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+    </main>
 
-    <?php
-    }
-    ?>
+    <!-- <script src="js/app.js"></script> -->
 
-
-    <form id="formdaftar" name="formdaftar" method="post" action="<?php echo base_url('cdaftar/prosesdaftar'); ?>">
-        <div class="mb-3 mt-3">
-            <div class="mb-3">
-                <input type="hidden" name="id_user" id="id_user" />
-                <input type="hidden" name="tipe_user" id="tipe_user" value="asesi" />
-            </div>
-            <div class="mb-3">
-                <label class="form-label">NIM :</label>
-                <input type="number" class="form-control" id="nim" placeholder="Masukkan NIM" name="nim">
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Nama Lengkap :</label>
-                <input type="text" class="form-control" id="nama_lengkap" placeholder="Masukkan nama lengkap" name="nama_lengkap">
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Email :</label>
-                <input type="email" class="form-control" id="email" placeholder="Masukkan Email" name="email">
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Password:</label>
-                <input type="password" class="form-control" id="password" placeholder="Masukkan password" name="password">
-            </div>
-            <div class="form-check mb-3">
-                <label class="form-check-label">
-                    <input class="form-check-input" type="checkbox" name="remember"> Remember me
-                </label>
-            </div>
-        </div>
-        <button type="button" class="btn btn-primary" onclick="simpandata();">Submit</button>
-    </form>
-
-</div>
+</body>
