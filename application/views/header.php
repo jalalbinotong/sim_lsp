@@ -16,15 +16,6 @@
     <link rel="stylesheet" href="<?php echo base_url('assets/vendor/remixicon/remixicon.css'); ?>">
     <link rel="stylesheet" href="<?php echo base_url('assets/vendor/swiper/swiper-bundle.min.css'); ?>">
 
-    <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
-    <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
-
-    <link rel="stylesheet" href="<?php echo base_url('assets/vendor/quill/quill.snow.css'); ?>">
-    <link rel="stylesheet" href="<?php echo base_url('assets/vendor/quill/quill.bubble.css'); ?>">
-
-
-
-
     <!-- Template Main CSS File -->
 
 
@@ -79,7 +70,7 @@
                 <ul>
                     <li><a class="nav-link scrollto active" href="<?php echo base_url('cmain/tampilberanda') ?>">Home</a></li>
                     <li><a class="nav-link scrollto" href="<?php echo base_url('cdashboard/dashboard') ?>">Dashboard</a></li>
-                    <li class="dropdown"><a href="#"><span>Menu</span> <i class="bi bi-chevron-down"></i></a>
+                    <li class="dropdown"><a href="#"><span>Akun</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
                             <li><a href="<?php echo base_url('cdaftar/formdaftar') ?>">Pendaftaran</a></li>
                             <li><a href="<?php echo base_url('clogin/formlogin') ?>">Login</a></li>
