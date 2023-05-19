@@ -3,6 +3,13 @@
 
     <ul class="sidebar-nav" id="sidebar-nav">
 
+        <div class="profile-info d-flex align-items-center">
+            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" class="profile-img me-2 img-fluid">
+            <h4 class="profile-name mb-0">
+                <?php echo $this->session->userdata('nama_lengkap'); ?>
+            </h4>
+        </div>
+
         <li class="nav-item">
             <a class="nav-link collapsed" href="<?php echo base_url('Cdashboard/dashboard'); ?>">
                 <i class="bi bi-grid"></i>
