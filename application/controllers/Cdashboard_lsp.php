@@ -11,7 +11,7 @@ class Cdashboard_lsp extends CI_Controller
     {   
         $data['sidebar'] = $this->load->view('sidebar_lsp', '', TRUE);
         $data['konten'] = $this->load->view('dashboard_lsp', '', TRUE);
-        $this->load->view('tampilanawal', $data);
+        $this->load->view('header', $data);
     }
 
     function fail_login()
