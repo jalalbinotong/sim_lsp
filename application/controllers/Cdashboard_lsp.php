@@ -6,11 +6,13 @@ class Cdashboard_lsp extends CI_Controller
         parent::__construct();
         $this->load->model('mvalidasi');
         $this->mvalidasi->validasi_lsp();
+        
     }
     function dashboard()
     {   
         $data['sidebar'] = $this->load->view('sidebar_lsp', '', TRUE);
         $data['konten'] = $this->load->view('dashboard_lsp', '', TRUE);
+        $data['tipe_user'] = $this->session->userdata('tipe_user');
         $this->load->view('header', $data);
     }
 
