@@ -9,7 +9,7 @@ class Clogin extends CI_Controller
     function formlogin()
     {
         $data['konten'] = $this->load->view('formlogin', '', TRUE);
-        $this->load->view('tampilanawal', $data);
+        $this->load->view('header', $data);
     }
 
     function proseslogin()
@@ -20,6 +20,6 @@ class Clogin extends CI_Controller
     function logout()
     {
         $this->session->sess_destroy();
-        redirect('clogin/formlogin');	
+        redirect('clogin/formlogin');
     }
 }

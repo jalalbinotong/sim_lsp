@@ -13,7 +13,7 @@ class Cdaftar extends CI_Controller
         //menyimpan view form daftar di array data -->konten
         $data['konten'] = $this->load->view('formdaftar', '', TRUE);
         //kirim konten ke halaman utama --> tampilawal
-        $this->load->view('tampilanawal', $data);
+        $this->load->view('header', $data);
     }
 
     function prosesdaftar()
