@@ -8,7 +8,15 @@
 				echo "<script>alert ('Anda tidak dapat mengakses halaman ini');</script>";
 				redirect('clogin/formlogin','refresh');
 			}
-			
 		}
-	}
+			function validasi_pegawai()
+    {
+        if ($this->session->userdata('tipe_user') != 'lsp') {
+            echo "<script>alert ('Anda tidak dapat mengakses halaman ini');</script>";
+            redirect('clogin/formlogin', 'refresh');
+        }
+    }
+				
+}	
+
 ?>
