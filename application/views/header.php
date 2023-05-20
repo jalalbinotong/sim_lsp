@@ -69,11 +69,8 @@
             <nav id="navbar" class="navbar">
                 <ul>
                     <li><a class="nav-link scrollto active" href="<?php echo base_url('cmain/tampilberanda') ?>">Home</a></li>
-                    <?php if (!empty($tipe_user) && $tipe_user == 'admin'): ?>
-        <a href="<?php echo base_url('cdashboard/dashboard'); ?>">Dashboard</a>
-    <?php elseif (!empty($tipe_user) && $tipe_user == 'lsp'): ?>
-        <a href="<?php echo base_url('cdashboard_lsp/dashboard'); ?>">Dashboard</a>
-    <?php endif; ?>
+                    <li><a class="nav-link scrollto" href="<?php echo base_url('credirect/validasi_dashboard') ?>">Dashboard</a></li>
+
                     <li class="dropdown"><a href="#"><span>Akun</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
                             <li><a href="<?php echo base_url('cdaftar/formdaftar') ?>">Pendaftaran</a></li>
