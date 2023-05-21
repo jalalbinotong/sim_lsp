@@ -19,12 +19,10 @@
         $reg['alamat_kantor'] = $this->input->post('alamat_kantor');
 
         $data = $_POST;
-        
-            //simpan
-            $this->db->insert('tb_data_asesi', $reg);
-            $this->session->set_flashdata('pesan', 'Data sudah disimpan');
-            redirect('cdaftar/FRAPL', 'refresh');
-        
-        }
-    }
 
+        //simpan
+        $this->db->insert('tb_data_asesi', $reg);
+        $this->session->set_flashdata('pesan', 'Data sudah disimpan');
+        redirect('cdaftar/FRAPL', 'refresh');
+    }
+}

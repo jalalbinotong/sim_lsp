@@ -143,8 +143,7 @@
                                     ?>
                                     <form id="FRAPL" name="FRAPL" method="post" action="<?php echo base_url('cdaftar/prosesdaftarasesi'); ?>">
                                         <div class="mb-3">
-                                            <input type="hidden" name="id_user" id="id_user" />
-                                            <input type="hidden" name="tipe_user" id="tipe_user" value="asesi" />
+                                            <input type="hidden" name="id_asesi" id="id_asesi" />
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label">Upload Fotocopy KTP </label>
@@ -167,7 +166,7 @@
                                             <input type="date" class="form-control" id="tgl_lahir" placeholder="Masukkan Tanggal Lahir" name="tgl_lahir">
                                         </div>
                                         <div class="mb-3">
-                                                Pilih Jenis Kelamin: <br>
+                                            Pilih Jenis Kelamin: <br>
                                             <input type="radio" name="jenis_kelamin" value="Laki-laki"> Laki-laki<br>
                                             <input type="radio" name="jenis_kelamin" value="Perempuan"> Perempuan<br>
                                         </div>
@@ -185,7 +184,7 @@
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label">Telepon Rumah</label>
-                                            <input type="number" class="form-control" id="telppn_rumah" placeholder="Masukkan No telepon Rumah Anda" name="telpon_rumah">
+                                            <input type="number" class="form-control" id="telpon_rumah" placeholder="Masukkan No telepon Rumah Anda" name="telpon_rumah">
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label">Telepon Kantor</label>
