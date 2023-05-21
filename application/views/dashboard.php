@@ -13,8 +13,7 @@
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">Data Pegawai</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                                card's content.</p>
+                            <p class="card-text">Mengatur Akun-Akun Pegawai LSP</p>
                             <a href="#" class="btn btn-primary">Kelola</a>
                         </div>
                     </div>
@@ -25,9 +24,8 @@
                             <img src="https://cdn-icons-png.flaticon.com/512/1415/1415345.png" class="card-img-top" alt="...">
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title">Data Schema</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                                card's content.</p>
+                            <h5 class="card-title">Data Skema</h5>
+                            <p class="card-text">Mengatur Data Data Skema Yang Ada</p>
                             <a href="#" class="btn btn-primary">Kelola</a>
                         </div>
                     </div>
@@ -39,8 +37,7 @@
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">Data Kegiatan</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                                card's content.</p>
+                            <p class="card-text">Mengatur Data-Data Kegiatan Yang Ada</p>
                             <a href="#" class="btn btn-primary">Kelola</a>
                         </div>
                     </div>

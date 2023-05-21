@@ -12,10 +12,9 @@
                             <img src="https://cdn-icons-png.flaticon.com/512/1415/1415345.png" class="card-img-top" alt="...">
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title">Data Schema</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                                card's content.</p>
-                            <a href="#" class="btn btn-primary">Kelola</a>
+                            <h5 class="card-title">Data FR APL.01</h5>
+                            <p class="card-text">Melengkapi Data FR APL.01</p>
+                            <a href="<?php echo base_url("Cdashboard_asesi/input_asesi")?>" class="btn btn-primary">Kelola</a>
                         </div>
                     </div>
                 </div>
@@ -25,9 +24,8 @@
                             <img src="https://cdn-icons-png.flaticon.com/512/2098/2098402.png" class="card-img-top" alt="...">
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title">Data Kegiatan</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                                card's content.</p>
+                            <h5 class="card-title">Data Skema</h5>
+                            <p class="card-text">Melihat Skema Skema LSP </p>
                             <a href="#" class="btn btn-primary">Kelola</a>
                         </div>
                     </div>

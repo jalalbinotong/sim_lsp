@@ -22,5 +22,11 @@ class Cdashboard_asesi extends CI_Controller
         <meta http-equiv='refresh' content='0; URL=http://localhost/simlsp/clogin/formlogin'>
         <?php
     }
+    function input_asesi()
+    {
+        $data['konten'] = $this->load->view('FRAPL', '', TRUE);
+        $this->load->view('header', $data);
+        
+    }
 }
 ?>
