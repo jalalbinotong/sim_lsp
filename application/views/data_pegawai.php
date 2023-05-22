@@ -1,12 +1,66 @@
-<main id="main" class="main">
-  <div class="col-sm-none col-lg-11 col-md-none justify-content-center">
-    <table class="table fluid">
-      <thead class="table-dark">
-        <?php
-        $query = $this->db->query('SELECT NIP,nama,kelamin,tempat_lahir,tgl_lahir,nomor_hp,alamat,email,jabatan,golongan FROM tb_data_pegawai');
-        echo $this->table->generate($query);
-        ?>
-        </tbody>
-    </table>
-  </div>
-</main>
+<script language="javascript">
+	function hapusdata(KodeData)
+	{
+		if (confirm("Apakah anda yakin menghapus data ini"))
+		{
+			window.open("<?php echo base_url()?>cbelajarcrud/hapusdata/"+KodeData,"_self");
+		}	
+	}
+	
+	function editdata(KodeData)
+	{
+		load("cbelajarcrud/editdata/"+KodeData,"#script");	
+	}
+
+</script>
+
+<div class="container mt-3">
+  <h4>Daftar Data</h4>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>No</th>
+        <th>NIP</th>
+        <th>Nama</th>
+        <th>Kelamin</th>
+        <th>Tempat Lahir</th>
+        <th>Tanggal Lahir</th>
+        <th>Nomor Handphone</th>
+        <th>Alamat</th>
+        <th>Email</th>
+        <th>Jabatan</th>
+        <th>golongan</th>
+      </tr>
+    </thead>
+    <tbody>
+  <?php
+  if(empty($hasil))
+  {
+	echo "Data Kosong";  
+  }
+  else
+  {
+	  $no=1;
+	  foreach ($hasil as $data):
+  ?>
+    
+      <tr>
+        <td><?php echo $no; ?></td>
+        <td><?php echo $data->NamaLengkap; ?></td>
+        <td><?php echo $data->Alamat; ?></td>
+        <td><?php echo $data->Telp; ?></td>
+        <td><?php echo $data->Email; ?></td>
+        <td>
+        <button type="button" class="btn btn-primary btn-sm" onclick="editdata('<?php echo $data->KodeData; ?>')">Edit</button>
+       	<button type="button" class="btn btn-danger btn-sm" onclick="hapusdata('<?php echo $data->KodeData; ?>');">Hapus</button>
+        </td>
+      </tr>
+  <?php
+  	$no++;
+  	endforeach;
+  }
+  ?>
+    
+    </tbody>
+  </table>
+</div>
