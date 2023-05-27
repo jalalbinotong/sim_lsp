@@ -3,6 +3,7 @@
 
     function prosesdaftarasesi()
     {
+        $reg['id_asesi'] = $this->input->post('id_asesi');
         $reg['foto_ktp'] = $this->input->post('foto_ktp');
         $reg['bukti_pembayaran'] = $this->input->post('bukti_pembayaran');
         $reg['no_ktp'] = $this->input->post('no_ktp');
@@ -19,6 +20,7 @@
         $reg['alamat_kantor'] = $this->input->post('alamat_kantor');
 
         $data = $_POST;
+        $id_asesi = $data['id_asesi'];
 
         //simpan
         $this->db->insert('tb_data_asesi', $reg);
