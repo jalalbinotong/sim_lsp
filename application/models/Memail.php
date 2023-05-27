@@ -1,13 +1,13 @@
 <?php
-class Cemail extends CI_Controller
+class Memail extends CI_Model
 {
-    // public function __construct()
-    // {
+    public function __construct()
+    {
     //     parent::__construct();
     //     $this->load->model('mvalidasi');
     //     $this->mvalidasi->validasi_admin();
-    // }
-    function index()
+    }
+    function sendEmail($to_email)
     {
         $this->load->library('email');
 
@@ -19,13 +19,13 @@ class Cemail extends CI_Controller
 
         // Cofiguration of EMAIL SMPTP
         $config['protocol'] = 'smtp';
-        $config['smtp_host'] = 'smtp.gmail.com';
-        $config['smtp_port'] = 587;
+        $config['smtp_host'] = 'ssl://smtp.googlemail.com';
+        $config['smtp_port'] = 465;
         $config['smtp_user'] = $from_email;
         $config['smtp_pass'] = 'LSPPNB2023';
         $config['smtp_crypto'] = 'tls';
         $config['mailtype'] = 'html';
-        $config['charset'] = 'iso-8859-1';
+        $config['charset'] = 'utf-8';
         $config['wordwrap'] = TRUE;
         $config['newline'] = "\r\n";
 
@@ -33,7 +33,7 @@ class Cemail extends CI_Controller
         $this->email->initialize($config);
 
         $this->email->from('simlsppnb@gmail.com');
-        $this->email->to('$target_email');
+        $this->email->to('$to_email');
         $this->email->subject($subject);
         $this->email->message($message);
 
