@@ -16,6 +16,14 @@
             redirect('clogin/formlogin', 'refresh');
         }
     }
+
+    		function validasi_asesi()
+    {
+        if ($this->session->userdata('tipe_user') != 'asesi') {
+            echo "<script>alert ('Anda tidak dapat mengakses halaman ini');</script>";
+            redirect('clogin/formlogin', 'refresh');
+        }
+    }
 				
 }	
 

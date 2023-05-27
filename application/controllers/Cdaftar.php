@@ -21,4 +21,15 @@ class Cdaftar extends CI_Controller
         $this->mdaftar->prosesdaftar();
         redirect('cdaftar/formdaftar');
     }
+    function prosesdaftarasesi()
+    {
+        $this->load->model('mdaftarAsesi');
+        $this->mdaftarAsesi->prosesdaftarasesi();
+        redirect('cdaftar/FRAPL');
+    }
+    function FRAPL()
+    {
+        $data['konten'] = $this->load->view('FRAPL', '', TRUE);
+        $this->load->view('header', $data);
+    }
 }

@@ -8,25 +8,13 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="card">
-                        <div class="card text-bg-warning">
-                            <img src="https://cdn-icons-png.flaticon.com/512/4168/4168988.png" class="card-img-top" alt="...">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Data Pegawai</h5>
-                            <p class="card-text">Mengatur Akun-Akun Pegawai LSP</p>
-                            <a href="#" class="btn btn-primary">Kelola</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
                         <div class="card text-bg-success">
                             <img src="https://cdn-icons-png.flaticon.com/512/1415/1415345.png" class="card-img-top" alt="...">
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title">Data Skema</h5>
-                            <p class="card-text">Mengatur Data Data Skema Yang Ada</p>
-                            <a href="#" class="btn btn-primary">Kelola</a>
+                            <h5 class="card-title">Data FR APL.01</h5>
+                            <p class="card-text">Melengkapi Data FR APL.01</p>
+                            <a href="<?php echo base_url("Cdashboard_asesi/input_asesi")?>" class="btn btn-primary">Kelola</a>
                         </div>
                     </div>
                 </div>
@@ -36,8 +24,8 @@
                             <img src="https://cdn-icons-png.flaticon.com/512/2098/2098402.png" class="card-img-top" alt="...">
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title">Data Kegiatan</h5>
-                            <p class="card-text">Mengatur Data-Data Kegiatan Yang Ada</p>
+                            <h5 class="card-title">Data Skema</h5>
+                            <p class="card-text">Melihat Skema Skema LSP </p>
                             <a href="#" class="btn btn-primary">Kelola</a>
                         </div>
                     </div>
