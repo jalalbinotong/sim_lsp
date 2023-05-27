@@ -8,6 +8,7 @@
         $reg['email'] = $this->input->post('email');
         $reg['password'] = $this->input->post('password');
         $reg['tipe_user'] = $this->input->post('tipe_user');
+        $reg['verifikasi'] = 0;
 
         $data = $_POST;
         $id_user = $data['id_user'];
