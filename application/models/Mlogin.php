@@ -6,7 +6,7 @@
         $email = $this->input->post('email');
         $password = $this->input->post('password');
 
-        $sql = "select email,password,tipe_user,id_user,nama_lengkap from tb_user where email='" . $email . "' and password='" . $password . "' and verifikasi=1";
+        $sql = "select email,password,tipe_user,id_user,nama_lengkap from tb_user where email='" . $email . "' and password='" . $password . "'";
         $query = $this->db->query($sql);
         if ($query->num_rows() > 0) {
             //ada ada di database
