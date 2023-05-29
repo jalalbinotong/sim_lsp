@@ -6,6 +6,7 @@ class Cdaftar extends CI_Controller
     {
         parent::__construct();
         $this->load->model('mdaftar');
+        $this->load->model('memail');
     }
 
     function formdaftar()
@@ -26,13 +27,19 @@ class Cdaftar extends CI_Controller
     {
         $this->load->model('mdaftarAsesi');
         // $this->mdaftarAsesi->prosesdaftarasesi();
-        $this->memail->sendEmail();
+        // $this->memail->sendEmail();
         redirect('cdaftar/FRAPL');
     }
     function FRAPL()
     {
         $data['konten'] = $this->load->view('FRAPL', '', TRUE);
         $this->load->view('header', $data);
+    }
+
+    function verifikasi()
+    {
+        $this->load->model('Memail');
+        $this->Memail->verifikasi();
     }
 
     // //set validation rules
