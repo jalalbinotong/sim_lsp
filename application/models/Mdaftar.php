@@ -8,7 +8,8 @@
         $reg['email'] = $this->input->post('email');
         $reg['password'] = $this->input->post('password');
         $reg['tipe_user'] = $this->input->post('tipe_user');
-        $reg['verifikasi'] = 'false';
+        $reg['id_prodi'] = $this->input->post('id_prodi');
+        $reg['key_md5'] = md5($reg['email']);
 
         $this->load->model('Memail');
         $data = $_POST;
@@ -17,13 +18,13 @@
             //cek nim
             $nim_c1 = $this->db->get_where('tb_masterdata_mahasiswa', array('nim' => $reg['nim']));
             if ($nim_c1->num_rows() > 0) {
-                $nim_c2 = $this->db->get_where('tb_user', array('nim' => $reg['nim']));
+                $nim_c2 = $this->db->get_where('tb_user_temp', array('nim' => $reg['nim'])); //sementra (nanti sambungkan ke tb_asesi)
                 if ($nim_c2->num_rows() == 0) {
                     $nama_c1 = $this->db->get_where('tb_masterdata_mahasiswa', array('nama' => $reg['nama_lengkap']));
                     if ($nama_c1->num_rows() > 0) {
                         if ($this->Memail->sendEmail($reg['email'])) {
-                        //simpan
-                        $this->db->insert('tb_user_temp', $reg);
+                            //simpan
+                            $this->db->insert('tb_user_temp', $reg);
                             $this->session->set_flashdata('pesan', 'Prosess registrasi berhasil, silahkan verifikasi Email untuk mengaktifkan akun');
                             redirect('cdaftar/formdaftar', 'refresh');
                         } else {

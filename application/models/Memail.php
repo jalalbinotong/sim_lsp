@@ -60,8 +60,36 @@ class Memail extends CI_Model
             echo 'error';
         } else {
             $key = $this->uri->segment(3);
-            $data = $this->db->get_where('tb_user_temp', array('email' => md5($key)));
+            $key_data = $this->db->get_where('tb_user_temp', array('key_md5' => $key));
+
+            if ($key_data->num_rows() > 0) {
+                
             
+                foreach ($key_data->result_array() as $data) {
+                    //tb_user
+                    $user['id_user'] = $data['id_user'];
+                    $user['nama_lengkap'] = $data['nama_lengkap'];
+                    $user['email'] = $data['email'];
+                    $user['password'] = $data['password'];
+                    $user['tipe_user'] = 'asesi';
+
+                    //tb_asesi
+                    $asesi['id_user'] = $data['id_user'];
+                    $asesi['id_prodi'] = $data['id_prodi'];
+                    $asesi['nim'] = $data['nim'];
+                    $asesi['id_skema'] = '9999';
+
+
+                    if ($key_data->num_rows() > 0) {
+                        $this->db->insert('tb_user', $user);
+                        $this->db->delete('tb_user_temp', array('id_user' => $user['id_user']));
+                        $this->db->insert('tb_asesi', $asesi);
+                    }
+                }
+            }
+
+
+
         }
 
 
