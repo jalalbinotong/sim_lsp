@@ -118,10 +118,10 @@
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label">Prodi :</label>
-                                            <select id="prodi" class="form-select" aria-label="Default select example">
+                                            <select id="id_prodi" name="id_prodi" class="form-select" aria-label="Default select example">
                                                 <option value="none" selected>Pilih Prodi</option>
-                                                <option value="TRPL">Teknologi Rekayasa Perangkat Lunak</option>
-                                                <option value="MI">Managemen informatika</option>
+                                                <option value="4004">Teknologi Rekayasa Perangkat Lunak</option>
+                                                <option value="4003">Managemen informatika</option>
                                             </select>
                                         </div>
                                         <div class="mb-3">
