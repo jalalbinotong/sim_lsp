@@ -19,8 +19,20 @@
                     'tipe_user' => $tipe_user,
                     'nama_lengkap' => $nama_lengkap
                 );
+                
+                if ($tipe_user == 'admin'){
                 $this->session->set_userdata($array);
                 redirect('cdashboard/dashboard');
+                }
+                else if ($tipe_user == 'lsp'){
+                    $this->session->set_userdata($array);
+                    redirect('cdashboard_lsp/dashboard');
+                
+                }
+                else if ($tipe_user == 'asesi'){
+                    $this->session->set_userdata($array);
+                    redirect('cdashboard_asesi/dashboard');
+                }
         } else {
             //tidak ada data
             $this->session->set_flashdata('pesan', 'Login Gagal');

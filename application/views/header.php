@@ -34,7 +34,8 @@
             <nav id="navbar" class="navbar">
                 <ul>
                     <li><a class="nav-link scrollto active" href="<?php echo base_url('cmain/tampilberanda') ?>">Home</a></li>
-                    <li><a class="nav-link scrollto" href="<?php echo base_url('cdashboard/dashboard') ?>">Dashboard</a></li>
+                    <li><a class="nav-link scrollto" href="<?php echo base_url('credirect/validasi_dashboard') ?>">Dashboard</a></li>
+
                     <li class="dropdown"><a href="#"><span>Akun</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
                             <li><a href="<?php echo base_url('cdaftar/formdaftar') ?>">Pendaftaran</a></li>
@@ -81,7 +82,8 @@
         <!-- </div> -->
         <!-- </div> -->
     </div>
-
+    <!-- <div id="preloader"></div> -->
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
     <script src="<?php echo base_url('assets/vendor/purecounter/purecounter_vanilla.js'); ?>"></script>
     <script src="<?php echo base_url('assets/vendor/aos/aos.js'); ?>"></script>
     <script src="<?php echo base_url('assets/vendor/bootstrap/js/bootstrap.bundle.min.js'); ?>"></script>
@@ -97,11 +99,15 @@
     </script>
 
     <!-- Template Main JS File -->
-    <script src="assets/js/main.js"></script>
+    <!-- <script src="assets/js/main.js"></script> -->
 
     <script src="<?php echo base_url('assets/js/main.js'); ?>"></script>
 
+
+
+
 </body>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 
 

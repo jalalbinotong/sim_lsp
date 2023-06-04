@@ -64,7 +64,7 @@
                                             echo "";
                                         } else {
                                         ?>
-                                            <div class="alert alert-success alert-dismissible">
+                                            <div class="alert alert-danger alert-dismissible">
                                                 <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
                                                 <strong><?php echo $pesan; ?></strong>
                                             </div>

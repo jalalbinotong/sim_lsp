@@ -26,6 +26,14 @@
             return false;
         }
 
+        var prodi = $('#prodi').val();
+        if (prodi == "none" || prodi == "") {
+
+            alert("Prodi masih kosong");
+            $('#prodi').focus();
+            return false;
+        }
+
         var password = $('#password').val();
         if (password == "") {
 
@@ -62,41 +70,70 @@
                                     if ($pesan == "") {
                                         echo "";
                                     } else {
-                                    ?>
+                                        ?>
                                         <div class="alert alert-success alert-dismissible">
                                             <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-                                            <strong><?php echo $pesan; ?></strong>
+                                            <strong>
+                                                <?php echo $pesan; ?>
+                                            </strong>
                                         </div>
 
-                                    <?php
+                                        <?php
+                                    }
+                                    $pesan_danger = $this->session->flashdata('pesan_danger');
+                                    if ($pesan_danger == "") {
+                                        echo "";
+                                    } else {
+                                        ?>
+                                        <div class="alert alert-danger alert-dismissible">
+                                            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                                            <strong>
+                                                <?php echo $pesan_danger; ?>
+                                            </strong>
+                                        </div>
+
+                                        <?php
                                     }
                                     ?>
-                                    <form id="formdaftar" name="formdaftar" method="post" action="<?php echo base_url('cdaftar/prosesdaftar'); ?>">
+                                    <form id="formdaftar" name="formdaftar" method="post"
+                                        action="<?php echo base_url('cdaftar/prosesdaftar'); ?>">
                                         <div class="mb-3">
                                             <input type="hidden" name="id_user" id="id_user" />
                                             <input type="hidden" name="tipe_user" id="tipe_user" value="asesi" />
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label">NIM :</label>
-                                            <input type="number" class="form-control" id="nim" placeholder="Masukkan NIM" name="nim">
+                                            <input type="number" class="form-control" id="nim"
+                                                placeholder="Masukkan NIM" name="nim">
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label">Nama Lengkap :</label>
-                                            <input type="text" class="form-control" id="nama_lengkap" placeholder="Masukkan nama lengkap" name="nama_lengkap">
+                                            <input type="text" class="form-control" id="nama_lengkap"
+                                                placeholder="Masukkan nama lengkap" name="nama_lengkap">
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label">Email :</label>
-                                            <input type="email" class="form-control" id="email" placeholder="Masukkan Email" name="email">
+                                            <input type="email" class="form-control" id="email"
+                                                placeholder="Masukkan Email" name="email">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Prodi :</label>
+                                            <select id="id_prodi" name="id_prodi" class="form-select" aria-label="Default select example">
+                                                <option value="none" selected>Pilih Prodi</option>
+                                                <option value="4004">Teknologi Rekayasa Perangkat Lunak</option>
+                                                <option value="4003">Managemen informatika</option>
+                                            </select>
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label">Password:</label>
-                                            <input type="password" class="form-control" id="password" placeholder="Masukkan password" name="password">
+                                            <input type="password" class="form-control" id="password"
+                                                placeholder="Masukkan password" name="password">
                                         </div>
-
 
                                         <div class="text-center mt-3">
                                             <!-- <a href="index.html" class="btn btn-lg btn-primary">Masuk</a> -->
-                                            <button type="button" class="btn btn-lg btn-primary" onclick="prosesdaftar();">Daftar</button>
+                                            <button type="button" class="btn btn-lg btn-primary"
+                                                onclick="prosesdaftar();">Daftar</button>
                                             <!-- <button type="submit" class="btn btn-lg btn-primary">Sign in</button> -->
                                         </div>
                                     </form>
