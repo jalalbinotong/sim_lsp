@@ -28,5 +28,6 @@ class Cdashboard_asesi extends CI_Controller
         $this->load->view('header', $data);
         
     }
+    
 }
 ?>
