@@ -38,7 +38,7 @@ class Cdaftar extends CI_Controller
     function prosesdaftarasesi()
     {
         $this->load->model('mdaftarAsesi');
-        // $this->mdaftarAsesi->prosesdaftarasesi();
+        $this->mdaftarAsesi->prosesdaftarasesi();
         // $this->memail->sendEmail();
         redirect('cdaftar/FRAPL');
     }
