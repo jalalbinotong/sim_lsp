@@ -26,6 +26,12 @@ class Cdashboard extends CI_Controller
         $this->load->view('header', $data);
     }
 
+    function tambah_akun_pegawai()
+    {
+        $data['konten'] = $this->load->view('tambah_akun_pegawai', '', TRUE);
+        $this->load->view('header', $data);
+    }
+
     function fail_login()
     {
 ?>
