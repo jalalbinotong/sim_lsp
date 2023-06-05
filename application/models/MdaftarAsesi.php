@@ -25,6 +25,6 @@
         //simpan
         $this->db->insert('tb_data_asesi', $reg);
         $this->session->set_flashdata('pesan', 'Data sudah disimpan');
-        redirect('cdaftar/FRAPL', 'refresh');
+        // redirect('cdaftar/FRAPL', 'refresh');
     }
 }
