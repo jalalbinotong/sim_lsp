@@ -2,10 +2,19 @@
 {
 
     function prosesdaftarasesi()
-    {
-        $reg['id_asesi'] = $this->input->post('id_asesi');
+    {  
+        $id_user = $this->session->userdata('id_user');
+        $id_asesi_arr = $this->db->get_where('tb_asesi', array('id_user' => $id_user));
+
+        if ($id_asesi_arr->num_rows() > 0) {
+            foreach ($id_asesi_arr->result_array() as $data) {
+                $id_asesi = $data['id_asesi'];
+
+
+        $reg['id_asesi'] = $id_asesi;
         $reg['foto_ktp'] = $this->input->post('foto_ktp');
         $reg['bukti_pembayaran'] = $this->input->post('bukti_pembayaran');
+        $reg['foto'] = $this->input->post('foto');
         $reg['no_ktp'] = $this->input->post('no_ktp');
         $reg['tempat_lahir'] = $this->input->post('tempat_lahir');
         $reg['tgl_lahir'] = $this->input->post('tgl_lahir');
@@ -19,12 +28,12 @@
         $reg['jabatan'] = $this->input->post('jabatan');
         $reg['alamat_kantor'] = $this->input->post('alamat_kantor');
 
-        $data = $_POST;
-        $id_asesi = $data['id_asesi'];
-
         //simpan
         $this->db->insert('tb_data_asesi', $reg);
         $this->session->set_flashdata('pesan', 'Data sudah disimpan');
-        redirect('cdaftar/FRAPL', 'refresh');
+        // 
     }
 }
+    }
+}
+
