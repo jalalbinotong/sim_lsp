@@ -48,4 +48,23 @@
         } else {
         }
     }
+
+    function prosesdaftar_lsp()
+    {
+        $data = $_POST;
+        $KodeData = $data['KodeData'];
+        if ($KodeData == "") {
+            //simpan
+            $this->db->insert('tb_user', $data);
+            $this->session->set_flashdata('pesan', 'Data sudah disimpan');
+        } else {
+            //edit	
+            // $update = array(
+            // 	'KodeData' => $KodeData
+            // );
+            // $this->db->where($update);
+            // $this->db->update('tbdata', $data);
+            // $this->session->set_flashdata('pesan', 'Data sudah diedit');
+        }
+    }
 }
