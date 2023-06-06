@@ -14,7 +14,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Data Skema Sertifikasi</h5>
                             <p class="card-text">Mengatur Data Skema</p>
-                            <a href="#" class="btn btn-primary">Kelola</a>
+                            <a href="<?php echo base_url("Cdashboard_lsp/data_skema")?>" class="btn btn-primary">Kelola</a>
                         </div>
                     </div>
                 </div>

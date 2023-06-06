@@ -26,7 +26,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Data Skema</h5>
                             <p class="card-text">Melihat Skema Skema LSP </p>
-                            <a href="#" class="btn btn-primary">Kelola</a>
+                            <a href="" class="btn btn-primary">Kelola</a>
                         </div>
                     </div>
                 </div>
