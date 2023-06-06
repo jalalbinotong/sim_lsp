@@ -18,6 +18,14 @@
             return false;
         }
 
+        var foto = $('#foto').val();
+        if (foto == "") {
+
+            alert("no ktp masih kosong");
+            $('#foto').focus();
+            return false;
+        }
+
         var no_ktp = $('#no_ktp').val();
         if (no_ktp == "") {
 
@@ -154,8 +162,12 @@
                                             <input type="file" class="form-control" id="bukti_pembayaran" placeholder="Upload" name="bukti_pembayaran">
                                         </div>
                                         <div class="mb-3">
+                                            <label class="form-label">Pas Foto</label>
+                                            <input type="file" class="form-control" id="foto" placeholder="Upload Pas Foto" name="foto">
+                                        </div>
+                                        <div class="mb-3">
                                             <label class="form-label">No KTP</label>
-                                            <input type="teks" class="form-control" id="no_ktp" placeholder="Upload" name="no_ktp">
+                                            <input type="teks" class="form-control" id="no_ktp" placeholder="Masukkan Nomor Ktp" name="no_ktp">
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label">Tempat Lahir</label>
