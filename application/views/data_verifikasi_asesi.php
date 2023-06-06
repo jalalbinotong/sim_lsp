@@ -7,6 +7,7 @@
       <thead>
         <tr>
           <th>Fotocopy KTP</th>
+          <th>Fotocopy KTP</th>
           <th>Bukti Pembayaran</th>
           <th>Pas Foto</th>
           <th>No KTP</th>
@@ -22,6 +23,7 @@
           <th>Nama Institusi</th>
           <th>Jabatan</th>
           <th>Alamat Kantor</th>
+          <th>Aksi</th>
 
         </tr>
       </thead>
@@ -53,9 +55,10 @@
               <td><?php echo $data->jabatan; ?></td>
               <td><?php echo $data->alamat_kantor; ?></td>
               <td>
-                <button type="button" class="btn btn-primary btn-sm" onclick="editdata('<?php echo $data->id_asesi; ?>')">Edit</button>
-                <button type="button" class="btn btn-danger btn-sm" onclick="hapusdata('<?php echo $data->id_asesi; ?>');">Hapus</button>
+                <button type="button" class="btn btn-primary btn-sm" onclick="editdata('<?php echo $data->id_asesi; ?>')">Setuju</button>
+                <button type="button" class="btn btn-danger btn-sm" onclick="hapusdata('<?php echo $data->id_asesi; ?>');">Tidak Setujuw</button>
               </td>
+              
             </tr>
         <?php
             $no++;
