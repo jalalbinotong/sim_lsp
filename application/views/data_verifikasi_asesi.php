@@ -48,13 +48,13 @@
               <td><?php echo $data->telpon_hp; ?></td>
               <td><?php echo $data->telpon_rumah; ?></td>
               <td><?php echo $data->telpon_kantor; ?></td>
-              <td><?php echo $data->KualifikasiPendidikan; ?></td>
+              <td><?php echo $data->kualifikasi_pendidikan; ?></td>
               <td><?php echo $data->nama_institusi; ?></td>
               <td><?php echo $data->jabatan; ?></td>
               <td><?php echo $data->alamat_kantor; ?></td>
               <td>
-                <button type="button" class="btn btn-primary btn-sm" onclick="editdata('<?php echo $data->KodeData; ?>')">Edit</button>
-                <button type="button" class="btn btn-danger btn-sm" onclick="hapusdata('<?php echo $data->KodeData; ?>');">Hapus</button>
+                <button type="button" class="btn btn-primary btn-sm" onclick="editdata('<?php echo $data->id_asesi; ?>')">Edit</button>
+                <button type="button" class="btn btn-danger btn-sm" onclick="hapusdata('<?php echo $data->id_asesi; ?>');">Hapus</button>
               </td>
             </tr>
         <?php
