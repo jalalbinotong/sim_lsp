@@ -179,8 +179,8 @@
                                         </div>
                                         <div class="mb-3">
                                             Pilih Jenis Kelamin: <br>
-                                            <input type="radio" name="jenis_kelamin" value="Laki-laki"> Laki-laki<br>
-                                            <input type="radio" name="jenis_kelamin" value="Perempuan"> Perempuan<br>
+                                            <input type="radio" name="jenis_kelamin" value="L"> Laki-laki<br>
+                                            <input type="radio" name="jenis_kelamin" value="P"> Perempuan<br>
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label">Kebangsaan</label>

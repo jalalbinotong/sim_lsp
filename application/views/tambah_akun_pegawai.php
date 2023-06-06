@@ -1,12 +1,5 @@
 <script language="javascript">
     function prosesdaftar() {
-        var nim = $('#nim').val();
-        if (nim == "") {
-
-            alert("Nim masih kosong");
-            $('#nim').focus();
-            return false;
-        }
 
         var nama_lengkap = $('#nama_lengkap').val();
         if (nama_lengkap == "") {
@@ -24,13 +17,6 @@
             return false;
         }
 
-        var prodi = $('#prodi').val();
-        if (prodi == "none" || prodi == "") {
-
-            alert("Prodi masih kosong");
-            $('#prodi').focus();
-            return false;
-        }
 
         var password = $('#password').val();
         if (password == "") {
@@ -94,7 +80,7 @@
                                     <?php
                                     }
                                     ?>
-                                    <form id="formdaftar" name="formdaftar" method="post" action="<?php echo base_url('cdaftar/prosesdaftar'); ?>">
+                                    <form id="formdaftar" name="formdaftar" method="post" action="<?php echo base_url('cdaftar/prosesdaftarlsp'); ?>">
                                         <div class="mb-3">
                                             <input type="hidden" name="id_user" id="id_user" />
                                             <input type="hidden" name="tipe_user" id="tipe_user" value="lsp" />

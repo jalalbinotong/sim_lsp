@@ -79,11 +79,13 @@ class Memail extends CI_Model
                     $asesi['nim'] = $data['nim'];
                     $asesi['id_skema'] = '9999';
 
-
+                    
                     if ($key_data->num_rows() > 0) {
+                        $this->db->trans_start();
                         $this->db->insert('tb_user', $user);
                         $this->db->delete('tb_user_temp', array('id_user' => $user['id_user']));
                         $this->db->insert('tb_asesi', $asesi);
+                        $this->db->trans_complete();
                     }
                 }
             }

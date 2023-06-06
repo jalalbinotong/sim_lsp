@@ -17,6 +17,18 @@ class Cdaftar extends CI_Controller
         $this->load->view('header', $data);
     }
 
+    function prosesdaftarlsp()
+    {
+        $this->mdaftar->prosesdaftar_lsp();
+        redirect('cdaftar/tampilformdaftar_lsp');
+    }
+
+    function tampilformdaftar_lsp()
+    {
+        $data['konten'] = $this->load->view('tambah_akun_pegawai', '', TRUE);
+        $this->load->view('header', $data);
+    }
+
     function prosesdaftar()
     {
         $this->mdaftar->prosesdaftar();
@@ -48,7 +60,7 @@ class Cdaftar extends CI_Controller
     // $this->form_validation->set_rules('email', 'Email ID', 'trim|required|valid_email|is_unique[user.email]');
     // $this->form_validation->set_rules('password', 'Password', 'trim|required|matches[cpassword]|md5');
     // $this->form_validation->set_rules('cpassword', 'Confirm Password', 'trim|required');
-    
+
     // //validate form input
     // if ($this->form_validation->run() == FALSE)
     // {
