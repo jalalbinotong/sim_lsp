@@ -27,15 +27,17 @@ class Cdashboard_lsp extends CI_Controller
     {
         $this->load->model('Mtampil_data_asesi');
         $datalist['hasil'] = $this->Mtampil_data_asesi->tampildata();
-        $data['tabel'] = $this->load->view('data_verifikasi_asesi', $datalist, TRUE);
+        $data['konten'] = $this->load->view('data_verifikasi_asesi', $datalist, TRUE);
         $this->load->view('header', $data);
     }
+
     function tampildataasesi()
     {
         $datalist['hasil'] = $this->Mtampil_data_asesi->tampildata();
         // $data['hasil'] = $this->load->view('data_verifikasi_asesi',$datalist,TRUE);
         $data['tabel'] = $this->load->view('data_verifikasi_asesi', $datalist, TRUE);
     }
+
     function data_skema()
     {
 
