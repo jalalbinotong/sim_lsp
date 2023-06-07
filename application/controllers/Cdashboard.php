@@ -13,7 +13,6 @@ class Cdashboard extends CI_Controller
         $data['konten'] = $this->load->view('dashboard', '', TRUE);
         $data['tipe_user'] = $this->session->userdata('tipe_user');
         $this->load->view('header', $data);
-        
     }
 
     function data_pegawai()
@@ -21,8 +20,8 @@ class Cdashboard extends CI_Controller
         $this->load->model('mdata_pegawai');
         $this->mdata_pegawai->tampil_data();
         $data['sidebar'] = $this->load->view('sidebar', '', TRUE);
-        $data['konten'] = $this->load->view('dashboard', '', TRUE);
-        $data['tabel'] = $this->load->view('data_pegawai', '', TRUE);
+        // $data['konten'] = $this->load->view('dashboard', '', TRUE);
+        $data['konten'] = $this->load->view('data_pegawai', '', TRUE);
         $this->load->view('header', $data);
     }
 

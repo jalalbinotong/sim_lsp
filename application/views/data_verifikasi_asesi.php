@@ -58,7 +58,7 @@
                 <button type="button" class="btn btn-primary btn-sm" onclick="editdata('<?php echo $data->id_asesi; ?>')">Setuju</button>
                 <button type="button" class="btn btn-danger btn-sm" onclick="hapusdata('<?php echo $data->id_asesi; ?>');">Tidak Setujuw</button>
               </td>
-              
+
             </tr>
         <?php
             $no++;
