@@ -1,10 +1,10 @@
 <?php
 class Cmain extends CI_Controller
 {
-    function tampilheader()
-    {
-        $this->load->view('header');
-    }
+    // function tampilheader()
+    // {
+    //     $this->load->view('header');
+    // }
 
     function tampilberanda()
     {

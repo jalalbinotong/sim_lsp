@@ -9,8 +9,8 @@ class Cdashboard extends CI_Controller
     }
     function dashboard()
     {
-        $data['sidebar'] = $this->load->view('sidebar', '', TRUE);
-        $data['konten'] = $this->load->view('dashboard', '', TRUE);
+        $data['sidebar'] = $this->load->view('Admin/sidebar', '', TRUE);
+        $data['konten'] = $this->load->view('Admin/dashboard', '', TRUE);
         $data['tipe_user'] = $this->session->userdata('tipe_user');
         $this->load->view('header', $data);
     }
@@ -20,15 +20,15 @@ class Cdashboard extends CI_Controller
 
         $this->load->model('mdata_pegawai');
         $datalist['hasil'] = $this->mdata_pegawai->tampil_data();
-        $data['sidebar'] = $this->load->view('sidebar', '', TRUE);
+        $data['sidebar'] = $this->load->view('Admin/sidebar', '', TRUE);
         // $data['konten'] = $this->load->view('dashboard', '', TRUE);
-        $data['konten'] = $this->load->view('data_pegawai', $datalist, TRUE);
+        $data['konten'] = $this->load->view('Admin/data_pegawai', $datalist, TRUE);
         $this->load->view('header', $data);
     }
 
     function tambah_akun_pegawai()
     {
-        $data['konten'] = $this->load->view('tambah_akun_pegawai', '', TRUE);
+        $data['konten'] = $this->load->view('Admin/tambah_akun_pegawai', '', TRUE);
         $this->load->view('header', $data);
     }
 

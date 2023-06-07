@@ -11,8 +11,8 @@ class Cdashboard_lsp extends CI_Controller
     }
     function dashboard()
     {
-        $data['sidebar'] = $this->load->view('sidebar_lsp', '', TRUE);
-        $data['konten'] = $this->load->view('dashboard_lsp', '', TRUE);
+        $data['sidebar'] = $this->load->view('Pegawai/sidebar_lsp', '', TRUE);
+        $data['konten'] = $this->load->view('Pegawai/dashboard_lsp', '', TRUE);
         $data['tipe_user'] = $this->session->userdata('tipe_user');
         $this->load->view('header', $data);
     }
@@ -28,7 +28,7 @@ class Cdashboard_lsp extends CI_Controller
     {
         $this->load->model('Mtampil_data_asesi');
         $datalist['hasil'] = $this->Mtampil_data_asesi->tampildata();
-        $data['konten'] = $this->load->view('data_verifikasi_asesi', $datalist, TRUE);
+        $data['konten'] = $this->load->view('Pegawai/data_verifikasi_asesi', $datalist, TRUE);
         $this->load->view('header', $data);
     }
 
@@ -36,15 +36,15 @@ class Cdashboard_lsp extends CI_Controller
     {
         $datalist['hasil'] = $this->Mtampil_data_asesi->tampildata();
         // $data['hasil'] = $this->load->view('data_verifikasi_asesi',$datalist,TRUE);
-        $data['tabel'] = $this->load->view('data_verifikasi_asesi', $datalist, TRUE);
+        $data['tabel'] = $this->load->view('Pegawai/data_verifikasi_asesi', $datalist, TRUE);
     }
 
     function data_skema()
     {
 
         $datalist['hasil'] = $this->mdata_skema->tampildata_skema();
-        $data['konten'] = $this->load->view('data_skema', '', TRUE);
-        $data['tabel'] = $this->load->view('tabeldata_skema', $datalist, TRUE);
+        $data['konten'] = $this->load->view('Pegawai/data_skema', '', TRUE);
+        $data['tabel'] = $this->load->view('Pegawai/tabeldata_skema', $datalist, TRUE);
         $this->load->view('header', $data);
     }
 
@@ -52,9 +52,9 @@ class Cdashboard_lsp extends CI_Controller
     {
 
         $datalist['hasil'] = $this->mdata_kegiatan->tampildata_kegiatan();
-        
-        $data['konten'] = $this->load->view('data_kegiatan', '', TRUE);
-        $data['tabel'] = $this->load->view('tabeldata_kegiatan', $datalist, TRUE);
+
+        $data['konten'] = $this->load->view('Pegawai/data_kegiatan', '', TRUE);
+        $data['tabel'] = $this->load->view('Pegawai/tabeldata_kegiatan', $datalist, TRUE);
         $this->load->view('header', $data);
     }
 
@@ -71,6 +71,5 @@ class Cdashboard_lsp extends CI_Controller
 
         redirect('Cdashboard_lsp/data_kegiatan');
     }
-    
 }
 ?>
