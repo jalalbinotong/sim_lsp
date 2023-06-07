@@ -40,13 +40,19 @@
 
             <tr>
               <td><?php echo $no; ?></td>
-              <td><?php echo $data->NamaLengkap; ?></td>
-              <td><?php echo $data->Alamat; ?></td>
-              <td><?php echo $data->Telp; ?></td>
-              <td><?php echo $data->Email; ?></td>
+              <td><?php echo $data->NIP; ?></td>
+              <td><?php echo $data->nama; ?></td>
+              <td><?php echo $data->kelamin; ?></td>
+              <td><?php echo $data->tempat_lahir; ?></td>
+              <td><?php echo $data->tgl_lahir; ?></td>
+              <td><?php echo $data->nomor_hp; ?></td>
+              <td><?php echo $data->alamat; ?></td>
+              <td><?php echo $data->email; ?></td>
+              <td><?php echo $data->jabatan; ?></td>
+              <td><?php echo $data->golongan; ?></td>
               <td>
-                <button type="button" class="btn btn-primary btn-sm" onclick="editdata('<?php echo $data->KodeData; ?>')">Edit</button>
-                <button type="button" class="btn btn-danger btn-sm" onclick="hapusdata('<?php echo $data->KodeData; ?>');">Hapus</button>
+                <button type="button" class="btn btn-primary btn-sm" onclick="editdata('<?php echo $data->id_user; ?>')">Edit</button>
+                <button type="button" class="btn btn-danger btn-sm" onclick="hapusdata('<?php echo $data->id_user; ?>');">Hapus</button>
               </td>
             </tr>
         <?php

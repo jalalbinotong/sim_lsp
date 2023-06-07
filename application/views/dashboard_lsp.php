@@ -14,7 +14,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Data Skema Sertifikasi</h5>
                             <p class="card-text">Mengatur Data Skema</p>
-                            <a href="<?php echo base_url("Cdashboard_lsp/data_skema")?>" class="btn btn-primary">Kelola</a>
+                            <a href="<?php echo base_url("Cdashboard_lsp/data_skema") ?>" class="btn btn-primary">Kelola</a>
                         </div>
                     </div>
                 </div>
@@ -26,7 +26,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Data Kegiatan</h5>
                             <p class="card-text">Mengatur Data Kegiatan</p>
-                            <a href="<?php echo base_url("Cdashboard_lsp/data_kegiatan")?>" class="btn btn-primary">Kelola</a>
+                            <a href="<?php echo base_url("Cdashboard_lsp/data_kegiatan") ?>" class="btn btn-primary">Kelola</a>
                         </div>
                     </div>
                 </div>
@@ -38,10 +38,13 @@
                         <div class="card-body">
                             <h5 class="card-title">Data Pendaftaran Asesi</h5>
                             <p class="card-text">Mengatur Data Asesi</p>
-                            <a href="<?php echo base_url("cdashboard_lsp/verifdataasesi")?>" class="btn btn-primary">Kelola</a>
+                            <a href="<?php echo base_url("cdashboard_lsp/verifdataasesi") ?>" class="btn btn-primary">Kelola</a>
                         </div>
+                    </div>
+                </div>
             </div>
         </div>
+    </div>
 </main>
 <style>
     /* .card {

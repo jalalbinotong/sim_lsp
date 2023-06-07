@@ -14,7 +14,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Data FR APL.01</h5>
                             <p class="card-text">Melengkapi Data FR APL.01</p>
-                            <a href="<?php echo base_url("Cdashboard_asesi/input_asesi")?>" class="btn btn-primary">Kelola</a>
+                            <a href="<?php echo base_url("Cdashboard_asesi/input_asesi") ?>" class="btn btn-primary">Kelola</a>
                         </div>
                     </div>
                 </div>
@@ -32,6 +32,7 @@
                 </div>
             </div>
         </div>
+    </div>
 </main>
 <style>
     /* .card {

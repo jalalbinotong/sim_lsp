@@ -17,11 +17,12 @@ class Cdashboard extends CI_Controller
 
     function data_pegawai()
     {
+
         $this->load->model('mdata_pegawai');
-        $this->mdata_pegawai->tampil_data();
+        $datalist['hasil'] = $this->mdata_pegawai->tampil_data();
         $data['sidebar'] = $this->load->view('sidebar', '', TRUE);
         // $data['konten'] = $this->load->view('dashboard', '', TRUE);
-        $data['konten'] = $this->load->view('data_pegawai', '', TRUE);
+        $data['konten'] = $this->load->view('data_pegawai', $datalist, TRUE);
         $this->load->view('header', $data);
     }
 
