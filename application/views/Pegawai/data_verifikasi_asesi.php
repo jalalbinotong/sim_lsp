@@ -1,30 +1,30 @@
 </script>
 
 <div style="padding-top: 100px">
-  <div class="container mt-3">
+  <div class="container-fluid">
     <h4>Data FRAPL.01</h4>
     <table class="table table-striped">
       <thead>
         <tr>
-          <th>Fotocopy KTP</th>
-          <th>Fotocopy KTP</th>
+          <th>Nomor</th>
+          <!-- <th>Fotocopy KTP</th>
           <th>Bukti Pembayaran</th>
           <th>Pas Foto</th>
-          <th>No KTP</th>
+          <th>No KTP</th> -->
           <th>Tempat Lahir</th>
           <th>Tanggal Lahir</th>
           <th>Jenis Kelamin</th>
-          <th>Kebangsaan</th>
+          <!-- <th>Kebangsaan</th> -->
           <th>Alamat</th>
           <th>Telepon HP</th>
-          <th>Telepon Rumah</th>
-          <th>Telepon Kantor</th>
+          <!-- <th>Telepon Rumah</th>
+          <th>Telepon Kantor</th> -->
           <th>Kualifikasi Pendidikan</th>
           <th>Nama Institusi</th>
           <th>Jabatan</th>
-          <th>Alamat Kantor</th>
+          <!-- <th>Alamat Kantor</th> -->
+          <th>Status</th>
           <th>Aksi</th>
-
         </tr>
       </thead>
       <tbody>
@@ -33,34 +33,74 @@
           echo "Asesi Belum Mengajukan Data FRAPL.01 <hr>";
         } else {
           $no = 1;
-          foreach ($hasil as $data) :
-        ?>
+          foreach ($hasil as $data):
+            ?>
 
             <tr>
-              <td><?php echo $no; ?></td>
-              <td><?php echo $data->foto_ktp; ?></td>
-              <td><?php echo $data->bukti_pembayaran; ?></td>
-              <td><?php echo $data->foto; ?></td>
-              <td><?php echo $data->no_ktp; ?></td>
-              <td><?php echo $data->tempat_lahir; ?></td>
-              <td><?php echo $data->tgl_lahir; ?></td>
-              <td><?php echo $data->jenis_kelamin; ?></td>
-              <td><?php echo $data->kebangsaan; ?></td>
-              <td><?php echo $data->alamat; ?></td>
-              <td><?php echo $data->telpon_hp; ?></td>
-              <td><?php echo $data->telpon_rumah; ?></td>
-              <td><?php echo $data->telpon_kantor; ?></td>
-              <td><?php echo $data->kualifikasi_pendidikan; ?></td>
-              <td><?php echo $data->nama_institusi; ?></td>
-              <td><?php echo $data->jabatan; ?></td>
-              <td><?php echo $data->alamat_kantor; ?></td>
               <td>
-                <button type="button" class="btn btn-primary btn-sm" onclick="editdata('<?php echo $data->id_asesi; ?>')">Setuju</button>
-                <button type="button" class="btn btn-danger btn-sm" onclick="hapusdata('<?php echo $data->id_asesi; ?>');">Tidak Setujuw</button>
+                <?php echo $no; ?>
               </td>
-
+              <!-- <td>
+                <!-- <?php echo $data->foto_ktp; ?>
+              </td>
+              <td>
+                <?php echo $data->bukti_pembayaran; ?>
+              </td>
+              <td>
+                <?php echo $data->foto; ?>
+              </td>
+              <td>
+                <?php echo $data->no_ktp; ?>
+              </td> -->
+              <td>
+                <?php echo $data->tempat_lahir; ?>
+              </td>
+              <td>
+                <?php echo $data->tgl_lahir; ?>
+              </td>
+              <td>
+                <?php echo $data->jenis_kelamin; ?>
+              </td>
+              <!-- <td>
+                <?php echo $data->kebangsaan; ?>
+              </td> -->
+              <td>
+                <?php echo $data->alamat; ?>
+              </td>
+              <td>
+                <?php echo $data->telpon_hp; ?>
+              </td>
+              <!-- <td>
+                <?php echo $data->telpon_rumah; ?>
+              </td>
+              <td>
+                <?php echo $data->telpon_kantor; ?>
+              </td> -->
+              <td>
+                <?php echo $data->kualifikasi_pendidikan; ?>
+              </td>
+              <td>
+                <?php echo $data->nama_institusi; ?>
+              </td>
+              <td>
+                <?php echo $data->jabatan; ?>
+              </td>
+              <!-- <td>
+                <?php echo $data->alamat_kantor; ?>
+              </td> -->
+              <td>
+                <?php echo $data->status; ?>  
+              </td>
+              <td>
+                <button type="button" class="btn btn-primary btn-sm"
+                  onclick="editdata('<?php echo $data->id_asesi; ?>')">Edit</button>
+              </td>
+              <td>
+                <button type="button" class="btn btn-danger btn-sm"
+                  onclick="hapusdata('<?php echo $data->id_asesi; ?>');">Hapus</button>
+              </td>
             </tr>
-        <?php
+            <?php
             $no++;
           endforeach;
         }
