@@ -12,9 +12,9 @@
                             <img src="https://cdn-icons-png.flaticon.com/512/1415/1415345.png" class="card-img-top" alt="...">
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title">Data FR APL.01</h5>
-                            <p class="card-text">Melengkapi Data FR APL.01</p>
-                            <a href="<?php echo base_url("Cdashboard_asesi/input_asesi")?>" class="btn btn-primary">Kelola</a>
+                            <h5 class="card-title">Data Skema Sertifikasi</h5>
+                            <p class="card-text">Mengatur Data Skema</p>
+                            <a href="<?php echo base_url("Cdashboard_lsp/data_skema") ?>" class="btn btn-primary">Kelola</a>
                         </div>
                     </div>
                 </div>
@@ -24,14 +24,27 @@
                             <img src="https://cdn-icons-png.flaticon.com/512/2098/2098402.png" class="card-img-top" alt="...">
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title">Data Skema</h5>
-                            <p class="card-text">Melihat Skema Skema LSP </p>
-                            <a href="" class="btn btn-primary">Kelola</a>
+                            <h5 class="card-title">Data Kegiatan</h5>
+                            <p class="card-text">Mengatur Data Kegiatan</p>
+                            <a href="<?php echo base_url("Cdashboard_lsp/data_kegiatan") ?>" class="btn btn-primary">Kelola</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card text-bg-primary">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2098/2098402.png" class="card-img-top" alt="...">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Data Pendaftaran Asesi</h5>
+                            <p class="card-text">Mengatur Data Asesi</p>
+                            <a href="<?php echo base_url("cdashboard_lsp/verifdataasesi") ?>" class="btn btn-primary">Kelola</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 </main>
 <style>
     /* .card {
