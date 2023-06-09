@@ -28,7 +28,7 @@
         </li><!-- End Dashboard Nav -->
 
         <li class="nav-item">
-            <a class="nav-link collapsed" href="<?php echo base_url('Cdashboard_asesi/input_asesi'); ?>">
+            <a class="nav-link collapsed" href="<?php echo base_url('Ccetakpdf/pdf'); ?>">
                 <i class="bi bi-file-earmark-text"></i>
                 <span>Cetak Data FR APL.01</span>
             </a>
