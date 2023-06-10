@@ -64,9 +64,24 @@
                                             echo "";
                                         } else {
                                         ?>
-                                            <div class="alert alert-danger alert-dismissible">
+                                            <div class="alert alert-success alert-dismissible">
                                                 <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
                                                 <strong><?php echo $pesan; ?></strong>
+                                            </div>
+
+                                        <?php
+                                        }
+
+                                        $pesan_danger = $this->session->flashdata('pesan_danger');
+                                        if ($pesan_danger == "") {
+                                            echo "";
+                                        } else {
+                                        ?>
+                                            <div class="alert alert-danger alert-dismissible">
+                                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                                                <strong>
+                                                    <?php echo $pesan_danger; ?>
+                                                </strong>
                                             </div>
 
                                         <?php
