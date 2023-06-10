@@ -11,7 +11,7 @@
           <th>Bukti Pembayaran</th>
           <th>Pas Foto</th>
           <th>No KTP</th> -->
-          <th>Tempat Lahir</th>
+          <th>Nama Lengkap</th>
           <th>Tanggal Lahir</th>
           <th>Jenis Kelamin</th>
           <!-- <th>Kebangsaan</th> -->
@@ -33,8 +33,8 @@
           echo "Asesi Belum Mengajukan Data FRAPL.01 <hr>";
         } else {
           $no = 1;
-          foreach ($hasil as $data):
-            ?>
+          foreach ($hasil as $data) :
+        ?>
 
             <tr>
               <td>
@@ -89,18 +89,16 @@
                 <?php echo $data->alamat_kantor; ?>
               </td> -->
               <td>
-                <?php echo $data->status; ?>  
+                <?php echo $data->status; ?>
               </td>
               <td>
-                <button type="button" class="btn btn-primary btn-sm"
-                  onclick="editdata('<?php echo $data->id_asesi; ?>')">Edit</button>
+                <button type="button" class="btn btn-primary btn-sm" onclick="editdata('<?php echo $data->id_asesi; ?>')">Edit</button>
               </td>
               <td>
-                <button type="button" class="btn btn-danger btn-sm"
-                  onclick="hapusdata('<?php echo $data->id_asesi; ?>');">Hapus</button>
+                <button type="button" class="btn btn-danger btn-sm" onclick="hapusdata('<?php echo $data->id_asesi; ?>');">Hapus</button>
               </td>
             </tr>
-            <?php
+        <?php
             $no++;
           endforeach;
         }

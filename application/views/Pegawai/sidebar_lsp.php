@@ -31,7 +31,7 @@
             </a>
         </li><!-- End Dashboard Nav -->
         <li class="nav-item">
-            <a class="nav-link collapsed" href="<?php echo base_url('cdashboard_lsp/verifdataasesi'); ?>">
+            <a class="nav-link collapsed" href="<?php echo base_url('cdashboard_lsp/listdataasesi'); ?>">
                 <i class="bi bi-file-earmark-text"></i>
                 <span>Data Pendaftaran Asesi</span>
             </a>

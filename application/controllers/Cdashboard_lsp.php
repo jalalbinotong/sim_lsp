@@ -24,6 +24,14 @@ class Cdashboard_lsp extends CI_Controller
 <?php
     }
 
+    function listdataasesi()
+    {
+        $this->load->model('Mtampil_data_asesi');
+        $datalist['hasil'] = $this->Mtampil_data_asesi->tampildata_user();
+        $data['konten'] = $this->load->view('Pegawai/list_asesi', $datalist, TRUE);
+        $this->load->view('header', $data);
+    }
+
     function verifdataasesi()
     {
         $this->load->model('Mtampil_data_asesi');
