@@ -63,8 +63,8 @@ class Memail extends CI_Model
             $key_data = $this->db->get_where('tb_user_temp', array('key_md5' => $key));
 
             if ($key_data->num_rows() > 0) {
-                
-            
+
+
                 foreach ($key_data->result_array() as $data) {
                     //tb_user
                     $user['id_user'] = $data['id_user'];
@@ -79,7 +79,7 @@ class Memail extends CI_Model
                     $asesi['nim'] = $data['nim'];
                     $asesi['id_skema'] = '9999';
 
-                    
+
                     if ($key_data->num_rows() > 0) {
                         $this->db->trans_start();
                         $this->db->insert('tb_user', $user);
@@ -89,12 +89,8 @@ class Memail extends CI_Model
                     }
                 }
             }
-
-
-
+            $this->session->set_flashdata('pesan', 'Email telah berhasil diverifikasi!');
+            redirect('clogin/formlogin');
         }
-
-
     }
 }
-?>
