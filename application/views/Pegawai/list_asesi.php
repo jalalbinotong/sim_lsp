@@ -37,11 +37,12 @@
 
 <div style="padding-top: 100px">
   <div class="container-fluid">
-    <h4>Data FRAPL.01</h4>
+    <h4>List Pengajuan Berkas</h4>
     <table class="table table-striped">
       <thead>
         <tr>
-          <th>Nomor</th>
+          <th></th>
+          <th>ID Berkas</th>
           <th>NIM</th>
           <th>Nama Lengkap</th>
           <th>Prodi</th>
@@ -62,6 +63,9 @@
             <tr>
               <td>
                 <?php echo $no; ?>
+              </td>
+              <td>
+                <?php echo $data->id; ?>
               </td>
               <td>
                 <?php echo $data->nim; ?>
