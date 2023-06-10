@@ -27,7 +27,7 @@
                             //simpan
                             $this->db->insert('tb_user_temp', $reg);
                             $this->db->trans_complete();
-                            $this->session->set_flashdata('pesan', 'Prosess registrasi berhasil, silahkan verifikasi Email untuk mengaktifkan akun');
+                            $this->session->set_flashdata('pesan', 'Proses registrasi berhasil, silahkan verifikasi Email untuk mengaktifkan akun');
                             redirect('cdaftar/formdaftar', 'refresh');
                         } else {
                             $this->session->set_flashdata('pesan_danger', 'Prosess registrasi Gagal, silahkan mencoba kembali');
