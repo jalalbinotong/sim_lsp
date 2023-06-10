@@ -39,6 +39,8 @@ class Cdashboard_lsp extends CI_Controller
         $data['tabel'] = $this->load->view('Pegawai/data_verifikasi_asesi', $datalist, TRUE);
     }
 
+
+    //Kode Untuk data skema
     function data_skema()
     {
 
@@ -48,6 +50,19 @@ class Cdashboard_lsp extends CI_Controller
         $this->load->view('header', $data);
     }
 
+    function hapusdata($id_skema)
+		{
+			$this->mdata_skema->hapusdata($id_skema); //panggil fungsi
+			redirect('cdashboard_lsp/tabeldata_skema');
+		}	
+
+		function editdata($id_skema)
+		{
+			$this->mdata_skema->editdata($id_skema);		
+		}
+
+
+     //Kode Untuk data kegiatan
     function data_kegiatan()
     {
 
