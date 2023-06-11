@@ -64,6 +64,7 @@ class Cdashboard_lsp extends CI_Controller
         $datalist['hasil'] = $this->mdata_skema->tampildata_skema();
         $data['konten'] = $this->load->view('Pegawai/data_skema', '', TRUE);
         $data['tabel'] = $this->load->view('Pegawai/tabeldata_skema', $datalist, TRUE);
+        $data['sidebar'] = $this->load->view('Pegawai/sidebar_lsp', '', TRUE);
         $this->load->view('header', $data);
     }
 
@@ -87,6 +88,7 @@ class Cdashboard_lsp extends CI_Controller
 
         $data['konten'] = $this->load->view('Pegawai/data_kegiatan', '', TRUE);
         $data['tabel'] = $this->load->view('Pegawai/tabeldata_kegiatan', $datalist, TRUE);
+        $data['sidebar'] = $this->load->view('Pegawai/sidebar_lsp', '', TRUE);
         $this->load->view('header', $data);
     }
 

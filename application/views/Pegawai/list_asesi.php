@@ -6,10 +6,8 @@
   }
 </script>
 
-</script>
-
 <main id="main" class="main">
-  <div class="container">
+  <div class="container mt-3">
     <h4>List Pengajuan Berkas</h4>
     <table class="table table-striped">
       <thead>
