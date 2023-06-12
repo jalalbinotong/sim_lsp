@@ -118,120 +118,118 @@
 
 <body>
     <main id="main" class="main">
-        <!-- <main class="d-flex w-100"> -->
-        <div class="container">
-            <!-- <div class="row vh-100"> -->
-            <div class="col-sm-10 col-md-8 col-lg-8 mx-auto d-table h-100">
-                <!-- <div class="d-table-cell align-middle"> -->
+        <main class="d-flex w-100">
+            <div class="container d-flex flex-column">
+                <div class="row vh-100">
+                    <div class="col-sm-10 col-md-8 col-lg-6 mx-auto d-table h-100">
+                        <div class="d-table-cell align-middle">
 
-                <div class="text-center mt-4">
-                    <h1 class="h2">Upload Data</h1>
-                    <p class="lead">
-                        Silahkan Lengkapi Data Anda!
-                    </p>
-                </div>
+                            <div class="text-center mt-4">
+                                <h1 class="h2">Form Daftar Data Asesi</h1>
+                                <p class="lead">
+                                    Silahkan Isi Data FR APL.01
+                                </p>
+                            </div>
 
-                <div class="card">
-                    <div class="card-body">
-                        <div class="m-sm-4">
-                            <br />
-                            <?php
-                            $pesan = $this->session->flashdata('pesan');
-                            if ($pesan == "") {
-                                echo "";
-                            } else {
-                            ?>
-                                <div class="alert alert-success alert-dismissible">
-                                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-                                    <strong><?php echo $pesan; ?></strong>
-                                </div>
+                            <div class="card">
 
-                            <?php
-                            }
-                            ?>
-                            <form id="FRAPL" name="FRAPL" method="post" action="<?php echo base_url('cdaftar/prosesdaftarasesi'); ?>">
-                                <div class="mb-3">
-                                    <input type="hidden" name="id_asesi" id="id_asesi" />
+                                <div class="card-body">
+                                    <div class="m-sm-4">
+                                        <br />
+                                        <?php
+                                        $pesan = $this->session->flashdata('pesan');
+                                        if ($pesan == "") {
+                                            echo "";
+                                        } else {
+                                        ?>
+                                            <div class="alert alert-success alert-dismissible">
+                                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                                                <strong><?php echo $pesan; ?></strong>
+                                            </div>
+
+                                        <?php
+                                        }
+                                        ?>
+                                        <form id="FRAPL" name="FRAPL" method="post" action="<?php echo base_url('cdaftar/prosesdaftarasesi'); ?>" enctype="multipart/form-data">
+
+                                            <input type="hidden" name="id_asesi" id="id_asesi" />
+
+                                            <label class="form-label">Upload Fotocopy KTP </label>
+                                            <input type="file" class="form-control" id="foto_ktp" placeholder="upload" name="foto_ktp">
+
+                                            <div class="mb-3">
+                                                <label class="form-label">Bukti Pembayaran</label>
+                                                <input type="file" class="form-control" id="bukti_pembayaran" placeholder="Upload" name="bukti_pembayaran">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Pas Foto</label>
+                                                <input type="file" class="form-control" id="foto" placeholder="Upload Pas Foto" name="foto">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">No KTP</label>
+                                                <input type="teks" class="form-control" id="no_ktp" placeholder="Masukkan Nomor Ktp" name="no_ktp">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Tempat Lahir</label>
+                                                <input type="text" class="form-control" id="tempat_lahir" placeholder="Masukkan Tempat Lahir" name="tempat_lahir">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Tanggal Lahir</label>
+                                                <input type="date" class="form-control" id="tgl_lahir" placeholder="Masukkan Tanggal Lahir" name="tgl_lahir">
+                                            </div>
+                                            <div class="mb-3">
+                                                Pilih Jenis Kelamin: <br>
+                                                <input type="radio" name="jenis_kelamin" value="L"> Laki-laki<br>
+                                                <input type="radio" name="jenis_kelamin" value="P"> Perempuan<br>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Kebangsaan</label>
+                                                <input type="text" class="form-control" id="Kebangsaan" placeholder="Masukkan Kebangsaan Anda" name="kebangsaan">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Alamat</label>
+                                                <input type="text" class="form-control" id="alamat" placeholder="Masukkan Alamat Anda" name="alamat">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Telepon HP</label>
+                                                <input type="number" class="form-control" id="telpon_hp" placeholder="Masukkan No telepon Anda" name="telpon_hp">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Telepon Rumah</label>
+                                                <input type="number" class="form-control" id="telpon_rumah" placeholder="Masukkan No telepon Rumah Anda" name="telpon_rumah">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Telepon Kantor</label>
+                                                <input type="number" class="form-control" id="telpon_kantor" placeholder="Masukkan No telepon Kantor Anda" name="telpon_kantor">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Kualifikasi Pendidikan</label>
+                                                <input type="teks" class="form-control" id="kualifikasi_pendidikan" placeholder="Masukkan Kualifikasi Pendidikan Anda" name="kualifikasi_pendidikan">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Nama Institusi/Perusahaan</label>
+                                                <input type="teks" class="form-control" id="nama_institusi" placeholder="Masukkan Nama Institusi Anda" name="nama_institusi">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Jabatan</label>
+                                                <input type="teks" class="form-control" id="jabatan" placeholder="Masukkan Kualifikasi Pendidikan Anda" name="jabatan">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Alamat Kantor</label>
+                                                <input type="teks" class="form-control" id="alamat_kantor" placeholder="Masukkan Alamat Kantor Anda" name="alamat_kantor">
+                                            </div>
+                                            <div class="text-center mt-3">
+                                                <button type="button" class="btn btn-lg btn-primary" onclick="prosesdaftarasesi();">Upload Berkas</button>
+                                            </div>
+                                        </form>
+                                    </div>
                                 </div>
-                                <div class="mb-3">
-                                    <label class="form-label">Upload Fotocopy KTP </label>
-                                    <input type="file" class="form-control" id="foto_ktp" placeholder="upload" name="foto_ktp">
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label">Bukti Pembayaran</label>
-                                    <input type="file" class="form-control" id="bukti_pembayaran" placeholder="Upload" name="bukti_pembayaran">
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label">Pas Foto</label>
-                                    <input type="file" class="form-control" id="foto" placeholder="Upload Pas Foto" name="foto">
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label">No KTP</label>
-                                    <input type="teks" class="form-control" id="no_ktp" placeholder="Masukkan Nomor Ktp" name="no_ktp">
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label">Tempat Lahir</label>
-                                    <input type="text" class="form-control" id="tempat_lahir" placeholder="Masukkan Tempat Lahir" name="tempat_lahir">
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label">Tanggal Lahir</label>
-                                    <input type="date" class="form-control" id="tgl_lahir" placeholder="Masukkan Tanggal Lahir" name="tgl_lahir">
-                                </div>
-                                <div class="mb-3">
-                                    Pilih Jenis Kelamin: <br>
-                                    <input type="radio" name="jenis_kelamin" value="L"> Laki-laki<br>
-                                    <input type="radio" name="jenis_kelamin" value="P"> Perempuan<br>
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label">Kebangsaan</label>
-                                    <input type="text" class="form-control" id="Kebangsaan" placeholder="Masukkan Kebangsaan Anda" name="kebangsaan">
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label">Alamat</label>
-                                    <input type="text" class="form-control" id="alamat" placeholder="Masukkan Alamat Anda" name="alamat">
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label">Telepon HP</label>
-                                    <input type="number" class="form-control" id="telpon_hp" placeholder="Masukkan No telepon Anda" name="telpon_hp">
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label">Telepon Rumah</label>
-                                    <input type="number" class="form-control" id="telpon_rumah" placeholder="Masukkan No telepon Rumah Anda" name="telpon_rumah">
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label">Telepon Kantor</label>
-                                    <input type="number" class="form-control" id="telpon_kantor" placeholder="Masukkan No telepon Kantor Anda" name="telpon_kantor">
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label">Kualifikasi Pendidikan</label>
-                                    <input type="teks" class="form-control" id="kualifikasi_pendidikan" placeholder="Masukkan Kualifikasi Pendidikan Anda" name="kualifikasi_pendidikan">
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label">Nama Institusi/Perusahaan</label>
-                                    <input type="teks" class="form-control" id="nama_institusi" placeholder="Masukkan Nama Institusi Anda" name="nama_institusi">
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label">Jabatan</label>
-                                    <input type="teks" class="form-control" id="jabatan" placeholder="Masukkan Kualifikasi Pendidikan Anda" name="jabatan">
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label">Alamat Kantor</label>
-                                    <input type="teks" class="form-control" id="alamat_kantor" placeholder="Masukkan Alamat Kantor Anda" name="alamat_kantor">
-                                </div>
-                                <div class="text-center mt-3">
-                                    <!-- <a href="index.html" class="btn btn-lg btn-primary">Masuk</a> -->
-                                    <button type="button" class="btn btn-lg btn-primary" onclick="prosesdaftarasesi();">Daftar</button>
-                                    <!-- <button type="submit" class="btn btn-lg btn-primary">Sign in</button> -->
-                                </div>
-                            </form>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <!-- </div>
             </div>
-            </div> -->
-            </div>
-            <!-- </main> -->
+        </main>
     </main>
 
     <!-- <script src="js/app.js"></script> -->
