@@ -32,6 +32,27 @@
               </div>
             </div>
 
+            <div class="row mb-3 offset-sm-1">
+              <label class="col-sm-4 col-form-label">Foto Copy KTP</label>
+              <div class="col-sm-6">
+                 <img src="<?php echo base_url(); ?>assets/gambar/<?php echo $hasil->foto_ktp; ?>" width="200" height="110" disabled>
+              </div>
+            </div>
+
+            <div class="row mb-3 offset-sm-1">
+              <label class="col-sm-4 col-form-label">Bukti Pembayaran</label>
+              <div class="col-sm-6">
+                 <img src="<?php echo base_url(); ?>assets/gambar/<?php echo $hasil->bukti_pembayaran; ?>" width="200" height="110" disabled>
+              </div>
+            </div>
+
+            <div class="row mb-3 offset-sm-1">
+              <label class="col-sm-4 col-form-label">Foto Diri</label>
+              <div class="col-sm-6">
+                 <img src="<?php echo base_url(); ?>assets/gambar/<?php echo $hasil->foto; ?>" width="200" height="110" disabled>
+              </div>
+            </div>
+
             <fieldset class="row mb-3 offset-sm-1">
               <legend class="col-form-label col-sm-4 pt-0">Jenis Kelamin</legend>
               <div class="col-sm-6">
