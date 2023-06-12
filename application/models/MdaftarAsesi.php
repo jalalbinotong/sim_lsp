@@ -28,6 +28,33 @@
                 $reg['jabatan'] = $this->input->post('jabatan');
                 $reg['alamat_kantor'] = $this->input->post('alamat_kantor');
 
+                $this->load->library('upload');
+
+                $config['upload_path'] = './assets/gambar'; // Tentukan direktori penyimpanan gambar
+                $config['allowed_types'] = 'gif|jpg|png'; // Tentukan jenis file yang diperbolehkan untuk diunggah
+
+                $this->upload->initialize($config);
+
+                // Upload foto KTP
+                if ($this->upload->do_upload('foto_ktp')) {
+                    $upload_data = $this->upload->data();
+                    $reg['foto_ktp'] = $upload_data['file_name']; // Simpan nama file gambar ke database
+                }
+
+                // Upload bukti pembayaran
+                if ($this->upload->do_upload('bukti_pembayaran')) {
+                    $upload_data = $this->upload->data();
+                    $reg['bukti_pembayaran'] = $upload_data['file_name']; // Simpan nama file gambar ke database
+                }
+
+                // Upload pas foto
+                if ($this->upload->do_upload('foto')) {
+                    $upload_data = $this->upload->data();
+                    $reg['foto'] = $upload_data['file_name']; // Simpan nama file gambar ke database
+                }
+
+
+
                 //simpan
                 $this->db->insert('tb_data_asesi', $reg);
                 $this->session->set_flashdata('pesan', 'Data sudah disimpan');

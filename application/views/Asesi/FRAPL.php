@@ -149,7 +149,7 @@
                                     <?php
                                     }
                                     ?>
-                                    <form id="FRAPL" name="FRAPL" method="post" action="<?php echo base_url('cdaftar/prosesdaftarasesi'); ?>">
+                                    <form id="FRAPL" name="FRAPL" method="post" action="<?php echo base_url('cdaftar/prosesdaftarasesi'); ?>" enctype="multipart/form-data">
                                         <div class="mb-3">
                                             <input type="hidden" name="id_asesi" id="id_asesi" />
                                         </div>
@@ -231,6 +231,7 @@
                                             <!-- <button type="submit" class="btn btn-lg btn-primary">Sign in</button> -->
                                             <button type="button" class="btn btn-lg btn-warning ">Cetak PDF</button>
                                         </div>
+                                        
                                     </form>
                                 </div>
                             </div>
