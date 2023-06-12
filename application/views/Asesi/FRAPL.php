@@ -229,6 +229,7 @@
                                             <!-- <a href="index.html" class="btn btn-lg btn-primary">Masuk</a> -->
                                             <button type="button" class="btn btn-lg btn-primary" onclick="prosesdaftarasesi();">Daftar</button>
                                             <!-- <button type="submit" class="btn btn-lg btn-primary">Sign in</button> -->
+                                            <button type="button" class="btn btn-lg btn-warning ">Cetak PDF</button>
                                         </div>
                                     </form>
                                 </div>
