@@ -23,7 +23,7 @@
 		{
 			$data=$_POST;
 			$id_skema=$data['id_skema'];
-			if($id_skema=="")
+			if($id_skema==$id_skema)
 			{
 				//simpan
 				$this->db->insert('tb_skema',$data);
