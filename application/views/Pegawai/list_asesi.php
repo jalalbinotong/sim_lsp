@@ -1,47 +1,18 @@
 <script language="javascript">
-  function simpandata() {
-    var NamaLengkap = $('#NamaLengkap').val();
-    if (NamaLengkap == "") {
-      alert("Nama lengkap masih kosong");
-      $('#NamaLengkap').focus();
-      return false;
-    }
+  function pilihdata(id) {
 
-    var Alamat = $('#Alamat').val();
-    if (Alamat == "") {
-      alert("Alamat masih kosong");
-      $('#Alamat').focus();
-      return false;
-    }
+    window.open("<?php echo base_url() ?>cdashboard_lsp/verifdataasesi/" + id, "_self");
 
-    var Telp = $('#Telp').val();
-    if (Telp == "") {
-      alert("Telp masih kosong");
-      $('#Telp').focus();
-      return false;
-    }
-
-    var Email = $('#Email').val();
-    if (Email == "") {
-      alert("Email masih kosong");
-      $('#Email').focus();
-      return false;
-    }
-
-
-    $('#formdata').submit();
   }
 </script>
 
-</script>
-
-<div style="padding-top: 100px">
-  <div class="container-fluid">
-    <h4>Data FRAPL.01</h4>
+<main id="main" class="main">
+  <div class="container mt-3">
+    <h4>List Pengajuan Berkas</h4>
     <table class="table table-striped">
       <thead>
         <tr>
-          <th>Nomor</th>
+          <th>ID Berkas</th>
           <th>NIM</th>
           <th>Nama Lengkap</th>
           <th>Prodi</th>
@@ -61,7 +32,7 @@
 
             <tr>
               <td>
-                <?php echo $no; ?>
+                <?php echo $data->id; ?>
               </td>
               <td>
                 <?php echo $data->nim; ?>
@@ -76,7 +47,7 @@
                 <!-- <?php echo $data->skema; ?> -->
               </td>
               <td>
-                <button type="button" class="btn btn-primary btn-sm" onclick="editdata('<?php echo $data->id_asesi; ?>')">Lihat Berkas</button>
+                <button type="button" class="btn btn-primary btn-sm" onclick="pilihdata('<?php echo $data->id; ?>')">Lihat Berkas</button>
               </td>
             </tr>
         <?php
@@ -88,4 +59,5 @@
       </tbody>
     </table>
   </div>
-</div>
+  </div>
+</main>

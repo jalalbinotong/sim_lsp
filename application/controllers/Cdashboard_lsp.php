@@ -29,16 +29,25 @@ class Cdashboard_lsp extends CI_Controller
         $this->load->model('Mtampil_data_asesi');
         $datalist['hasil'] = $this->Mtampil_data_asesi->tampildata_user();
         $data['konten'] = $this->load->view('Pegawai/list_asesi', $datalist, TRUE);
+        $data['sidebar'] = $this->load->view('Pegawai/sidebar_lsp', '', TRUE);
+        $this->load->view('header', $data);
+    }
+    function verifdataasesi($id)
+    {
+        $this->load->model('Mtampil_data_asesi');
+        $datalist['hasil'] = $this->Mtampil_data_asesi->tampildata($id);
+        $data['konten'] = $this->load->view('Pegawai/data_verifikasi_asesi', $datalist, TRUE);
+        $data['sidebar'] = $this->load->view('Pegawai/sidebar_lsp', '', TRUE);
         $this->load->view('header', $data);
     }
 
-    function verifdataasesi()
-    {
-        $this->load->model('Mtampil_data_asesi');
-        $datalist['hasil'] = $this->Mtampil_data_asesi->tampildata();
-        $data['konten'] = $this->load->view('Pegawai/data_verifikasi_asesi', $datalist, TRUE);
-        $this->load->view('header', $data);
-    }
+    // function verifdataasesi()
+    // {
+    //     $this->load->model('Mtampil_data_asesi');
+    //     $datalist['hasil'] = $this->Mtampil_data_asesi->tampildata();
+    //     $data['konten'] = $this->load->view('Pegawai/data_verifikasi_asesi', $datalist, TRUE);
+    //     $this->load->view('header', $data);
+    // }
 
     function tampildataasesi()
     {
@@ -55,22 +64,23 @@ class Cdashboard_lsp extends CI_Controller
         $datalist['hasil'] = $this->mdata_skema->tampildata_skema();
         $data['konten'] = $this->load->view('Pegawai/data_skema', '', TRUE);
         $data['tabel'] = $this->load->view('Pegawai/tabeldata_skema', $datalist, TRUE);
+        $data['sidebar'] = $this->load->view('Pegawai/sidebar_lsp', '', TRUE);
         $this->load->view('header', $data);
     }
 
     function hapusdata($id_skema)
-		{
-			$this->mdata_skema->hapusdata($id_skema); //panggil fungsi
-			redirect('cdashboard_lsp/tabeldata_skema');
-		}	
+    {
+        $this->mdata_skema->hapusdata($id_skema); //panggil fungsi
+        redirect('cdashboard_lsp/tabeldata_skema');
+    }
 
-		function editdata($id_skema)
-		{
-			$this->mdata_skema->editdata($id_skema);		
-		}
+    function editdata($id_skema)
+    {
+        $this->mdata_skema->editdata($id_skema);
+    }
 
 
-     //Kode Untuk data kegiatan
+    //Kode Untuk data kegiatan
     function data_kegiatan()
     {
 
@@ -78,6 +88,7 @@ class Cdashboard_lsp extends CI_Controller
 
         $data['konten'] = $this->load->view('Pegawai/data_kegiatan', '', TRUE);
         $data['tabel'] = $this->load->view('Pegawai/tabeldata_kegiatan', $datalist, TRUE);
+        $data['sidebar'] = $this->load->view('Pegawai/sidebar_lsp', '', TRUE);
         $this->load->view('header', $data);
     }
 
