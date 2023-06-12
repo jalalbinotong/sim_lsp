@@ -25,7 +25,7 @@ class Cdaftar extends CI_Controller
 
     function tampilformdaftar_lsp()
     {
-        $data['konten'] = $this->load->view('tambah_akun_pegawai', '', TRUE);
+        $data['konten'] = $this->load->view('Admin/tambah_akun_pegawai', '', TRUE);
         $this->load->view('header', $data);
     }
 
@@ -44,7 +44,7 @@ class Cdaftar extends CI_Controller
     }
     function FRAPL()
     {
-        $data['konten'] = $this->load->view('FRAPL', '', TRUE);
+        $data['konten'] = $this->load->view('Asesi/FRAPL', '', TRUE);
         $this->load->view('header', $data);
     }
 

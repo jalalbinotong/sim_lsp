@@ -23,6 +23,7 @@ class Cdashboard_asesi extends CI_Controller
     }
     function input_asesi()
     {
+        $data['sidebar'] = $this->load->view('Asesi/sidebar_asesi', '', TRUE);
         $data['konten'] = $this->load->view('Asesi/FRAPL', '', TRUE);
         $this->load->view('header', $data);
     }

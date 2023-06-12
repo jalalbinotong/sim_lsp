@@ -29,6 +29,7 @@ class Cdashboard extends CI_Controller
     function tambah_akun_pegawai()
     {
         $data['konten'] = $this->load->view('Admin/tambah_akun_pegawai', '', TRUE);
+        $data['sidebar'] = $this->load->view('Admin/sidebar', '', TRUE);
         $this->load->view('header', $data);
     }
 

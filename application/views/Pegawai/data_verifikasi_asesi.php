@@ -1,112 +1,127 @@
+<script language="javascript">
+  function pilihdata(id) {
+
+    window.open("<?php echo base_url() ?>cdashboard_lsp/verifdataasesi/" + id, "_self");
+
+  }
 </script>
 
-<div style="padding-top: 100px">
-  <div class="container-fluid">
-    <h4>Data FRAPL.01</h4>
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>Nomor</th>
-          <!-- <th>Fotocopy KTP</th>
-          <th>Bukti Pembayaran</th>
-          <th>Pas Foto</th>
-          <th>No KTP</th> -->
-          <th>Tempat Lahir</th>
-          <th>Tanggal Lahir</th>
-          <th>Jenis Kelamin</th>
-          <!-- <th>Kebangsaan</th> -->
-          <th>Alamat</th>
-          <th>Telepon HP</th>
-          <!-- <th>Telepon Rumah</th>
-          <th>Telepon Kantor</th> -->
-          <th>Kualifikasi Pendidikan</th>
-          <th>Nama Institusi</th>
-          <th>Jabatan</th>
-          <!-- <th>Alamat Kantor</th> -->
-          <th>Status</th>
-          <th>Aksi</th>
-        </tr>
-      </thead>
-      <tbody>
-        <?php
-        if (empty($hasil)) {
-          echo "Asesi Belum Mengajukan Data FRAPL.01 <hr>";
-        } else {
-          $no = 1;
-          foreach ($hasil as $data):
-            ?>
+<main id="main" class="main">
 
-            <tr>
-              <td>
-                <?php echo $no; ?>
-              </td>
-              <!-- <td>
-                <!-- <?php echo $data->foto_ktp; ?>
-              </td>
-              <td>
-                <?php echo $data->bukti_pembayaran; ?>
-              </td>
-              <td>
-                <?php echo $data->foto; ?>
-              </td>
-              <td>
-                <?php echo $data->no_ktp; ?>
-              </td> -->
-              <td>
-                <?php echo $data->tempat_lahir; ?>
-              </td>
-              <td>
-                <?php echo $data->tgl_lahir; ?>
-              </td>
-              <td>
-                <?php echo $data->jenis_kelamin; ?>
-              </td>
-              <!-- <td>
-                <?php echo $data->kebangsaan; ?>
-              </td> -->
-              <td>
-                <?php echo $data->alamat; ?>
-              </td>
-              <td>
-                <?php echo $data->telpon_hp; ?>
-              </td>
-              <!-- <td>
-                <?php echo $data->telpon_rumah; ?>
-              </td>
-              <td>
-                <?php echo $data->telpon_kantor; ?>
-              </td> -->
-              <td>
-                <?php echo $data->kualifikasi_pendidikan; ?>
-              </td>
-              <td>
-                <?php echo $data->nama_institusi; ?>
-              </td>
-              <td>
-                <?php echo $data->jabatan; ?>
-              </td>
-              <!-- <td>
-                <?php echo $data->alamat_kantor; ?>
-              </td> -->
-              <td>
-                <?php echo $data->status; ?>  
-              </td>
-              <td>
-                <button type="button" class="btn btn-primary btn-sm"
-                  onclick="editdata('<?php echo $data->id_asesi; ?>')">Edit</button>
-              </td>
-              <td>
-                <button type="button" class="btn btn-danger btn-sm"
-                  onclick="hapusdata('<?php echo $data->id_asesi; ?>');">Hapus</button>
-              </td>
-            </tr>
-            <?php
-            $no++;
-          endforeach;
-        }
-        ?>
+  <div class="container">
+    <div class="col-sm-10 col-md-8 col-lg-8 mx-auto d-table h-100">
+      <div class="pagetitle">
+        <h1>Verifikasi Data FR APL.01</h1>
+      </div>
+      <div class="card  ">
+        <div class="card-body mt-4">
 
-      </tbody>
-    </table>
-  </div>
-</div>
+          <!-- General Form Elements -->
+          <form>
+            <div class="row mb-3 offset-sm-1">
+              <label class="col-sm-4 col-form-label">Tempat Lahir</label>
+              <div class="col-sm-6">
+                <input type="text" class="form-control" value=" <?php echo $hasil->tempat_lahir; ?>" disabled>
+              </div>
+            </div>
+
+            <div class="row mb-3 offset-sm-1">
+              <label class="col-sm-4 col-form-label">Tanggal Lahir</label>
+              <div class="col-sm-6">
+                <input type="text" class="form-control" value=" <?php echo $hasil->tgl_lahir; ?>" disabled>
+              </div>
+            </div>
+
+            <div class="row mb-3 offset-sm-1">
+              <label class="col-sm-4 col-form-label">Foto Copy KTP</label>
+              <div class="col-sm-6">
+                 <img src="<?php echo base_url(); ?>assets/gambar/<?php echo $hasil->foto_ktp; ?>" width="200" height="110" disabled>
+              </div>
+            </div>
+
+            <div class="row mb-3 offset-sm-1">
+              <label class="col-sm-4 col-form-label">Bukti Pembayaran</label>
+              <div class="col-sm-6">
+                 <img src="<?php echo base_url(); ?>assets/gambar/<?php echo $hasil->bukti_pembayaran; ?>" width="200" height="110" disabled>
+              </div>
+            </div>
+
+            <div class="row mb-3 offset-sm-1">
+              <label class="col-sm-4 col-form-label">Foto Diri</label>
+              <div class="col-sm-6">
+                 <img src="<?php echo base_url(); ?>assets/gambar/<?php echo $hasil->foto; ?>" width="200" height="110" disabled>
+              </div>
+            </div>
+
+            <fieldset class="row mb-3 offset-sm-1">
+              <legend class="col-form-label col-sm-4 pt-0">Jenis Kelamin</legend>
+              <div class="col-sm-6">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="male" <?php if ($hasil->jenis_kelamin == 'L') echo 'checked'; ?> disabled>
+                  <label class="form-check-label" for="gridRadios1">
+                    Laki-Laki
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="female" <?php if ($hasil->jenis_kelamin == 'P') echo 'checked'; ?> disabled>
+                  <label class="form-check-label" for="gridRadios3">
+                    Perempuan
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+
+            <div class="row mb-3 offset-sm-1">
+              <label class="col-sm-4 col-form-label">Alamat</label>
+              <div class="col-sm-6">
+                <textarea class="form-control" rows="4" disabled><?php echo $hasil->alamat; ?></textarea>
+              </div>
+            </div>
+
+            <div class="row mb-3 offset-sm-1">
+              <label class="col-sm-4 col-form-label">Telfon HP</label>
+              <div class="col-sm-6">
+                <input type="text" class="form-control" value="<?php echo $hasil->telpon_hp; ?>" disabled>
+              </div>
+            </div>
+
+            <div class="row mb-3 offset-sm-1">
+              <label class="col-sm-4 col-form-label">Kualifikasi Pendidikan</label>
+              <div class="col-sm-6">
+                <input type="text" class="form-control" value="<?php echo $hasil->kualifikasi_pendidikan; ?>" disabled>
+              </div>
+            </div>
+
+            <div class="row mb-3 offset-sm-1">
+              <label class="col-sm-4 col-form-label">Nama Institusi</label>
+              <div class="col-sm-6">
+                <input type="text" class="form-control" value="<?php echo $hasil->nama_institusi; ?>" disabled>
+              </div>
+            </div>
+
+            <div class="row mb-3 offset-sm-1">
+              <label class="col-sm-4 col-form-label">Jabatan</label>
+              <div class="col-sm-6">
+                <input type="text" class="form-control" value="<?php echo $hasil->jabatan; ?>" disabled>
+              </div>
+            </div>
+
+            <div class="row mb-3 offset-sm-1">
+              <label class="col-sm-4 col-form-label">Status</label>
+              <div class="col-sm-6">
+                <input type="text" class="form-control" value="<?php echo $hasil->status; ?>" disabled>
+              </div>
+            </div>
+
+            <div class="row mb-3 offset-sm-1">
+              <label class="col-sm-4 col-form-label">Persetujuan</label>
+              <div class="col-sm-6">
+                <button type="submit" class="btn btn-primary">Setujui Berkas</button>
+                <button type="submit" class="btn btn-danger">Tolak Berkas</button>
+              </div>
+            </div>
+          </form><!-- End General Form Elements -->
+        </div>
+      </div>
+    </div>
+</main>

@@ -11,7 +11,7 @@
 </script>
 
 <main id="main" class="main">
-  <div class="container-fluid">
+  <div class="container-fluid mt-3">
     <h4>Daftar Data</h4>
     <table class="table table-striped">
       <thead>

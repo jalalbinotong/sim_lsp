@@ -38,7 +38,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Data Pendaftaran Asesi</h5>
                             <p class="card-text">Mengatur Data Asesi</p>
-                            <a href="<?php echo base_url("cdashboard_lsp/verifdataasesi") ?>" class="btn btn-primary">Kelola</a>
+                            <a href="<?php echo base_url("cdashboard_lsp/listdataasesi") ?>" class="btn btn-primary">Kelola</a>
                         </div>
                     </div>
                 </div>
