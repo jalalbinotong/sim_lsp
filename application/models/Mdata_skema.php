@@ -23,10 +23,22 @@
 		{
 			$data=$_POST;
 			$id_skema=$data['id_skema'];
-			//simpan
-			$this->db->insert('tb_skema',$data);
-			$this->session->set_flashdata('pesan','Data sudah disimpan');	
-			
+			if($id_skema=="")
+			{
+				//simpan
+				$this->db->insert('tb_skema',$data);
+				$this->session->set_flashdata('pesan','Data sudah disimpan');	
+			}
+			else
+			{
+				//edit	
+				$update=array(
+					'id_skema'=>$id_skema
+				);
+				$this->db->where($update);
+				$this->db->update('tb_skema',$data);
+				$this->session->set_flashdata('pesan','Data sudah diedit');
+			}
 		}
 
 		function hapusdata($id_skema)

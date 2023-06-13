@@ -120,4 +120,12 @@
     }
 </script>
 
+<!-- AJAX -->
+<div id="script"></div>
+<script src="<?php echo base_url(); ?>/jquery/app.js"></script>
+<script language="javascript">
+  var site = "<?php echo base_url()?>index.php/";
+  var loading_image_large = "<?php echo base_url()?>gambar/loading_large.gif";
+</script> 
+
 </html>

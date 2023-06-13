@@ -91,12 +91,19 @@ class Cdashboard_lsp extends CI_Controller
     function hapusdata($id_skema)
     {
         $this->mdata_skema->hapusdata($id_skema); //panggil fungsi
-        redirect('cdashboard_lsp/tabeldata_skema');
+        redirect('cdashboard_lsp/data_skema');
     }
 
     function editdata($id_skema)
     {
         $this->mdata_skema->editdata($id_skema);
+    }
+
+    function simpandata()
+    {
+        $this->mdata_skema->simpandata(); //panggil fungsi
+
+        redirect('Cdashboard_lsp/data_skema');
     }
 
 
@@ -112,13 +119,18 @@ class Cdashboard_lsp extends CI_Controller
         $this->load->view('header', $data);
     }
 
-    function simpandata()
-    {
-        $this->mdata_skema->simpandata(); //panggil fungsi
 
-        redirect('Cdashboard_lsp/data_skema');
+    function hapusdata_kegiatan($id_jadwal)
+    {
+        $this->mdata_kegiatan->hapusdata_kegiatan($id_jadwal); //panggil fungsi
+        redirect('cdashboard_lsp/data_kegiatan');
     }
 
+    function editdata_kegiatan($id_jadwal)
+    {
+        $this->mdata_kegiatan->editdata_kegiatan($id_jadwal);
+    }
+    
     function simpandata_kegiatan()
     {
         $this->mdata_kegiatan->simpandata_kegiatan(); //panggil fungsi
