@@ -45,12 +45,29 @@ class Mtampil_data_asesi extends CI_MODEL
         FROM tb_data_asesi INNER JOIN tb_asesi 
         WHERE id = '$id'";
 
-        $sql = "select * from tb_data_asesi where id='" . $id . "'";
         $query = $this->db->query($sql);
         if ($query->num_rows() > 0) {
             $hasil = $query->row();
         }
 
         return $hasil;
+    }
+
+    function setuju($id)
+    {
+        $sql = "UPDATE tb_data_asesi
+        SET status = 'setuju'
+        WHERE id = '$id'";
+
+        $this->db->query($sql);
+    }
+
+    function tolak($id)
+    {
+        $sql = "UPDATE tb_data_asesi
+        SET status = 'tolak'
+        WHERE id = '$id'";
+
+        $this->db->query($sql);
     }
 }
