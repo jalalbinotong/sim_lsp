@@ -41,6 +41,26 @@ class Cdashboard_lsp extends CI_Controller
         $this->load->view('header', $data);
     }
 
+    function setuju_verifdataasesi($id)
+    {
+        $this->load->model('Mtampil_data_asesi');
+        $this->Mtampil_data_asesi->setuju($id);
+        $datalist['hasil'] = $this->Mtampil_data_asesi->tampildata($id);
+        $data['konten'] = $this->load->view('Pegawai/data_verifikasi_asesi', $datalist, TRUE);
+        $data['sidebar'] = $this->load->view('Pegawai/sidebar_lsp', '', TRUE);
+        $this->load->view('header', $data);
+    }
+
+    function tolak_verifdataasesi($id)
+    {
+        $this->load->model('Mtampil_data_asesi');
+        $this->Mtampil_data_asesi->tolak($id);
+        $datalist['hasil'] = $this->Mtampil_data_asesi->tampildata($id);
+        $data['konten'] = $this->load->view('Pegawai/data_verifikasi_asesi', $datalist, TRUE);
+        $data['sidebar'] = $this->load->view('Pegawai/sidebar_lsp', '', TRUE);
+        $this->load->view('header', $data);
+    }
+
     // function verifdataasesi()
     // {
     //     $this->load->model('Mtampil_data_asesi');
