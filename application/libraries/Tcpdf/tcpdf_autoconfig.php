@@ -107,6 +107,20 @@ if (!defined('PDF_HEADER_LOGO')) {
 	}
 	define ('PDF_HEADER_LOGO', $tcpdf_header_logo);
 }
+if (!defined('PDF_HEADER_LOGO2')) {
+	$tcpdf_header_logo2 = '';
+	if (@file_exists(K_PATH_IMAGES.'bnsps.jpg')) {
+		$tcpdf_header_logo2 = 'bnsps.jpg';
+	}
+	define ('PDF_HEADER_LOGO2', $tcpdf_header_logo2);
+}
+if (!defined('PDF_HEADER_LOGO2_WIDTH')) {
+	if (!empty($tcpdf_header_logo)) {
+		define ('PDF_HEADER_LOGO2_WIDTH', 30);
+	} else {
+		define ('PDF_HEADER_LOGO2_WIDTH', 0);
+	}
+}
 
 if (!defined('PDF_HEADER_LOGO_WIDTH')) {
 	if (!empty($tcpdf_header_logo)) {

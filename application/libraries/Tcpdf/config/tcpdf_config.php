@@ -74,7 +74,7 @@
 /**
  * Header logo image width in user units.
  */
-//define ('PDF_HEADER_LOGO_WIDTH', 0);
+define ('PDF_HEADER_LOGO_WIDTH', 20);
 
 /**
  * Cache directory for temporary files (full path).
@@ -109,12 +109,12 @@ define ('PDF_AUTHOR', 'TCPDF');
 /**
  * Header title.
  */
-define ('PDF_HEADER_TITLE', 'TCPDF Example');
+define ('PDF_HEADER_TITLE', "Lembaga Sertifikasi Profesi\n Politeknik Negeri Bali");
 
 /**
  * Header description string.
  */
-define ('PDF_HEADER_STRING', "by Nicola Asuni - Tecnick.com\nwww.tcpdf.org");
+define ('PDF_HEADER_STRING', "Kampus Bukit Jimbaran Kuta Selatan,Badung Bali\nTelp.0361-701981, Fax:0361-701128 Email:lsp@pnb.ac.id");
 
 /**
  * Document unit of measure [pt=point, mm=millimeter, cm=centimeter, in=inch].
@@ -179,7 +179,7 @@ define ('PDF_FONT_MONOSPACED', 'courier');
 /**
  * Ratio used to adjust the conversion of pixels to user units.
  */
-define ('PDF_IMAGE_SCALE_RATIO', 1.25);
+define ('PDF_IMAGE_SCALE_RATIO', 2.25);
 
 /**
  * Magnification factor for titles.
