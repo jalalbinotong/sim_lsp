@@ -48,7 +48,7 @@
 
       <div class="mb-3 mt-3">
         <label class="form-label">Deskripsi :</label>
-        <input type="text" class="form-control" id="deskripsi" name="deskripsi">
+        <textarea type="text" class="form-control" id="deskripsi" name="deskripsi"></textarea>
       </div>
 
       <div class="mb-3 mt-3">
