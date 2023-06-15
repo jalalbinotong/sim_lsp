@@ -11,9 +11,7 @@ class Cdaftar extends CI_Controller
 
     function formdaftar()
     {
-        //menyimpan view form daftar di array data -->konten
         $data['konten'] = $this->load->view('formdaftar', '', TRUE);
-        //kirim konten ke halaman utama --> tampilawal
         $this->load->view('header', $data);
     }
 
@@ -32,20 +30,14 @@ class Cdaftar extends CI_Controller
     function prosesdaftar()
     {
         $this->mdaftar->prosesdaftar();
-        // $this->mdaftar_asesi->prosesdaftar_asesi();
         $this->load->model('Memail');
     }
-    function prosesdaftarasesi()
+
+    function input_FRAPL()
     {
-        $this->load->model('mdaftarAsesi');
-        $this->mdaftarAsesi->prosesdaftarasesi();
-        // $this->memail->sendEmail();
-        redirect('cdaftar/FRAPL');
-    }
-    function FRAPL()
-    {
-        $data['konten'] = $this->load->view('Asesi/FRAPL', '', TRUE);
-        $this->load->view('header', $data);
+        $this->load->model('mfrapl');
+        $this->mfrapl->input_FRAPL();
+        redirect('Cdashboard_asesi/FRAPL');
     }
 
     function verifikasi()

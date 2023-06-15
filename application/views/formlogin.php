@@ -22,25 +22,6 @@
 
 <link rel="stylesheet" href="<?php echo base_url('assets/css/style_sidebar.css'); ?>">
 
-
-
-
-<!-- <div class="container">
-        <form id="formlogin" name="formlogin" method="post" action="<?php echo base_url('clogin/proseslogin'); ?>">
-            <div class="mb-3 mt-3">
-                <label class="form-label">Email:</label>
-                <input type="text" class="form-control" id="email" placeholder="Masukkan email" name="email">
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Password:</label>
-                <input type="password" class="form-control" id="password" placeholder="Masukkan password" name="password">
-            </div>
-            <button type="submit" class="btn btn-primary" onclick="proseslogin();">Login</button>
-            <button type="submit" class="btn btn-danger">Batal</button>
-        </form>
-
-    </div> -->
-
 <body>
     <main class="d-flex w-100">
         <div class="container d-flex flex-column">
@@ -110,9 +91,7 @@
                                                 </label> -->
                                         </div>
                                         <div class="text-center mt-3">
-                                            <!-- <a href="index.html" class="btn btn-lg btn-primary">Masuk</a> -->
                                             <button type="button" class="btn btn-lg btn-primary" onclick="proseslogin();">Login</button>
-                                            <!-- <button type="submit" class="btn btn-lg btn-primary">Sign in</button> -->
                                         </div>
                                     </form>
                                 </div>
@@ -123,9 +102,6 @@
             </div>
         </div>
     </main>
-
-    <!-- <script src="js/app.js"></script> -->
-
 </body>
 
 </html>

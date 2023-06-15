@@ -150,13 +150,14 @@
                                         <?php
                                         }
                                         ?>
-                                        <form id="FRAPL" name="FRAPL" method="post" action="<?php echo base_url('cdaftar/prosesdaftarasesi'); ?>" enctype="multipart/form-data">
+                                        <form id="FRAPL" name="FRAPL" method="post" action="<?php echo base_url('cdaftar/input_FRAPL'); ?>" enctype="multipart/form-data">
 
                                             <input type="hidden" name="id_asesi" id="id_asesi" />
 
-                                            <label class="form-label">Upload Fotocopy KTP </label>
-                                            <input type="file" class="form-control" id="foto_ktp" placeholder="upload" name="foto_ktp">
-
+                                            <div class="mb-3">
+                                                <label class="form-label">Upload Fotocopy KTP </label>
+                                                <input type="file" class="form-control" id="foto_ktp" placeholder="upload" name="foto_ktp">
+                                            </div>
                                             <div class="mb-3">
                                                 <label class="form-label">Bukti Pembayaran</label>
                                                 <input type="file" class="form-control" id="bukti_pembayaran" placeholder="Upload" name="bukti_pembayaran">
@@ -231,7 +232,4 @@
             </div>
         </main>
     </main>
-
-    <!-- <script src="js/app.js"></script> -->
-
 </body>
