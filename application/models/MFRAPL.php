@@ -10,6 +10,8 @@ class MFRAPL extends CI_Model
             foreach ($id_asesi_arr->result_array() as $data) {
                 $id_asesi = $data['id_asesi'];
 
+                $sql = "DELETE FROM tb_data_asesi WHERE id_asesi = '$id_asesi'";
+                $this->db->query($sql);
 
                 $reg['id_asesi'] = $id_asesi;
                 $reg['foto_ktp'] = $this->input->post('foto_ktp');

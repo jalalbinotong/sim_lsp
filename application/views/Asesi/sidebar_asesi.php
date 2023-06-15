@@ -10,6 +10,66 @@
             </h4>
         </div>
 
+        <?php
+
+        $pesan_warn_sidebar = $this->session->flashdata('pesan_warn_sidebar');
+        $pesan_sidebar = $this->session->flashdata('pesan_sidebar');
+        if ($pesan_sidebar == "") {
+            echo "";
+        } else {
+            $pesan_warn_sidebar = "";
+        ?>
+            <div class="alert alert-success">
+                <strong><?php echo $pesan_sidebar; ?></strong>
+            </div>
+
+        <?php
+        }
+        ?>
+
+        <?php
+        $pesan_danger_sidebar = $this->session->flashdata('pesan_danger_sidebar');
+        if ($pesan_danger_sidebar == "") {
+            echo "";
+        } else {
+            $pesan_warn_sidebar = "";
+        ?>
+            <div class="alert alert-danger">
+                <strong><?php echo $pesan_danger_sidebar; ?></strong>
+            </div>
+
+        <?php
+        }
+        ?>
+
+        <?php
+        $pesan_menunggu_sidebar = $this->session->flashdata('pesan_menunggu_sidebar');
+        if ($pesan_menunggu_sidebar == "") {
+            echo "";
+        } else {
+            $pesan_warn_sidebar = "";
+        ?>
+            <div class="alert alert-warning">
+                <strong><?php echo $pesan_menunggu_sidebar; ?></strong>
+            </div>
+
+        <?php
+        }
+        ?>
+
+        <?php
+        if ($pesan_warn_sidebar == "") {
+            echo "";
+        } else {
+        ?>
+            <div class="alert alert-warning">
+                <strong><?php echo $pesan_warn_sidebar; ?></strong>
+            </div>
+
+        <?php
+        }
+        ?>
+
         <li class="nav-heading">Menu</li>
 
         <li class="nav-item">
