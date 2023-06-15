@@ -1,17 +1,4 @@
-<script language="javascript">
-  function hapusdata_kegiatan(id_jadwal)
-  {
-    if (confirm("Apakah anda yakin menghapus data ini"))
-    {
-      window.open("<?php echo base_url()?>cdashboard_lsp/hapusdata_kegiatan/"+id_jadwal,"_self");
-    } 
-  }
 
-  function editdata_kegiatan(id_jadwal)
-  {
-    load("cdashboard_lsp/editdata_kegiatan/"+id_jadwal,"#script");  
-  }
-  </script> 
 <div class="container mt-3">
   <h4>Data Skema</h4>
   <table class="table table-striped">
@@ -39,9 +26,9 @@
             <td><?php echo $data->jadwal; ?></td>
             <td><?php echo $data->lokasi; ?></td>
             <td>
-              <button type="button" class="btn btn-primary btn-sm" onclick="editdata_kegiatan('<?php echo $data->id_jadwal; ?>');">Edit</button>
+              <button type="button" class="btn btn-primary btn-sm" onclick="editdata('<?php echo $data->id_skema; ?>');">Edit</button>
 
-              <button type="button" class="btn btn-danger btn-sm" onclick="hapusdata_kegiatan('<?php echo $data->id_jadwal; ?>');">Hapus</button>
+              <button type="button" class="btn btn-danger btn-sm" onclick="editdata('<?php echo $data->id_skema; ?>');">Hapus</button>
             </td>
           </tr>
       <?php

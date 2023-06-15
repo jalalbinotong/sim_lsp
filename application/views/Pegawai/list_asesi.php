@@ -12,6 +12,7 @@
     <table class="table table-striped">
       <thead>
         <tr>
+          <th>ID Berkas</th>
           <th>NIM</th>
           <th>Nama Lengkap</th>
           <th>Prodi</th>
@@ -30,6 +31,9 @@
         ?>
 
             <tr>
+              <td>
+                <?php echo $data->id; ?>
+              </td>
               <td>
                 <?php echo $data->nim; ?>
               </td>
