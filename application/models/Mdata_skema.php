@@ -24,9 +24,16 @@
 			$data=$_POST;
 			$id_skema=$data['id_skema'];
 			//simpan
-			$this->db->insert('tb_skema',$data);
-			$this->session->set_flashdata('pesan','Data sudah disimpan');	
-			
+			$sql = "select id_skema from tb_skema where id_skema='".$id_skema."'";
+			$query=$this->db->query($sql);
+			if($query->num_rows()>0)
+			{
+				$this->db->update('tb_skema',$data,array('id_skema'=>$id_skema));
+				$this->session->set_flashdata('pesan','Data sudah diedit');
+			} else {
+				$this->db->insert('tb_skema',$data);
+				$this->session->set_flashdata('pesan','Data sudah disimpan');
+			}
 		}
 
 		function hapusdata($id_skema)

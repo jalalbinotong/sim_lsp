@@ -26,7 +26,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Data Skema</h5>
                         <p class="card-text">Mengatur Data Data Skema Yang Ada</p>
-                        <a href="#" class="btn btn-primary">Kelola</a>
+                        <a href="<?php echo base_url("Cdashboard_lsp/data_skema") ?>" class="btn btn-primary">Kelola</a>
                     </div>
                 </div>
             </div>
@@ -38,7 +38,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Data Kegiatan</h5>
                         <p class="card-text">Mengatur Data-Data Kegiatan Yang Ada</p>
-                        <a href="#" class="btn btn-primary">Kelola</a>
+                        <a href="<?php echo base_url("Cdashboard_lsp/data_kegiatan") ?>" class="btn btn-primary">Kelola</a>
                     </div>
                 </div>
             </div>

@@ -38,7 +38,6 @@ class Mdata_kegiatan extends CI_Model
 
     function editdata_kegiatan($id_jadwal)
     {
-        echo "<br><br><br><br><br><br><br><br><br><br><br><br>";
         $sql = "SELECT tb_jadwal_skema.*, nama_skema
             FROM tb_jadwal_skema  INNER JOIN tb_skema 
             ON tb_jadwal_skema.id_skema =  tb_skema.id_skema 

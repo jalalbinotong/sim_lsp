@@ -29,6 +29,35 @@
 
 <main id="main" class="main">
   <div class="container">
+  <?php
+    $pesan = $this->session->flashdata('pesan');
+    if ($pesan == "") {
+        echo "";
+    } else {
+    ?>
+        <div class="alert alert-success alert-dismissible">
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            <strong><?php echo $pesan; ?></strong>
+        </div>
+
+    <?php
+    }
+
+    $pesan_danger = $this->session->flashdata('pesan_danger');
+    if ($pesan_danger == "") {
+        echo "";
+    } else {
+    ?>
+        <div class="alert alert-danger alert-dismissible">
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            <strong>
+                <?php echo $pesan_danger; ?>
+            </strong>
+        </div>
+
+    <?php
+    }
+    ?>
     <form name="data_kegiatan" id="data_kegiatan" method="post" action="<?php echo base_url('cdashboard_lsp/simpandata_kegiatan'); ?>">
       <br>
 
