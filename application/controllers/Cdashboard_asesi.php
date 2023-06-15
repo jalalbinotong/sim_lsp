@@ -12,7 +12,12 @@ class Cdashboard_asesi extends CI_Controller
         $data['sidebar'] = $this->load->view('Asesi/sidebar_asesi', '', TRUE);
         $data['konten'] = $this->load->view('Asesi/dashboard_asesi', '', TRUE);
         $data['tipe_user'] = $this->session->userdata('tipe_user');
-        $this->load->view('header', $data);
+        if (@$this->session->userdata('tipe_user')=='')
+			{
+				$this->load->view('header',$data);
+			} else {
+                $this->load->view('header_dashboard',$data);
+            }
     }
 
     function fail_login()
@@ -25,7 +30,12 @@ class Cdashboard_asesi extends CI_Controller
     {
         $data['sidebar'] = $this->load->view('Asesi/sidebar_asesi', '', TRUE);
         $data['konten'] = $this->load->view('Asesi/FRAPL', '', TRUE);
-        $this->load->view('header', $data);
+        if (@$this->session->userdata('tipe_user')=='')
+			{
+				$this->load->view('header',$data);
+			} else {
+                $this->load->view('header_dashboard',$data);
+            }
     }
 }
 ?>

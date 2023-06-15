@@ -14,7 +14,12 @@ class Cdaftar extends CI_Controller
         //menyimpan view form daftar di array data -->konten
         $data['konten'] = $this->load->view('formdaftar', '', TRUE);
         //kirim konten ke halaman utama --> tampilawal
-        $this->load->view('header', $data);
+        if (@$this->session->userdata('tipe_user')=='')
+			{
+				$this->load->view('header',$data);
+			} else {
+                $this->load->view('header_login',$data);
+            }
     }
 
     function prosesdaftarlsp()
@@ -26,7 +31,12 @@ class Cdaftar extends CI_Controller
     function tampilformdaftar_lsp()
     {
         $data['konten'] = $this->load->view('Admin/tambah_akun_pegawai', '', TRUE);
-        $this->load->view('header', $data);
+        if (@$this->session->userdata('tipe_user')=='')
+			{
+				$this->load->view('header',$data);
+			} else {
+                $this->load->view('header_login',$data);
+            }
     }
 
     function prosesdaftar()
@@ -40,12 +50,17 @@ class Cdaftar extends CI_Controller
         $this->load->model('mdaftarAsesi');
         $this->mdaftarAsesi->prosesdaftarasesi();
         // $this->memail->sendEmail();
-        redirect('cdaftar/FRAPL');
+        redirect('Cdashboard_asesi/input_asesi');
     }
     function FRAPL()
     {
         $data['konten'] = $this->load->view('Asesi/FRAPL', '', TRUE);
-        $this->load->view('header', $data);
+        if (@$this->session->userdata('tipe_user')=='')
+			{
+				$this->load->view('header',$data);
+			} else {
+                $this->load->view('header_login',$data);
+            }
     }
 
     function verifikasi()

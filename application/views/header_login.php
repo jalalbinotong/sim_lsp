@@ -34,11 +34,11 @@
             <nav id="navbar" class="navbar">
                 <ul>
                     <li><a class="nav-link scrollto active" href="<?php echo base_url('cmain/tampilberanda') ?>">Home</a></li>
+                    <li><a class="nav-link scrollto" href="<?php echo base_url('credirect/validasi_dashboard') ?>">Dashboard</a></li>
 
                     <li class="dropdown"><a href="#"><span>Akun</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
-                            <li><a href="<?php echo base_url('cdaftar/formdaftar') ?>">Pendaftaran</a></li>
-                            <li><a href="<?php echo base_url('clogin/formlogin') ?>">Login</a></li>
+                            <li><a href="javascript:void(0)" onClick="logout();">Logout</a></li>
                         </ul>
                     </li>
                     <!-- <li><a class="nav-link scrollto" href="#contact">Contact</a></li> -->
