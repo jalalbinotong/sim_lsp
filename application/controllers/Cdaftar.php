@@ -11,15 +11,8 @@ class Cdaftar extends CI_Controller
 
     function formdaftar()
     {
-        //menyimpan view form daftar di array data -->konten
         $data['konten'] = $this->load->view('formdaftar', '', TRUE);
-        //kirim konten ke halaman utama --> tampilawal
-        if (@$this->session->userdata('tipe_user')=='')
-			{
-				$this->load->view('header',$data);
-			} else {
-                $this->load->view('header_login',$data);
-            }
+        $this->load->view('header', $data);
     }
 
     function prosesdaftarlsp()
@@ -31,36 +24,20 @@ class Cdaftar extends CI_Controller
     function tampilformdaftar_lsp()
     {
         $data['konten'] = $this->load->view('Admin/tambah_akun_pegawai', '', TRUE);
-        if (@$this->session->userdata('tipe_user')=='')
-			{
-				$this->load->view('header',$data);
-			} else {
-                $this->load->view('header_login',$data);
-            }
+        $this->load->view('header', $data);
     }
 
     function prosesdaftar()
     {
         $this->mdaftar->prosesdaftar();
-        // $this->mdaftar_asesi->prosesdaftar_asesi();
         $this->load->model('Memail');
     }
-    function prosesdaftarasesi()
+
+    function input_FRAPL()
     {
-        $this->load->model('mdaftarAsesi');
-        $this->mdaftarAsesi->prosesdaftarasesi();
-        // $this->memail->sendEmail();
-        redirect('Cdashboard_asesi/input_asesi');
-    }
-    function FRAPL()
-    {
-        $data['konten'] = $this->load->view('Asesi/FRAPL', '', TRUE);
-        if (@$this->session->userdata('tipe_user')=='')
-			{
-				$this->load->view('header',$data);
-			} else {
-                $this->load->view('header_login',$data);
-            }
+        $this->load->model('mfrapl');
+        $this->mfrapl->input_FRAPL();
+        redirect('Cdashboard_asesi/FRAPL');
     }
 
     function verifikasi()

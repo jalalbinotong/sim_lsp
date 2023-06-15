@@ -1,129 +1,152 @@
 <?php
-    	$pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT,'A3', true, 'UTF-8', false);
+    	$pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT,'A4', true, 'UTF-8', false);
 		$pdf->setPrintFooter(false);
 		$pdf->SetMargins(20, 15, 20, true);
 		$pdf->setPrintHeader(false);
 		$pdf->AddPage('');
 		$pdf->SetFont('');
 		$pdf->SetDisplayMode('real', 'default');
+		$pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
+
+
+
+
+
+// set default header data
+$pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE.' ', PDF_HEADER_STRING);
+
+// set header and footer fonts
+$pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
+$pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
+
+
+// set default monospaced font
+$pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
+
+// set margins
+$pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
+$pdf->SetHeaderMargin(PDF_MARGIN_HEADER);
+$pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
+
+// set auto page breaks
+$pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
+
+// set image scale factor
+$pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
+
+
+
+
+// Set font
+$pdf->SetFont('times', '', 10);
+
+
+// set font
+$pdf->SetFont('times', '', 10);
+
+// add a page
+$pdf->AddPage();
+
+// set cell padding
+$pdf->setCellPaddings(1, 1, 1, 1);
+
+// set cell margins
+$pdf->setCellMargins(1, 1, 1, 1);
+
+// set color for background
+$pdf->SetFillColor(255, 255, 127);
+
+define('K1_PATH_IMAGES', dirname(__FILE__).'/../images/');
+$imageFile1 = K_PATH_IMAGES . 'bnsps.jpg';
+$pageWidth = $pdf->getPageWidth();
+$margins = $pdf->getMargins();
+$imageWidth = 56; // Lebar gambar yang diinginkan
+$x1 = $pageWidth - $margins['right'] - $imageWidth;
+$y1 = -6;
+$pdf->Image($imageFile1, $x1, $y1, $imageWidth, 0, '', '', 'R', false, 300, '', false, false, 0, false, false, false, '');
+
+$data = array(
+    array('Dataaaaa 1', 'Data 2', 'Data 3', 'Data 4'),
+    array('Data 5', 'Data 6', 'Data 7', 'Data 8'),
+    array('Data 9', 'Data 10', 'Data 11', 'Data 12'),
+);
+
+$columnWidths = array(40, 40, 40, 40);
+
+ $html="
 		
-		$html="FR.APL.01. PERMOHONAN SERTIFIKASI KOMPETENSI <br>
-		Bagian 1 : Rincian Data Pemohon Sertifikasi
-		Pada bagian ini, cantumlan data pribadi, data pendidikan formal serta data pekerjaan anda pada
-		saat ini.
-		<br>
-		a. Data Pribadi <br>
+<b>FR.APL.01. PERMOHONAN SERTIFIKASI KOMPETENSI </b><br>
+<br>
 
-   Nama lengkap                  : <br>
-
-   No. KTP/NIK/Paspor            : <br>
-
-   Tempat / tgl. Lahir           : <br>
-
-   Jenis kelamin                 :   Laki-laki / Wanita *)
-
-   Kebangsaan                    :
-
-                                 :
-   Alamat rumah
-                                                              Kode pos :
-
-                                 :   Rumah :                  Kantor :
-   No. Telepon/E-mail
-                                 :   HP :                     E-mail :
-
-   Kualifikasi Pendidikan        :
- *Coret yang tidak perlu
-
-b. Data Pekerjaan Sekarang
-
-    Nama Institusi /         :
-    Perusahaan
-
-    Jabatan                  :
-
-    Alamat Kantor            :
-
-                                                             Kode pos :
-    No. Telp/Fax/E-mail      :       Telp :                  Fax :
-                                     E-mail :
-       Bagian 2 : Data Sertifikasi
-
-                               Judul     :   JUNIOR NETWORK ADMINITRATOR
-  Skema Sertifikasi
-  (SKKNI/Okupasi/Klaster)      Nomor     :       FR SKEMA-02-TE-JNA
-  Tujuan Asesmen                         :       Sertifikasi
-                                                 Sertifikasi Ulang
-                                                 Pengakuan Kompetensi Terkini (PKT)
-                                                 Rekognisi Pembelajaran Lampau
-                                                 Lainnya
-
-
-Daftar Unit Kompetensi sesuai kemasan:
-                                                                               Jenis Standar
-                                                                                 (Standar
- No.           Kode Unit                         Judul Unit
-                                                                              Khusus/Standar
-                                                                           Internasional/SKKNI)
-
-  1      J.611000.004.01        Merancang pengalamatan jaringan                  SKKNI
-
-  2      J.611000.010.02        Memasang jaringan nirkabel                       SKKNI
-
-  3      J.611000.012.02        Mengkonfigurasi switch pada jaringan.            SKKNI
-
-  4                             Mengkonfigurasi routing pada perangkat
-         J.611000.013.02                                                         SKKNI
-                                jaringan dalam satu autonomous system.
-
-  5                             Mengkonfigurasi routing pada perangkat
-         J.611000.014.02                                                         SKKNI
-                                jaringan antar autonomous system
+<b>Bagian 1 : Rincian Data Pemohon Sertifikasi</b> <br>
+Pada bagian ini, cantumkan data pribadi, data pendidikan formal serta data pekerjaan anda pada
+saat ini.<br>
+<br>
+<b> A. Data Pribadi </b><br>
+<br>
+Nama Lengkap : <br>
+<br>
+No.KTP/NIK/Paspor : <br>
+<br>
+Tempat/Tgl Lahir : <br>
+<br>
+Jenis Kelamin : 	Laki-laki/Wanita *) <br>
+<br>
+Kebangsaan : <br>
+<br>
+Alamat Rumah : <br>
+<br>
+Kode Pos : <br>
+<br>
+No. Telepon/HP : <br>
+<br>
+Email : <br>
+<br>
+Kantor : <br>
+<br>
+Kualifikasi pendidikan : <br>
+<br>
+*Coret Yang Tidak Perlu<br>
+<br>
+<b> B. Data Pekerjaan Sekarang </b><br>
+<br>
+Nama Institusi/Perusahaan : <br>
+<br>
+jabatan : <br>
+<br>
+Alamat Kantor : <br>
+<br>
+Kode Pos : <br>
+<br>
+No. Telp/fax/E-mail : <br>
+<br>
+Email : <br>
+<br>
+";
 
 
 
+// Set ulang posisi Y untuk tabel
+$pdf->SetY($pdf->GetY() + 8);
+// Tampilkan header kolom
+$pdf->SetX(15);
+$html .= "<table>";
+for ($i = 0; $i < count($data); $i++) {
+    $html .= "<tr>";
+    for ($j = 0; $j < count($data[$i]); $j++) {
+        $html .= "<td>" . $data[$i][$j] . "</td>";
+    }
+    $html .= "</tr>";
+}
+$html .= "</table>";
+	
 
-                                                                                                  1
-      Bagian 3 : Bukti Kelengkapan Pemohon
-      Bukti Persyaratan Dasar Pemohon
-                                                                    Ada
-No.                   Bukti Persyaratan Dasar                               Tidak    Tidak Ada
-                                                          Memenuhi
-                                                                          Memenuhi
-                                                           Syarat
-                                                                           Syarat
- 1.     Copy KTP Copy
-                                                             ☐              ☐
- 2.     Copy KTM
-                                                             ☐              ☐
- 3.     Pas foto 3x4 (4 lembar) latar merah
-                                                             ☐              ☐
- 4.     Copy Transkrip nilai sampai dengan semester 5
-                                                             ☐              ☐
- 5.     Copy Sertifikat/Surat Keterangan Praktek Kerja
-        Lapangan/Magang
-                                                             ☐              ☐
- 6.     Sertifikat pelatihan keahlian dibidang Network
-        Administrator bagi peserta hasil pelatihan
-                                                             ☐              ☐
-
-
-Rekomendasi (diisi oleh LSP):                             Pemohon/ Kandidat :
-Berdasarkan ketentuan persyaratan dasar, maka             Nama
-pemohon:
-Diterima/ Tidak diterima *) sebagai peserta sertifikasi   Tanda tangan/
-* coret yang tidak sesuai                                 Tanggal
-
-Catatan :                                                 Admin LSP :
-                                                          Nama
-                                                          No. Reg
-
-                                                          Tanda tangan/
-                                                          Tanggal
+	
 		
-		";
-		
-		
+		$Nama='Form-'."PDF";
+		$pdf->SetTitle($Nama);
+		$pdf->writeHTML($html);
+		$pdf->Output($Nama, 'I');	
 		
 		
 		
@@ -132,5 +155,4 @@ Catatan :                                                 Admin LSP :
 		$Nama='Form-'."PDF";
 		$pdf->SetTitle($Nama);
 		$pdf->writeHTML($html);
-		$pdf->Output($Nama, 'I');	
-?>
+		$pdf->Output($Nama, 'I');

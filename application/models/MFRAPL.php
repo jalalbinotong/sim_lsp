@@ -1,7 +1,7 @@
-<?php class MdaftarAsesi extends CI_Model
+<?php
+class MFRAPL extends CI_Model
 {
-
-    function prosesdaftarasesi()
+    function input_FRAPL()
     {
         $id_user = $this->session->userdata('id_user');
         $id_asesi_arr = $this->db->get_where('tb_asesi', array('id_user' => $id_user));
@@ -24,6 +24,7 @@
                 $reg['telpon_hp'] = $this->input->post('telpon_hp');
                 $reg['telpon_rumah'] = $this->input->post('telpon_rumah');
                 $reg['telpon_kantor'] = $this->input->post('telpon_kantor');
+                $reg['kualifikasi_pendidikan'] = $this->input->post('kualifikasi_pendidikan');
                 $reg['nama_institusi'] = $this->input->post('nama_institusi');
                 $reg['jabatan'] = $this->input->post('jabatan');
                 $reg['alamat_kantor'] = $this->input->post('alamat_kantor');

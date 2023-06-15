@@ -53,4 +53,26 @@ class Mtampil_data_asesi extends CI_MODEL
 
         return $hasil;
     }
+
+    function setuju($id)
+    {
+        $sql = "UPDATE tb_data_asesi
+        SET status = 'setuju'
+        WHERE id = '$id'";
+
+        $this->db->query($sql);
+        $this->session->set_flashdata('pesan_danger', '');
+        $this->session->set_flashdata('pesan', 'Berkas Telah Disetujui');
+    }
+
+    function tolak($id)
+    {
+        $sql = "UPDATE tb_data_asesi
+        SET status = 'tolak'
+        WHERE id = '$id'";
+
+        $this->db->query($sql);
+        $this->session->set_flashdata('pesan', '');
+        $this->session->set_flashdata('pesan_danger', 'Berkas Telah Ditolak');
+    }
 }
