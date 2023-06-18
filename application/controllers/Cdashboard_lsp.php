@@ -14,12 +14,11 @@ class Cdashboard_lsp extends CI_Controller
         $data['sidebar'] = $this->load->view('Pegawai/sidebar_lsp', '', TRUE);
         $data['konten'] = $this->load->view('Pegawai/dashboard_lsp', '', TRUE);
         $data['tipe_user'] = $this->session->userdata('tipe_user');
-        if (@$this->session->userdata('tipe_user')=='')
-			{
-				$this->load->view('header',$data);
-			} else {
-                $this->load->view('header_dashboard',$data);
-            }
+        if (@$this->session->userdata('tipe_user') == '') {
+            $this->load->view('header', $data);
+        } else {
+            $this->load->view('header_dashboard', $data);
+        }
     }
 
     function fail_login()
@@ -35,12 +34,11 @@ class Cdashboard_lsp extends CI_Controller
         $datalist['hasil'] = $this->Mtampil_data_asesi->tampildata_user();
         $data['konten'] = $this->load->view('Pegawai/list_asesi', $datalist, TRUE);
         $data['sidebar'] = $this->load->view('Pegawai/sidebar_lsp', '', TRUE);
-        if (@$this->session->userdata('tipe_user')=='')
-			{
-				$this->load->view('header',$data);
-			} else {
-                $this->load->view('header_dashboard',$data);
-            }
+        if (@$this->session->userdata('tipe_user') == '') {
+            $this->load->view('header', $data);
+        } else {
+            $this->load->view('header_dashboard', $data);
+        }
     }
     function verifdataasesi($id)
     {
@@ -48,12 +46,11 @@ class Cdashboard_lsp extends CI_Controller
         $datalist['hasil'] = $this->Mtampil_data_asesi->tampildata($id);
         $data['konten'] = $this->load->view('Pegawai/data_verifikasi_asesi', $datalist, TRUE);
         $data['sidebar'] = $this->load->view('Pegawai/sidebar_lsp', '', TRUE);
-        if (@$this->session->userdata('tipe_user')=='')
-			{
-				$this->load->view('header',$data);
-			} else {
-                $this->load->view('header_dashboard',$data);
-            }
+        if (@$this->session->userdata('tipe_user') == '') {
+            $this->load->view('header', $data);
+        } else {
+            $this->load->view('header_dashboard', $data);
+        }
     }
 
     function setuju_verifdataasesi($id)
@@ -100,12 +97,12 @@ class Cdashboard_lsp extends CI_Controller
         $data['konten'] = $this->load->view('Pegawai/data_skema', '', TRUE);
         $data['tabel'] = $this->load->view('Pegawai/tabeldata_skema', $datalist, TRUE);
         $data['sidebar'] = $this->load->view('Pegawai/sidebar_lsp', '', TRUE);
-        if (@$this->session->userdata('tipe_user')=='')
-			{
-				$this->load->view('header',$data);
-			} else {
-                $this->load->view('header_dashboard',$data);
-            }
+        if (@$this->session->userdata('tipe_user') == '') {
+            $this->load->view('header', $data);
+        } else {
+            $data['sidebar'] = $this->load->view('Admin/sidebar', '', TRUE);
+            $this->load->view('header_dashboard', $data);
+        }
     }
 
     function hapusdata($id_skema)
@@ -138,12 +135,12 @@ class Cdashboard_lsp extends CI_Controller
         $data['konten'] = $this->load->view('Pegawai/data_kegiatan', '', TRUE);
         $data['tabel'] = $this->load->view('Pegawai/tabeldata_kegiatan', $datalist, TRUE);
         $data['sidebar'] = $this->load->view('Pegawai/sidebar_lsp', '', TRUE);
-        if (@$this->session->userdata('tipe_user')=='')
-			{
-				$this->load->view('header',$data);
-			} else {
-                $this->load->view('header_dashboard',$data);
-            }
+        if (@$this->session->userdata('tipe_user') == '') {
+            $this->load->view('header', $data);
+        } else {
+            $data['sidebar'] = $this->load->view('Admin/sidebar', '', TRUE);
+            $this->load->view('header_dashboard', $data);
+        }
     }
 
 
