@@ -12,7 +12,12 @@ class Cdashboard extends CI_Controller
         $data['sidebar'] = $this->load->view('Admin/sidebar', '', TRUE);
         $data['konten'] = $this->load->view('Admin/dashboard', '', TRUE);
         $data['tipe_user'] = $this->session->userdata('tipe_user');
-        $this->load->view('header', $data);
+        if (@$this->session->userdata('tipe_user')=='')
+			{
+				$this->load->view('header',$data);
+			} else {
+                $this->load->view('header_login',$data);
+            }
     }
 
     function data_pegawai()
@@ -23,14 +28,24 @@ class Cdashboard extends CI_Controller
         $data['sidebar'] = $this->load->view('Admin/sidebar', '', TRUE);
         // $data['konten'] = $this->load->view('dashboard', '', TRUE);
         $data['konten'] = $this->load->view('Admin/data_pegawai', $datalist, TRUE);
-        $this->load->view('header', $data);
+        if (@$this->session->userdata('tipe_user')=='')
+			{
+				$this->load->view('header',$data);
+			} else {
+                $this->load->view('header_login',$data);
+            }
     }
 
     function tambah_akun_pegawai()
     {
         $data['konten'] = $this->load->view('Admin/tambah_akun_pegawai', '', TRUE);
         $data['sidebar'] = $this->load->view('Admin/sidebar', '', TRUE);
-        $this->load->view('header', $data);
+        if (@$this->session->userdata('tipe_user')=='')
+			{
+				$this->load->view('header',$data);
+			} else {
+                $this->load->view('header_dashboard',$data);
+            }
     }
 
     function fail_login()

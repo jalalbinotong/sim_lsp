@@ -9,7 +9,12 @@ class Clogin extends CI_Controller
     function formlogin()
     {
         $data['konten'] = $this->load->view('formlogin', '', TRUE);
-        $this->load->view('header', $data);
+        if (@$this->session->userdata('tipe_user')=='')
+			{
+				$this->load->view('header',$data);
+			} else {
+                $this->load->view('header_login',$data);
+            }
     }
 
     function proseslogin()

@@ -9,7 +9,12 @@ class Cheader extends CI_Controller
     public function header()
     {
         $data['tipe_user'] = $this->session->userdata('tipe_user');
-        $this->load->view('header', $data);
+        if (@$this->session->userdata('tipe_user')=='')
+			{
+				$this->load->view('header',$data);
+			} else {
+                $this->load->view('header_login',$data);
+            }
     }
 }
 ?>
