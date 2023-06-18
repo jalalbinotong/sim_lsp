@@ -29,5 +29,6 @@ class Cdashboard_asesi extends CI_Controller
         $data['konten'] = $this->load->view('Asesi/FRAPL', '', TRUE);
         $this->load->view('header', $data);
     }
+ 
 }
 ?>
