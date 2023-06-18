@@ -99,8 +99,11 @@ class Cdashboard_lsp extends CI_Controller
         $data['sidebar'] = $this->load->view('Pegawai/sidebar_lsp', '', TRUE);
         if (@$this->session->userdata('tipe_user') == '') {
             $this->load->view('header', $data);
-        } else {
+        }
+        if (@$this->session->userdata('tipe_user') == 'admin') {
             $data['sidebar'] = $this->load->view('Admin/sidebar', '', TRUE);
+            $this->load->view('header_dashboard', $data);
+        } else {
             $this->load->view('header_dashboard', $data);
         }
     }
@@ -123,9 +126,6 @@ class Cdashboard_lsp extends CI_Controller
         redirect('Cdashboard_lsp/data_skema');
     }
 
-
-
-
     //Kode Untuk data kegiatan
     function data_kegiatan()
     {
@@ -137,12 +137,14 @@ class Cdashboard_lsp extends CI_Controller
         $data['sidebar'] = $this->load->view('Pegawai/sidebar_lsp', '', TRUE);
         if (@$this->session->userdata('tipe_user') == '') {
             $this->load->view('header', $data);
-        } else {
+        }
+        if (@$this->session->userdata('tipe_user') == 'admin') {
             $data['sidebar'] = $this->load->view('Admin/sidebar', '', TRUE);
+            $this->load->view('header_dashboard', $data);
+        } else {
             $this->load->view('header_dashboard', $data);
         }
     }
-
 
     function hapusdata_kegiatan($id_jadwal)
     {
