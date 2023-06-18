@@ -18,13 +18,7 @@ class Cdaftar extends CI_Controller
     function prosesdaftarlsp()
     {
         $this->mdaftar->prosesdaftar_lsp();
-        redirect('cdaftar/tampilformdaftar_lsp');
-    }
-
-    function tampilformdaftar_lsp()
-    {
-        $data['konten'] = $this->load->view('Admin/tambah_akun_pegawai', '', TRUE);
-        $this->load->view('header', $data);
+        redirect('Cdashboard/tambah_akun_pegawai');
     }
 
     function prosesdaftar()

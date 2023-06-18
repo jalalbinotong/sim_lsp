@@ -24,16 +24,22 @@ class Mstatus_frapl extends CI_MODEL
         }
         foreach ($data as $hasil) {
 
+            $this->session->set_flashdata('pesan_warn_sidebar', 'Anda Belum Mengupload Berkas Pendaftaran!');
+            $this->session->set_flashdata('pesan_danger_sidebar', '');
+            $this->session->set_flashdata('pesan_sidebar', '');
+
             if ($hasil == 'menunggu') {
-                $this->session->set_flashdata('pesan_menunggu_sidebar', 'Data Anda Sedang Diproses');
+                $this->session->set_flashdata('pesan_warn_sidebar', 'Data Anda Sedang Diproses');
             }
             if ($hasil == 'tolak') {
-                $this->session->set_flashdata('pesan_danger_sidebar', 'Data Anda Ditolak! Harap Isi Kembali Data Anda');
+                $this->session->set_flashdata('pesan_danger_sidebar', 'Data Anda Ditolak! Harap Isi Kembali Data Pendaftaran Anda');
+
+                $this->session->set_flashdata('pesan_warn_sidebar', '');
             }
             if ($hasil == 'setuju') {
                 $this->session->set_flashdata('pesan_sidebar', 'Data Anda Diterima! Sekarang Anda Dapat Mencetak Dokumen Anda');
-            } else {
-                $this->session->set_flashdata('pesan_warn_sidebar', 'Anda Belum Mengupload Berkas Pendaftaran!');
+
+                $this->session->set_flashdata('pesan_warn_sidebar', '');
             }
         }
     }
