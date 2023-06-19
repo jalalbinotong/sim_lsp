@@ -44,6 +44,7 @@ class Cdashboard_asesi extends CI_Controller
         $datalist['hasil'] = $this->Mdata_skema_asesi->tampildata_skema();
         $data['konten'] = $this->load->view('Asesi/list_skema', $datalist, TRUE);
         $data['sidebar'] = $this->load->view('Asesi/sidebar_asesi', '', TRUE);
+        $this->Mstatus_frapl->tampildata();
         $this->load->view('header_dashboard', $data);
     }
 
