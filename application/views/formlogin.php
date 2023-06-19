@@ -1,4 +1,22 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
 <script language="javascript">
+    $(document).ready(function() {
+        $('#email').keydown(function(event) {
+            checkEnter(event);
+        });
+
+        $('#password').keydown(function(event) {
+            checkEnter(event);
+        });
+    });
+
+    function checkEnter(event) {
+        if (event.keyCode === 13) {
+            proseslogin();
+        }
+    }
+
     function proseslogin() {
 
         var email = $('#email').val();
@@ -91,7 +109,7 @@
                                                 </label> -->
                                         </div>
                                         <div class="text-center mt-3">
-                                            <button type="button" class="btn btn-lg btn-primary" onclick="proseslogin();">Login</button>
+                                            <button type="button" class="btn btn-lg btn-primary" onkeydown="checkEnter(event)" onclick="proseslogin();">Login</button>
                                         </div>
                                     </form>
                                 </div>
