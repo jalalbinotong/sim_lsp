@@ -5,6 +5,7 @@ class Cdashboard extends CI_Controller
     {
         parent::__construct();
         $this->load->model('mvalidasi');
+        $this->load->model('makun_pegawai');
         $this->mvalidasi->validasi_admin();
     }
     function dashboard()
@@ -46,6 +47,27 @@ class Cdashboard extends CI_Controller
 			} else {
                 $this->load->view('header_dashboard',$data);
             }
+    }
+
+    function tabelakun_pegawai()
+    {
+        $this->load->model('Makun_pegawai');
+        $data['sidebar'] = $this->load->view('Admin/sidebar', '', TRUE);
+        $datalist['hasil'] = $this->Makun_pegawai->akun_pegawai();
+        // $data['hasil'] = $this->load->view('data_verifikasi_asesi',$datalist,TRUE);
+        $data['konten'] = $this->load->view('Admin/tabelakun_pegawai', $datalist, TRUE);
+        if (@$this->session->userdata('tipe_user')=='')
+			{
+				$this->load->view('header',$data);
+			} else {
+                $this->load->view('header_dashboard',$data);
+            }
+    }
+
+    function hapusakun_pegawai($id_user)
+    {
+        $this->makun_pegawai->hapusakun_pegawai($id_user); //panggil fungsi
+        redirect('cdashboard/tabelakun_pegawai');
     }
 
     function fail_login()

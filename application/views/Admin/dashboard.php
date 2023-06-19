@@ -14,7 +14,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Data Pegawai</h5>
                         <p class="card-text">Mengatur Akun-Akun Pegawai LSP</p>
-                        <a href="#" class="btn btn-primary">Kelola</a>
+                        <a href="<?php echo base_url("Cdashboard/tabelakun_pegawai") ?>" class="btn btn-primary">Kelola</a>
                     </div>
                 </div>
             </div>
