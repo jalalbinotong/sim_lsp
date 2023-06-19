@@ -6,11 +6,16 @@ class Cdashboard_asesi extends CI_Controller
         parent::__construct();
         $this->load->model('mvalidasi');
         $this->load->model('Mstatus_frapl');
+        $this->load->model('Statusmodel');
+        
     }
     function dashboard()
     {
         $this->Mstatus_frapl->tampildata();
-        $data['sidebar'] = $this->load->view('Asesi/sidebar_asesi', '', TRUE);
+        $status = $this->Statusmodel->getStatus();
+        $data['status'] = $status;
+        
+        $data['sidebar'] = $this->load->view('Asesi/sidebar_asesi', $data, TRUE);
         $data['konten'] = $this->load->view('Asesi/dashboard_asesi', '', TRUE);
         $data['tipe_user'] = $this->session->userdata('tipe_user');
         if (@$this->session->userdata('tipe_user')=='')
@@ -30,7 +35,9 @@ class Cdashboard_asesi extends CI_Controller
     function FRAPL()
     {
         $this->Mstatus_frapl->tampildata();
-        $data['sidebar'] = $this->load->view('Asesi/sidebar_asesi', '', TRUE);
+        $status = $this->Statusmodel->getStatus();
+        $data['status'] = $status;
+        $data['sidebar'] = $this->load->view('Asesi/sidebar_asesi', $data, TRUE);
         $data['konten'] = $this->load->view('Asesi/FRAPL', '', TRUE);
         if (@$this->session->userdata('tipe_user')=='')
 			{
@@ -39,6 +46,7 @@ class Cdashboard_asesi extends CI_Controller
                 $this->load->view('header_dashboard',$data);
             }
     }
+    
  
 }
 ?>
