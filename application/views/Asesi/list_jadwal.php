@@ -22,7 +22,7 @@
       <tbody>
         <?php
         if (empty($hasil)) {
-          echo "Tidak terdapat jadwal pada database";
+          echo "Pilih Skema Terlebih Dahulu Sebelum Memilih Jadwal!";
         } else {
           $no = 1;
           foreach ($hasil as $data) :
