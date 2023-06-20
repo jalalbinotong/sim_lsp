@@ -52,7 +52,26 @@ class Cdashboard_asesi extends CI_Controller
     {
         $this->load->model('Mdata_skema_asesi');
         $datalist['hasil'] = $this->Mdata_skema_asesi->pilihskema($id);
+        $this->Mstatus_frapl->tampildata();
         redirect('Cdashboard_asesi/listskema');
+    }
+
+    function listjadwal()
+    {
+        $this->load->model('Mdata_jadwal_asesi');
+        $datalist['hasil'] = $this->Mdata_jadwal_asesi->tampildata_jadwal();
+        $data['konten'] = $this->load->view('Asesi/list_jadwal', $datalist, TRUE);
+        $data['sidebar'] = $this->load->view('Asesi/sidebar_asesi', '', TRUE);
+        $this->Mstatus_frapl->tampildata();
+        $this->load->view('header_dashboard', $data);
+    }
+
+    function pilihjadwal($id)
+    {
+        $this->load->model('Mdata_jadwal_asesi');
+        $datalist['hasil'] = $this->Mdata_jadwal_asesi->pilihjadwal($id);
+        $this->Mstatus_frapl->tampildata();
+        redirect('Cdashboard_asesi/listjadwal');
     }
 }
 ?>

@@ -40,7 +40,7 @@
                 <?php echo $data->nama_prodi; ?>
               </td>
               <td>
-                <!-- <?php echo $data->skema; ?> -->
+                <?php echo $data->nama_skema; ?>
               </td>
               <td>
                 <button type="button" class="btn btn-primary btn-sm" onclick="pilihdata('<?php echo $data->id; ?>')">Lihat Berkas</button>

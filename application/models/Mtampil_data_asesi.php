@@ -11,6 +11,8 @@ class Mtampil_data_asesi extends CI_MODEL
         ON tb_asesi.id_prodi = tb_prodi.id_prodi
         INNER JOIN tb_data_asesi
         ON tb_asesi.id_asesi = tb_data_asesi.id_asesi
+        INNER JOIN tb_skema
+        ON tb_skema.id_skema = tb_asesi.id_skema
         WHERE tipe_user = 'asesi'
         ORDER BY tb_data_asesi.id DESC";
 
