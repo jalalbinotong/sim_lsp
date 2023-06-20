@@ -77,7 +77,7 @@ class Memail extends CI_Model
                     $asesi['id_user'] = $data['id_user'];
                     $asesi['id_prodi'] = $data['id_prodi'];
                     $asesi['nim'] = $data['nim'];
-                    $asesi['id_skema'] = '9999';
+                    // $asesi['id_skema'] = '9999';
 
 
                     if ($key_data->num_rows() > 0) {
