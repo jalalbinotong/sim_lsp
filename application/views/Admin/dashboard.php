@@ -33,7 +33,7 @@
             <div class="col-md-4">
                 <div class="card mb-4">
                     <div class="card text-bg-primary">
-                        <img src="https://cdn-icons-png.flaticon.com/512/2098/2098402.png" class="card-img-top" alt="...">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3652/3652267.png" class="card-img-top" alt="...">
                     </div>
                     <div class="card-body">
                         <h5 class="card-title">Data Kegiatan</h5>

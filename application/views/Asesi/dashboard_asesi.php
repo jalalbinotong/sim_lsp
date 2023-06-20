@@ -1,4 +1,3 @@
-
 <main id="main" class="main">
     <div class="col">
         <div class="container fluid">
@@ -9,8 +8,8 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="card">
-                        <div class="card text-bg-success">
-                            <img src="https://cdn-icons-png.flaticon.com/512/1415/1415345.png" class="card-img-top" alt="...">
+                        <div class="card text-bg-primary">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2098/2098402.png" class="card-img-top" alt="...">
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">Data FR APL.01</h5>
@@ -21,8 +20,8 @@
                 </div>
                 <div class="col-md-4">
                     <div class="card">
-                        <div class="card text-bg-primary">
-                            <img src="https://cdn-icons-png.flaticon.com/512/2098/2098402.png" class="card-img-top" alt="...">
+                        <div class="card text-bg-success">
+                            <img src="https://cdn-icons-png.flaticon.com/512/1415/1415345.png" class="card-img-top" alt="...">
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">Pilih Skema</h5>

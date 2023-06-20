@@ -45,7 +45,7 @@
             <div class="row icon-boxes">
                 <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="200">
                     <div class="icon-box">
-                        <div class="icon"><i class="ri-stack-line"></i></div>
+                        <div class="icon"><i class="bi bi-person"></i></div>
                         <h4 class="title"><a href="">Daftar Akun</a></h4>
                         <p class="description">Langkah pertama yang dilakukan dengan membuat akun untuk mengikuti proses registrasi LSP</p>
                     </div>
@@ -53,17 +53,17 @@
 
                 <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="300">
                     <div class="icon-box">
-                        <div class="icon"><i class="ri-palette-line"></i></div>
+                        <div class="icon"><i class="bi bi-file-earmark-text"></i></div>
                         <h4 class="title"><a href="">Melengkapi Berkas Pendaftaran Serta Memilih Skema Dan Jadwal</a></h4>
-                        <p class="description">Anda dolore</p>
+                        <p class="description">Selanjutnya Melengkapi Berkas Pendaftaran Dan Memilih Skema Serta Jadwal Ujian Yang Tersedia</p>
                     </div>
                 </div>
 
                 <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="400">
                     <div class="icon-box">
-                        <div class="icon"><i class="ri-command-line"></i></div>
-                        <h4 class="title"><a href="">Magni Dolores</a></h4>
-                        <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+                        <div class="icon"><i class="bi bi-printer"></i></div>
+                        <h4 class="title"><a href="">Cetak Berkas Pendaftaran</a></h4>
+                        <p class="description">Berkas Pendaftaran Yang Disetujui Dapat Melakukan Cetak Bukti Pendaftaran</p>
                     </div>
                 </div>
 
@@ -94,8 +94,8 @@
         <div class="container" data-aos="fade-up">
 
             <div class="section-title">
-                <h2>Pilih Skema</h2>
-                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+                <h2>Skema LSP</h2>
+                <p>Skema-Skema Yang Terdapat Pada Masing-Masing Bidang</p>
             </div>
 
             <div class="faq-list">
@@ -221,7 +221,7 @@
 
             <div class="section-title">
                 <h2>Temukan</h2>
-                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+                <p>Lokasi Pusat LSP Politeknik Negeri Bali</p>
             </div>
 
             <div>
@@ -292,20 +292,21 @@
     <footer id="footer">
 
         <div class="footer-top">
-            <div class="container">
-                <div class="row">
+            <div class="container position-relative text-center content-center">
+                <!-- <div class="row"> -->
 
-                    <div class="col-lg-3 col-md-6 footer-contact">
-                        <h3>OnePage</h3>
-                        <p>
-                            A108 Adam Street <br>
-                            New York, NY 535022<br>
-                            United States <br><br>
-                            <strong>Phone:</strong> +1 5589 55488 55<br>
-                            <strong>Email:</strong> info@example.com<br>
-                        </p>
-                    </div>
-
+                <div class="footer-contact">
+                    <h3>LSP Politeknik Negeri Bali
+                    </h3>
+                    <p>
+                        Kampus Bukit, Jimbaran <br>
+                        South Kuta, Badung Regency, Bali 80364 <br>
+                        Indonesia <br><br>
+                        <strong>Telepon:</strong> 0361701981<br>
+                        <strong>Email:</strong> pnb@ac.id<br>
+                    </p>
+                </div>
+                <!-- 
                     <div class="col-lg-2 col-md-6 footer-links">
                         <h4>Useful Links</h4>
                         <ul>
@@ -334,11 +335,11 @@
                         <form action="" method="post">
                             <input type="email" name="email"><input type="submit" value="Subscribe">
                         </form>
-                    </div>
+                    </div> -->
 
-                </div>
             </div>
         </div>
+        <!-- </div> -->
 
         <div class="container d-md-flex py-4">
 
@@ -355,11 +356,11 @@
                 </div>
             </div> -->
             <div class="social-links text-center text-md-right pt-3 pt-md-0">
-                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <!-- <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a> -->
                 <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
                 <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                <!-- <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a> -->
             </div>
         </div>
     </footer><!-- End Footer -->

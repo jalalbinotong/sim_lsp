@@ -26,7 +26,7 @@
         </li><!-- End Dashboard Nav -->
         <li class="nav-item">
             <a class="nav-link collapsed" href="<?php echo base_url('Cdashboard_lsp/data_kegiatan'); ?>">
-                <i class="bi bi-list-task"></i>
+                <i class="bi bi-calendar-event"></i>
                 <span>Data Kegiatan</span>
             </a>
         </li><!-- End Dashboard Nav -->
