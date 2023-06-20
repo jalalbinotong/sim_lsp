@@ -35,7 +35,23 @@
             return false;
         }
         $('#formlogin').submit();
+        
+
     }
+    function handleKeyPress(event) {
+        if (event.keyCode === 13 || event.which === 13) {
+            event.preventDefault();
+            proseslogin();
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        var emailInput = document.getElementById('email');
+        var passwordInput = document.getElementById('password');
+
+        emailInput.addEventListener('keypress', handleKeyPress);
+        passwordInput.addEventListener('keypress', handleKeyPress);
+    });
 </script>
 
 <link rel="stylesheet" href="<?php echo base_url('assets/css/style_sidebar.css'); ?>">

@@ -69,6 +69,7 @@
             </a>
         </li><!-- End Dashboard Nav -->
 
+
         <li class="nav-item">
             <a class="nav-link collapsed" href="<?php echo base_url('Cdashboard_asesi/listskema'); ?>">
                 <i class="bi bi-journal-text"></i>
@@ -83,12 +84,42 @@
             </a>
         </li><!-- End Dashboard Nav -->
 
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="<?php echo base_url('Ccetakpdf/pdf'); ?>">
+        <?php if ($status === 'setuju') : ?>
+            <a class="nav-link collapsed" href="<?php echo base_url('Ccetakpdf/pdf'); ?>" id="cetak-link" data-status="setuju">
                 <i class="bi bi-file-earmark-text"></i>
-                <span>Cetak Data FR APL.01</span>
+                <span>Cetak Data FR.APL 01</span>
             </a>
+        <?php elseif ($status === 'menunggu') : ?>
+            <a class="nav-link collapsed" href="#" id="cetak-link" onclick="return false;" data-status="menunggu">
+                <i class="bi bi-file-earmark-text"></i>
+                <span>Cetak Data FR.APL 01</span>
+            </a>
+        <?php else : ?>
+            <a class="nav-link collapsed" href="#" id="cetak-link" onclick="return false;" data-status="tolak">
+                <i class="bi bi-file-earmark-text"></i>
+                <span>Cetak Data FR.APL 01</span>
+            </a>
+        <?php endif; ?>
         </li><!-- End Dashboard Nav -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                var cetakLink = document.getElementById('cetak-link');
+                if (cetakLink.getAttribute('href') === '#') {
+                    cetakLink.addEventListener('click', function(event) {
+                        event.preventDefault();
+                        var status = this.getAttribute('data-status');
+                        if (status === 'menunggu') {
+                            alert('Tombol tidak dapat diklik karena status menunggu.');
+                        } else if (status === 'tolak') {
+                            alert('Tombol tidak dapat diklik karena status ditolak.');
+                        } else {
+                            alert('Tombol tidak dapat diklik karena status tidak aktif.');
+                        }
+                    });
+                }
+            });
+        </script>
+
 
 
 </aside><!-- End Sidebar-->
