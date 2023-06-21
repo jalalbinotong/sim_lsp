@@ -30,7 +30,7 @@ class Mdata_skema_asesi extends CI_Model
                 $sql = "UPDATE tb_asesi 
                 SET id_skema = '$id'
                 WHERE id_asesi = '$id_asesi'";
-
+                $this->session->set_flashdata('pesan', 'Anda telah memilih skema');
                 $this->db->query($sql);
             }
         }

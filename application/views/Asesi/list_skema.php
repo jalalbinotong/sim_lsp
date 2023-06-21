@@ -7,6 +7,21 @@
 </script>
 
 <main id="main" class="main">
+  <?php
+    $pesan = $this->session->flashdata('pesan');
+    if ($pesan == "") {
+        echo "";
+    } else {
+    ?>
+        <div class="alert alert-success alert-dismissible">
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            <strong><?php echo $pesan; ?></strong>
+        </div>
+
+  <?php
+  }
+  ?>
+
   <div class="container mt-3">
     <h4>List Skema</h4>
     <table class="table table-striped">
