@@ -56,7 +56,9 @@
         if ($KodeData == "") {
             //simpan
             $this->db->insert('tb_user', $data);
-            $this->session->set_flashdata('pesan', 'Data sudah disimpan');
+            $this->session->set_flashdata('pesan', 'Data sudah disimpan <br>
+                                            Harap mengisi pendataan pegawai lsp');
+            redirect('Cdashboard/masterdata_pegawai');
         } else {
             //edit	
             // $update = array(
@@ -66,5 +68,24 @@
             // $this->db->update('tbdata', $data);
             // $this->session->set_flashdata('pesan', 'Data sudah diedit');
         }
+    }
+
+    function prosesmasterdata_pegawai()
+    {
+        $data = $_POST;
+        $NIP = $data['NIP'];
+            //simpan
+            $this->db->insert('tb_data_pegawai', $data);
+            $this->session->set_flashdata('pesan', 'Data sudah disimpan');
+            redirect('Cdashboard/masterdata_pegawai');
+
+                    //edit	
+            // $update = array(
+            // 	'KodeData' => $KodeData
+            // );
+            // $this->db->where($update);
+            // $this->db->update('tbdata', $data);
+            // $this->session->set_flashdata('pesan', 'Data sudah diedit');
+        
     }
 }

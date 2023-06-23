@@ -18,7 +18,15 @@ class Cdaftar extends CI_Controller
     function prosesdaftarlsp()
     {
         $this->mdaftar->prosesdaftar_lsp();
-        redirect('Cdashboard/tambah_akun_pegawai');
+        // redirect('Cdashboard/masterdata_pegawai');
+    }
+
+    function prosesmasterdata_pegawai()
+    {
+        $this->mdaftar->prosesmasterdata_pegawai();
+        
+        redirect('Cdashboard/masterdata_pegawai');
+        
     }
 
     function prosesdaftar()
