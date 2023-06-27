@@ -121,7 +121,7 @@
                                         <form id="masterdata_pegawai" name="masterdata_pegawai" method="post" action="<?php echo base_url('cdaftar/prosesmasterdata_pegawai'); ?>">
 
                                             <div class="mb-3">
-                                                <input type="hidden" class="form-control" id="id_user" name="id_user" value="17">
+                                                <input type="hidden" class="form-control" id="id_user" name="id_user" value="<?php echo $this->session->userdata('id_user'); ?>">
                                             </div>
 
                                             <div class="mb-3">

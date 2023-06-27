@@ -1,12 +1,12 @@
 <script language="javascript">
-  function hapusdata(KodeData) {
+  function hapusdata(NIP) {
     if (confirm("Apakah anda yakin menghapus data ini")) {
-      window.open("<?php echo base_url() ?>cbelajarcrud/hapusdata/" + KodeData, "_self");
+      window.open("<?php echo base_url() ?>cmasterdata_pegawai/hapusdata/" + NIP, "_self");
     }
   }
 
-  function editdata(KodeData) {
-    load("cbelajarcrud/editdata/" + KodeData, "#script");
+  function editdata(NIP) {
+    load("cmasterdata_pegawai/editdata/" + NIP, "#script");
   }
 </script>
 

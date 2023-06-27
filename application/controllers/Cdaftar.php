@@ -7,6 +7,7 @@ class Cdaftar extends CI_Controller
         parent::__construct();
         $this->load->model('mdaftar');
         $this->load->model('memail');
+        
     }
 
     function formdaftar()
@@ -18,15 +19,7 @@ class Cdaftar extends CI_Controller
     function prosesdaftarlsp()
     {
         $this->mdaftar->prosesdaftar_lsp();
-        // redirect('Cdashboard/masterdata_pegawai');
-    }
-
-    function prosesmasterdata_pegawai()
-    {
-        $this->mdaftar->prosesmasterdata_pegawai();
-        
-        redirect('Cdashboard/masterdata_pegawai');
-        
+        redirect('Cdashboard/tambah_akun_pegawai');
     }
 
     function prosesdaftar()

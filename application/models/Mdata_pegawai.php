@@ -14,4 +14,28 @@ class Mdata_pegawai extends CI_Model
     }
     return $hasil;
   }
+
+  function prosesmasterdata_pegawai()
+  {
+      $data = $_POST;
+      $NIP = $data['NIP'];
+      //simpan
+      $this->db->insert('tb_data_pegawai', $data);
+      $this->session->set_flashdata('pesan', 'Data sudah disimpan');
+      
+
+              //edit	
+      // $update = array(
+      // 	'KodeData' => $KodeData
+      // );
+      // $this->db->where($update);
+      // $this->db->update('tbdata', $data);
+      // $this->session->set_flashdata('pesan', 'Data sudah diedit');
+  }
+
+  function hapusakun_pegawai($id_user)
+  {
+    $sql = "delete from tb_user where id_user='" . $id_user . "'";
+    $this->db->query($sql);
+  }
 }

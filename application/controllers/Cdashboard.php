@@ -21,18 +21,6 @@ class Cdashboard extends CI_Controller
             }
     }
 
-    function masterdata_pegawai()
-    {
-        $data['konten'] = $this->load->view('Admin/masterdata_pegawai', '', TRUE);
-        $data['sidebar'] = $this->load->view('Admin/sidebar', '', TRUE);
-        if (@$this->session->userdata('tipe_user')=='')
-			{
-				$this->load->view('header',$data);
-			} else {
-                $this->load->view('header_dashboard',$data);
-            }
-    }
-
     function data_pegawai()
     {
         $this->load->model('mdata_pegawai');
