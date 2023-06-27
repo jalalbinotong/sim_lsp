@@ -7,6 +7,7 @@ class cmasterdata_pegawai extends CI_Controller
         $this->load->model('mvalidasi');
         $this->load->model('mdata_skema');
         $this->load->model('mdata_kegiatan');
+        $this->load->model('mdata_pegawai');
         $this->mvalidasi->validasi_lsp_data();
     }
 
@@ -20,5 +21,11 @@ class cmasterdata_pegawai extends CI_Controller
 			} else {
                 $this->load->view('header_dashboard',$data);
             }
+    }
+
+    function prosesmasterdata_pegawai()
+    {
+        $this->mdata_pegawai->prosesmasterdata_pegawai();
+        redirect('Cdashboard_lsp/dashboard');
     }
 }
