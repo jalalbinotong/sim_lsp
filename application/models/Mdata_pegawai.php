@@ -33,20 +33,33 @@ class Mdata_pegawai extends CI_Model
     // $this->session->set_flashdata('pesan', 'Data sudah diedit');
   }
 
+  // function proseseditdata()
+  // {
+  //   $data = $_POST;
+  //   $NIP = $data['NIP'];
+  //   // //simpan
+  //   // $this->db->insert('tb_data_pegawai', $data);
+  //   // $this->session->set_flashdata('pesan', 'Data sudah disimpan');
+
+
+  //   //edit	
+  //   $update = array(
+  //     'NIP' => $NIP
+  //   );
+  //   $this->db->where($update);
+  //   $this->db->update('tb_data_pegawai', $data);
+  //   $this->session->set_flashdata('pesan', 'Data sudah diedit');
+  // }
+
+
   function proseseditdata()
   {
     $data = $_POST;
-    $NIP = $data['NIP'];
+    $id_user = $data['id_user'];
     var_dump($data); // Mencetak isi array dengan informasi yang lebih detail (termasuk tipe data)
 
-    // //simpan
-    // $this->db->insert('tb_data_pegawai', $data);
-    // $this->session->set_flashdata('pesan', 'Data sudah disimpan');
-
-
-    //edit	
     $update = array(
-      'NIP' => $NIP
+      'id_user' => $id_user
     );
     $this->db->where($update);
     $this->db->update('tb_data_pegawai', $data);

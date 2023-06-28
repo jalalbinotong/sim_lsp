@@ -234,7 +234,7 @@
                         <div class="row mb-3 offset-sm-1">
                             <label class="col-sm-4 col-form-label">NIP</label>
                             <div class="col-sm-6">
-                                <input type="text" class="form-control" id="NIP" name="NIP" value=" <?php echo $hasil->NIP; ?>">
+                                <input type="text" class="form-control" id="NIP" name="NIP" value="<?php echo $hasil->NIP; ?>">
                             </div>
                         </div>
 
@@ -242,7 +242,7 @@
                         <div class="row mb-3 offset-sm-1">
                             <label class="col-sm-4 col-form-label">Nama Pegawai</label>
                             <div class="col-sm-6">
-                                <input type="text" class="form-control" id="nama" name="nama" value=" <?php echo $hasil->nama; ?>">
+                                <input type="text" class="form-control" id="nama" name="nama" value="<?php echo $hasil->nama; ?>">
                             </div>
                         </div>
 
@@ -268,7 +268,7 @@
                         <div class="row mb-3 offset-sm-1">
                             <label class="col-sm-4 col-form-label">Tempat Lahir</label>
                             <div class="col-sm-6">
-                                <input type="text" class="form-control" id="tempat_lahir" name="tempat_lahir" value=" <?php echo $hasil->tempat_lahir; ?>">
+                                <input type="text" class="form-control" id="tempat_lahir" name="tempat_lahir" value="<?php echo $hasil->tempat_lahir; ?>">
                             </div>
                         </div>
 
@@ -283,7 +283,7 @@
                         <div class="row mb-3 offset-sm-1">
                             <label class="col-sm-4 col-form-label">Nomor HP</label>
                             <div class="col-sm-6">
-                                <input type="text" class="form-control" id="nomor_hp" name="nomor_hp" value=" <?php echo $hasil->nomor_hp; ?>">
+                                <input type="text" class="form-control" id="nomor_hp" name="nomor_hp" value="<?php echo $hasil->nomor_hp; ?>">
                             </div>
                         </div>
 
@@ -297,21 +297,21 @@
                         <div class="row mb-3 offset-sm-1">
                             <label class="col-sm-4 col-form-label">Email</label>
                             <div class="col-sm-6">
-                                <input type="text" class="form-control" id="email" name="email" value=" <?php echo $hasil->email; ?>">
+                                <input type="text" class="form-control" id="email" name="email" value="<?php echo $hasil->email; ?>">
                             </div>
                         </div>
 
                         <div class="row mb-3 offset-sm-1">
                             <label class="col-sm-4 col-form-label">Jabatan</label>
                             <div class="col-sm-6">
-                                <input type="text" class="form-control" id="jabatan" name="jabatan" value=" <?php echo $hasil->jabatan; ?>">
+                                <input type="text" class="form-control" id="jabatan" name="jabatan" value="<?php echo $hasil->jabatan; ?>">
                             </div>
                         </div>
 
                         <div class="row mb-3 offset-sm-1">
                             <label class="col-sm-4 col-form-label">Golongan</label>
                             <div class="col-sm-6">
-                                <input type="text" class="form-control" id="golongan" name="golongan" value=" <?php echo $hasil->golongan; ?>">
+                                <input type="text" class="form-control" id="golongan" name="golongan" value="<?php echo $hasil->golongan; ?>">
                             </div>
                         </div>
                         <div class="row mb-3 offset-sm-1">
