@@ -5,12 +5,14 @@ class Cdashboard extends CI_Controller
     {
         parent::__construct();
         $this->load->model('mvalidasi');
+        $this->load->model('makun_pegawai');
+        $this->load->model('mdata_pegawai');
         $this->mvalidasi->validasi_admin();
     }
     function dashboard()
     {
-        $data['sidebar'] = $this->load->view('sidebar', '', TRUE);
-        $data['konten'] = $this->load->view('dashboard', '', TRUE);
+        $data['sidebar'] = $this->load->view('Admin/sidebar', '', TRUE);
+        $data['konten'] = $this->load->view('Admin/dashboard', '', TRUE);
         $data['tipe_user'] = $this->session->userdata('tipe_user');
         if (@$this->session->userdata('tipe_user') == '') {
             $this->load->view('header', $data);
