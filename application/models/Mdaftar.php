@@ -11,6 +11,7 @@
         $reg['id_prodi'] = $this->input->post('id_prodi');
         $reg['key_md5'] = md5($reg['email']);
 
+        $this->db->trans_start();
         $this->load->model('Memail');
         $data = $_POST;
         $id_user = $data['id_user'];
@@ -25,7 +26,8 @@
                         if ($this->Memail->sendEmail($reg['email'])) {
                             //simpan
                             $this->db->insert('tb_user_temp', $reg);
-                            $this->session->set_flashdata('pesan', 'Prosess registrasi berhasil, silahkan verifikasi Email untuk mengaktifkan akun');
+                            $this->db->trans_complete();
+                            $this->session->set_flashdata('pesan', 'Proses registrasi berhasil, silahkan verifikasi Email untuk mengaktifkan akun');
                             redirect('cdaftar/formdaftar', 'refresh');
                         } else {
                             $this->session->set_flashdata('pesan_danger', 'Prosess registrasi Gagal, silahkan mencoba kembali');
@@ -46,4 +48,25 @@
         } else {
         }
     }
+
+    function prosesdaftar_lsp()
+    {
+        $data = $_POST;
+        $KodeData = $data['KodeData'];
+        if ($KodeData == "") {
+            //simpan
+            $this->db->insert('tb_user', $data);
+            $this->session->set_flashdata('pesan', 'Data sudah disimpan');
+            
+        } else {
+            //edit	
+            // $update = array(
+            // 	'KodeData' => $KodeData
+            // );
+            // $this->db->where($update);
+            // $this->db->update('tbdata', $data);
+            // $this->session->set_flashdata('pesan', 'Data sudah diedit');
+        }
+    }
+
 }

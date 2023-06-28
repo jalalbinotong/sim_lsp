@@ -7,33 +7,32 @@ class Cdaftar extends CI_Controller
         parent::__construct();
         $this->load->model('mdaftar');
         $this->load->model('memail');
+        
     }
 
     function formdaftar()
     {
-        //menyimpan view form daftar di array data -->konten
         $data['konten'] = $this->load->view('formdaftar', '', TRUE);
-        //kirim konten ke halaman utama --> tampilawal
         $this->load->view('header', $data);
+    }
+
+    function prosesdaftarlsp()
+    {
+        $this->mdaftar->prosesdaftar_lsp();
+        redirect('Cdashboard/tambah_akun_pegawai');
     }
 
     function prosesdaftar()
     {
         $this->mdaftar->prosesdaftar();
-        // $this->mdaftar_asesi->prosesdaftar_asesi();
         $this->load->model('Memail');
     }
-    function prosesdaftarasesi()
+
+    function input_FRAPL()
     {
-        $this->load->model('mdaftarAsesi');
-        // $this->mdaftarAsesi->prosesdaftarasesi();
-        // $this->memail->sendEmail();
-        redirect('cdaftar/FRAPL');
-    }
-    function FRAPL()
-    {
-        $data['konten'] = $this->load->view('FRAPL', '', TRUE);
-        $this->load->view('header', $data);
+        $this->load->model('mfrapl');
+        $this->mfrapl->input_FRAPL();
+        redirect('Cdashboard_asesi/FRAPL');
     }
 
     function verifikasi()
@@ -48,7 +47,7 @@ class Cdaftar extends CI_Controller
     // $this->form_validation->set_rules('email', 'Email ID', 'trim|required|valid_email|is_unique[user.email]');
     // $this->form_validation->set_rules('password', 'Password', 'trim|required|matches[cpassword]|md5');
     // $this->form_validation->set_rules('cpassword', 'Confirm Password', 'trim|required');
-    
+
     // //validate form input
     // if ($this->form_validation->run() == FALSE)
     // {
