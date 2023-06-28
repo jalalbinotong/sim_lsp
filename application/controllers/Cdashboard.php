@@ -53,7 +53,7 @@ class Cdashboard extends CI_Controller
     function hapusdata($NIP)
     {
         $this->mdata_pegawai->hapusdata($NIP); //panggil fungsi
-        redirect('cdashboard/data_pegawai');
+        redirect('cdashboard/list_data_pegawai');
     }
 
     // function editdata($id)
@@ -104,7 +104,7 @@ class Cdashboard extends CI_Controller
     function hapusakun_pegawai($id_user)
     {
         $this->makun_pegawai->hapusakun_pegawai($id_user); //panggil fungsi
-        redirect('cdashboard/list_data_pegawai');
+        redirect('cdashboard/tabelakun_pegawai');
     }
 
     function fail_login()
