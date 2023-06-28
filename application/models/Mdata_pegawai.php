@@ -58,12 +58,15 @@ class Mdata_pegawai extends CI_Model
     $id_user = $data['id_user'];
     var_dump($data); // Mencetak isi array dengan informasi yang lebih detail (termasuk tipe data)
 
-    $update = array(
-      'id_user' => $id_user
-    );
-    $this->db->where($update);
-    $this->db->update('tb_data_pegawai', $data);
+    echo $id_user;
+    //Data di delete dulu agar dapat mengedit NIM yang primary key -Rio
+    $this->db->where('id_user', $id_user);
+    $this->db->delete('tb_data_pegawai');
+
+    $this->db->insert('tb_data_pegawai', $data);
     $this->session->set_flashdata('pesan', 'Data sudah diedit');
+
+    return $id_user;
   }
 
   function hapusakun_pegawai($id_user)
@@ -97,9 +100,9 @@ class Mdata_pegawai extends CI_Model
   //   }
   // }
 
-  function pilih_data_pegawai($NIP)
+  function pilih_data_pegawai($id)
   {
-    $sql = "select * from tb_data_pegawai where NIP = '$NIP'";
+    $sql = "select * from tb_data_pegawai where id_user = '$id'";
     $query = $this->db->query($sql);
     if ($query->num_rows() > 0) {
       $hasil = $query->row();

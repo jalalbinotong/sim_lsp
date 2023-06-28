@@ -228,7 +228,7 @@
                     <form id="formdata_pegawai" name="formdata_pegawai" method="post" action="<?php echo base_url('cdashboard/proseseditdata'); ?>">
 
                         <div class="mb-3">
-                            <input type="hidden" class="form-control" id="id_user" name="id_user" value="<?php echo $this->session->userdata('id_user'); ?>">
+                            <input type="hidden" class="form-control" id="id_user" name="id_user" value="<?php echo $hasil->id_user; ?>">
                         </div>
 
                         <div class="row mb-3 offset-sm-1">
@@ -318,7 +318,7 @@
                             <label class="col-sm-4 col-form-label"></label>
                             <div class="col-sm-6">
 
-                                <button type="button" class="btn btn-primary" onClick="proseseditdata()">Edit</button>
+                                <button type="button" class="btn btn-primary" onClick="proseseditdata()">Simpan Perubahan</button>
                             </div>
                         </div>
                     </form><!-- End General Form Elements -->

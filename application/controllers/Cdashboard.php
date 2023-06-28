@@ -24,7 +24,6 @@ class Cdashboard extends CI_Controller
     function list_data_pegawai()
     {
         $datalist['hasil'] = $this->mdata_pegawai->tampil_data();
-        // $data['konten'] = $this->load->view('Admin/formdata_pegawai', '', TRUE);
         $data['konten'] = $this->load->view('Admin/data_pegawai', $datalist, TRUE);
         $data['sidebar'] = $this->load->view('Admin/sidebar', '', TRUE);
         if (@$this->session->userdata('tipe_user') == '') {
@@ -38,10 +37,10 @@ class Cdashboard extends CI_Controller
         }
     }
 
-    function pilih_data_pegawai($NIP)
+    function pilih_data_pegawai($id)
     {
         $this->load->model('Mdata_pegawai');
-        $datalist['hasil'] = $this->Mdata_pegawai->pilih_data_pegawai($NIP);
+        $datalist['hasil'] = $this->Mdata_pegawai->pilih_data_pegawai($id);
         $data['sidebar'] = $this->load->view('Admin/sidebar', '', TRUE);
         $data['konten'] = $this->load->view('Admin/formdata_pegawai', $datalist, TRUE);
         if (@$this->session->userdata('tipe_user') == '') {
@@ -57,10 +56,10 @@ class Cdashboard extends CI_Controller
         redirect('cdashboard/data_pegawai');
     }
 
-    function editdata($NIP)
-    {
-        $this->mdata_pegawai->editdata($NIP);
-    }
+    // function editdata($id)
+    // {
+    //     $this->mdata_pegawai->editdata($id);
+    // }
 
     function tambah_akun_pegawai()
     {
@@ -88,16 +87,24 @@ class Cdashboard extends CI_Controller
     }
     function proseseditdata()
     {
-        $this->mdata_pegawai->proseseditdata(); //panggil fungsi
+        $id = $this->mdata_pegawai->proseseditdata(); //panggil fungsi
 
-        // redirect('Cdashboard/pilih_data_pegawai');
+        $this->load->model('Mdata_pegawai');
+        $datalist['hasil'] = $this->Mdata_pegawai->pilih_data_pegawai($id);
+        $data['sidebar'] = $this->load->view('Admin/sidebar', '', TRUE);
+        $data['konten'] = $this->load->view('Admin/formdata_pegawai', $datalist, TRUE);
+        if (@$this->session->userdata('tipe_user') == '') {
+            $this->load->view('header', $data);
+        } else {
+            $this->load->view('header_dashboard', $data);
+        }
     }
 
 
     function hapusakun_pegawai($id_user)
     {
         $this->makun_pegawai->hapusakun_pegawai($id_user); //panggil fungsi
-        redirect('cdashboard/tabelakun_pegawai');
+        redirect('cdashboard/list_data_pegawai');
     }
 
     function fail_login()
