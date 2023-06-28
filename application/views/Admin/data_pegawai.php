@@ -1,21 +1,20 @@
 <script language="javascript">
   function hapusdata(NIP) {
     if (confirm("Apakah anda yakin menghapus data ini")) {
-      window.open("<?php echo base_url() ?>cmasterdata_pegawai/hapusdata/" + NIP, "_self");
+      window.open("<?php echo base_url() ?>cdashboard/hapusdata/" + NIP, "_self");
     }
   }
 
   function editdata(NIP) {
-    load("cmasterdata_pegawai/editdata/" + NIP, "#script");
+    load("cdashboard/editdata/" + NIP, "#script");
   }
 </script>
 
-<main id="main" class="main">
-  <div class="container-fluid mt-3">
-    <h4>Daftar Data</h4>
-    <table class="table table-striped">
-      <thead>
-        <tr>
+<div class="container mt-3">
+  <h4>Data Pegawai</h4>
+  <table class="table table-striped">
+    <thead>
+    <tr>
           <th>No</th>
           <th>NIP</th>
           <th>Nama</th>
@@ -26,19 +25,21 @@
           <th>Alamat</th>
           <th>Email</th>
           <th>Jabatan</th>
-          <th>golongan</th>
+          <th>Golongan</th>
+          <th>Aksi</th>
         </tr>
-      </thead>
-      <tbody>
-        <?php
-        if (empty($hasil)) {
-          echo "Data Kosong";
-        } else {
-          $no = 1;
-          foreach ($hasil as $data) :
-        ?>
+    </thead>
+    <tbody>
+      <?php
+      if (empty($hasil)) {
+        echo "Data Kosong";
+      } else {
+        $no = 1;
+        foreach ($hasil as $data) :
+      ?>
 
-            <tr>
+       
+          <tr>
               <td><?php echo $no; ?></td>
               <td><?php echo $data->NIP; ?></td>
               <td><?php echo $data->nama; ?></td>
@@ -51,17 +52,16 @@
               <td><?php echo $data->jabatan; ?></td>
               <td><?php echo $data->golongan; ?></td>
               <td>
-                <button type="button" class="btn btn-primary btn-sm" onclick="editdata('<?php echo $data->id_user; ?>')">Edit</button>
-                <button type="button" class="btn btn-danger btn-sm" onclick="hapusdata('<?php echo $data->id_user; ?>');">Hapus</button>
+                <button type="button" class="btn btn-primary btn-sm" onclick="editdata('<?php echo $data->NIP; ?>')">Edit</button>
+                <button type="button" class="btn btn-danger btn-sm" onclick="hapusdata('<?php echo $data->NIP; ?>');">Hapus</button>
               </td>
             </tr>
-        <?php
-            $no++;
-          endforeach;
-        }
-        ?>
+      <?php
+          $no++;
+        endforeach;
+      }
+      ?>
 
-      </tbody>
-    </table>
-  </div>
-</main>
+    </tbody>
+  </table>
+</div>
