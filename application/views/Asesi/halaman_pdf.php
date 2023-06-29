@@ -34,9 +34,6 @@ $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
 // set image scale factor
 $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
 
-
-
-
 // Set font
 $pdf->SetFont('times', '', 10);
 
@@ -65,13 +62,7 @@ $x1 = $pageWidth - $margins['right'] - $imageWidth;
 $y1 = -6;
 $pdf->Image($imageFile1, $x1, $y1, $imageWidth, 0, '', '', 'R', false, 300, '', false, false, 0, false, false, false, '');
 
-$data = array(
-    array('Dataaaaa 1', 'Data 2', 'Data 3', 'Data 4'),
-    array('Data 5', 'Data 6', 'Data 7', 'Data 8'),
-    array('Data 9', 'Data 10', 'Data 11', 'Data 12'),
-);
 
-$columnWidths = array(40, 40, 40, 40);
 
  $html="
 		
@@ -122,32 +113,28 @@ No. Telp/fax/E-mail : <br>
 <br>
 Email : <br>
 <br>
+<b> A. Bagian 2 : Data Sertifikasi </b><br>
+<table class='table'>
+<tr>
+<th> No. </th>
+<th> email </th>
+<th> Kantor </th>
+</tr>
+<tr>
+<td> 1 </td>
+<td> user@example.com </td>
+<td> Company A </td>
+</tr>
+<tr>
+<td> 2 </td>
+<td> test@example.com </td>
+<td> Company B </td>
+</tr>
+</table>
 ";
 
 
-
-// Set ulang posisi Y untuk tabel
-$pdf->SetY($pdf->GetY() + 8);
-// Tampilkan header kolom
-$pdf->SetX(15);
-$html .= "<table>";
-for ($i = 0; $i < count($data); $i++) {
-    $html .= "<tr>";
-    for ($j = 0; $j < count($data[$i]); $j++) {
-        $html .= "<td>" . $data[$i][$j] . "</td>";
-    }
-    $html .= "</tr>";
-}
-$html .= "</table>";
 	
-
-	
-		
-		$Nama='Form-'."PDF";
-		$pdf->SetTitle($Nama);
-		$pdf->writeHTML($html);
-		$pdf->Output($Nama, 'I');	
-		
 		
 		
 		
