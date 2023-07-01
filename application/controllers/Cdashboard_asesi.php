@@ -7,6 +7,7 @@ class Cdashboard_asesi extends CI_Controller
         $this->load->model('mvalidasi');
         $this->load->model('Mstatus_frapl');
         $this->load->model('Statusmodel');
+        $this->mvalidasi->validasi_asesi();
     }
     function dashboard()
     {
