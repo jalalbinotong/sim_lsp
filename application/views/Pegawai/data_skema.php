@@ -33,31 +33,31 @@
 <main id="main" class="main">
 
   <div class="container">
-  <?php
+    <?php
     $pesan = $this->session->flashdata('pesan');
     if ($pesan == "") {
-        echo "";
+      echo "";
     } else {
     ?>
-        <div class="alert alert-success alert-dismissible">
-            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-            <strong><?php echo $pesan; ?></strong>
-        </div>
+      <div class="alert alert-success alert-dismissible">
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        <strong><?php echo $pesan; ?></strong>
+      </div>
 
     <?php
     }
 
     $pesan_danger = $this->session->flashdata('pesan_danger');
     if ($pesan_danger == "") {
-        echo "";
+      echo "";
     } else {
     ?>
-        <div class="alert alert-danger alert-dismissible">
-            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-            <strong>
-                <?php echo $pesan_danger; ?>
-            </strong>
-        </div>
+      <div class="alert alert-danger alert-dismissible">
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        <strong>
+          <?php echo $pesan_danger; ?>
+        </strong>
+      </div>
 
     <?php
     }
@@ -91,7 +91,19 @@
         <label class="form-label">Jurusan:</label>
         <select id="id_jurusan" name="id_jurusan" class="form-select" aria-label="Default select example">
           <option value="none" selected>Pilih jurusan</option>
-          <option value="4001">Teknik Elektro</option>
+          <?php
+          if (empty($hasil)) {
+          ?>
+            <option value="">Tidak ada data</option>
+            <?php
+          } else {
+            foreach ($hasil as $data) :
+            ?>
+              <option value="<?php echo $data->id_jurusan; ?>"><?php echo $data->nama_jurusan; ?></option>
+          <?php
+            endforeach;
+          }
+          ?>
         </select>
       </div>
       <br>

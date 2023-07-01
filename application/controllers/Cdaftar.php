@@ -7,12 +7,13 @@ class Cdaftar extends CI_Controller
         parent::__construct();
         $this->load->model('mdaftar');
         $this->load->model('memail');
-        
     }
 
     function formdaftar()
     {
-        $data['konten'] = $this->load->view('formdaftar', '', TRUE);
+        $this->load->model('Mdata_jurusan');
+        $datalist['hasil'] = $this->Mdata_jurusan->listjurusan();
+        $data['konten'] = $this->load->view('formdaftar', $datalist, TRUE);
         $this->load->view('header', $data);
     }
 
