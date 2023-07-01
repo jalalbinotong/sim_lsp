@@ -1,5 +1,5 @@
 <?php
-class StatusModel extends CI_Model
+class Statusmodel extends CI_Model
 {
     public function getStatus()
     {

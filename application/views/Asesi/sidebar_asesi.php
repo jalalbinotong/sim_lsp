@@ -80,7 +80,7 @@
         <li class="nav-item">
             <a class="nav-link collapsed" href="<?php echo base_url('Cdashboard_asesi/listjadwal'); ?>">
                 <i class="bi bi-calendar-event"></i>
-                <span>Pilih Jadwal</span>
+                <span>Pilih Jadwal </span>
             </a>
         </li><!-- End Dashboard Nav -->
 
@@ -94,11 +94,17 @@
                 <i class="bi bi-file-earmark-text"></i>
                 <span>Cetak Data FR.APL 01</span>
             </a>
-        <?php else : ?>
+        <?php elseif ($status === 'tolak'): ?>
             <a class="nav-link collapsed" href="#" id="cetak-link" onclick="return false;" data-status="tolak">
                 <i class="bi bi-file-earmark-text"></i>
                 <span>Cetak Data FR.APL 01</span>
             </a>
+            <?php elseif (empty($status)): ?>
+            <a class="nav-link collapsed" href="#" id="cetak-link" onclick="return false;" data-status="kosong">
+                <i class="bi bi-file-earmark-text"></i>
+                <span>Cetak Data FR.APL 01</span>
+            </a>
+            
         <?php endif; ?>
         </li><!-- End Dashboard Nav -->
         <script>
@@ -108,13 +114,14 @@
                     cetakLink.addEventListener('click', function(event) {
                         event.preventDefault();
                         var status = this.getAttribute('data-status');
-                        if (status === 'menunggu') {
-                            alert('Tombol tidak dapat diklik karena status menunggu.');
-                        } else if (status === 'tolak') {
-                            alert('Tombol tidak dapat diklik karena status ditolak.');
-                        } else {
-                            alert('Tombol tidak dapat diklik karena status tidak aktif.');
-                        }
+                    
+                    if (status == 'tolak') {
+                        alert('Tombol tidak dapat diklik karena berkas anda di tolak.');
+                    } else if (status == 'menunggu') {
+                        alert('Tombol tidak dapat diklik karena berkas anda belum di verifikasi.');
+                    } else if (status == 'kosong') {
+                        alert('Tombol tidak dapat diklik karena berkas anda kosong.');
+                    }
                     });
                 }
             });
