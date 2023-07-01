@@ -36,13 +36,19 @@
                 <span>Buat Akun Pegawai</span>
             </a>
         </li>
-
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="<?php echo base_url('Cdashboard/tabelakun_pegawai'); ?>">
+                <i class="bi bi-person-gear"></i>
+                <span>Kelola Akun Pegawai</span>
+            </a>
+        </li>
         <li class="nav-item">
             <a class="nav-link collapsed" href="<?php echo base_url('Cdashboard/list_data_pegawai'); ?>">
-                <i class="bi bi-person-gear"></i>
+                <i class="bi bi-person-vcard"></i>
                 <span>Data Pegawai</span>
             </a>
         </li>
+
 </aside><!-- End Sidebar-->
 <style>
     .profile-info {

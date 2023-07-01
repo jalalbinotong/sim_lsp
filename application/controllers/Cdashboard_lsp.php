@@ -60,7 +60,11 @@ class Cdashboard_lsp extends CI_Controller
         $datalist['hasil'] = $this->Mtampil_data_asesi->tampildata($id);
         $data['konten'] = $this->load->view('Pegawai/data_verifikasi_asesi', $datalist, TRUE);
         $data['sidebar'] = $this->load->view('Pegawai/sidebar_lsp', '', TRUE);
-        $this->load->view('header', $data);
+        if (@$this->session->userdata('tipe_user') == '') {
+            $this->load->view('header', $data);
+        } else {
+            $this->load->view('header_dashboard', $data);
+        }
     }
 
     function tolak_verifdataasesi($id)
@@ -70,7 +74,11 @@ class Cdashboard_lsp extends CI_Controller
         $datalist['hasil'] = $this->Mtampil_data_asesi->tampildata($id);
         $data['konten'] = $this->load->view('Pegawai/data_verifikasi_asesi', $datalist, TRUE);
         $data['sidebar'] = $this->load->view('Pegawai/sidebar_lsp', '', TRUE);
-        $this->load->view('header', $data);
+        if (@$this->session->userdata('tipe_user') == '') {
+            $this->load->view('header', $data);
+        } else {
+            $this->load->view('header_dashboard', $data);
+        }
     }
 
     // function verifdataasesi()
