@@ -125,7 +125,7 @@
                                                 } else {
                                                     foreach ($hasil as $data) :
                                                     ?>
-                                                        <option value="<?php echo $data->id_jurusan; ?>"><?php echo $data->nama_jurusan; ?></option>
+                                                        <option value="<?php echo $data->id_prodi; ?>"><?php echo $data->nama_prodi; ?></option>
                                                 <?php
                                                     endforeach;
                                                 }
