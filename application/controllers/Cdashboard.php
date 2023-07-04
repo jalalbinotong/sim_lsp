@@ -14,19 +14,17 @@ class Cdashboard extends CI_Controller
         $data['sidebar'] = $this->load->view('Admin/sidebar', '', TRUE);
         $data['konten'] = $this->load->view('Admin/dashboard', '', TRUE);
         $data['tipe_user'] = $this->session->userdata('tipe_user');
-        if (@$this->session->userdata('tipe_user')=='')
-			{
-				$this->load->view('header',$data);
-			} else {
-                $this->load->view('header_login',$data);
-            }
+        if (@$this->session->userdata('tipe_user') == '') {
+            $this->load->view('header', $data);
+        } else {
+            $this->load->view('header_login', $data);
+        }
     }
 
-    function data_pegawai()
+    function list_data_pegawai()
     {
         $datalist['hasil'] = $this->mdata_pegawai->tampil_data();
-        $data['konten'] = $this->load->view('Admin/formdata_pegawai', '', TRUE);
-        $data['tabel'] = $this->load->view('Admin/data_pegawai', $datalist, TRUE);
+        $data['konten'] = $this->load->view('Admin/data_pegawai', $datalist, TRUE);
         $data['sidebar'] = $this->load->view('Admin/sidebar', '', TRUE);
         if (@$this->session->userdata('tipe_user') == '') {
             $this->load->view('header', $data);
@@ -37,30 +35,41 @@ class Cdashboard extends CI_Controller
         } else {
             $this->load->view('header_dashboard', $data);
         }
-       
+    }
+
+    function pilih_data_pegawai($id)
+    {
+        $this->load->model('Mdata_pegawai');
+        $datalist['hasil'] = $this->Mdata_pegawai->pilih_data_pegawai($id);
+        $data['sidebar'] = $this->load->view('Admin/sidebar', '', TRUE);
+        $data['konten'] = $this->load->view('Admin/formdata_pegawai', $datalist, TRUE);
+        if (@$this->session->userdata('tipe_user') == '') {
+            $this->load->view('header', $data);
+        } else {
+            $this->load->view('header_dashboard', $data);
+        }
     }
 
     function hapusdata($NIP)
     {
         $this->mdata_pegawai->hapusdata($NIP); //panggil fungsi
-        redirect('cdashboard/data_pegawai');
+        redirect('cdashboard/list_data_pegawai');
     }
 
-    function editdata($NIP)
-    {
-        $this->mdata_pegawai->editdata($NIP);
-    }
+    // function editdata($id)
+    // {
+    //     $this->mdata_pegawai->editdata($id);
+    // }
 
     function tambah_akun_pegawai()
     {
         $data['konten'] = $this->load->view('Admin/tambah_akun_pegawai', '', TRUE);
         $data['sidebar'] = $this->load->view('Admin/sidebar', '', TRUE);
-        if (@$this->session->userdata('tipe_user')=='')
-			{
-				$this->load->view('header',$data);
-			} else {
-                $this->load->view('header_dashboard',$data);
-            }
+        if (@$this->session->userdata('tipe_user') == '') {
+            $this->load->view('header', $data);
+        } else {
+            $this->load->view('header_dashboard', $data);
+        }
     }
 
     function tabelakun_pegawai()
@@ -70,19 +79,27 @@ class Cdashboard extends CI_Controller
         $datalist['hasil'] = $this->Makun_pegawai->akun_pegawai();
         // $data['hasil'] = $this->load->view('data_verifikasi_asesi',$datalist,TRUE);
         $data['konten'] = $this->load->view('Admin/tabelakun_pegawai', $datalist, TRUE);
-        if (@$this->session->userdata('tipe_user')=='')
-			{
-				$this->load->view('header',$data);
-			} else {
-                $this->load->view('header_dashboard',$data);
-            }
+        if (@$this->session->userdata('tipe_user') == '') {
+            $this->load->view('header', $data);
+        } else {
+            $this->load->view('header_dashboard', $data);
+        }
     }
     function proseseditdata()
     {
-        $this->mdata_pegawai->proseseditdata(); //panggil fungsi
+        $id = $this->mdata_pegawai->proseseditdata(); //panggil fungsi
 
-        redirect('Cdashboard/data_pegawai');
+        $this->load->model('Mdata_pegawai');
+        $datalist['hasil'] = $this->Mdata_pegawai->pilih_data_pegawai($id);
+        $data['sidebar'] = $this->load->view('Admin/sidebar', '', TRUE);
+        $data['konten'] = $this->load->view('Admin/formdata_pegawai', $datalist, TRUE);
+        if (@$this->session->userdata('tipe_user') == '') {
+            $this->load->view('header', $data);
+        } else {
+            $this->load->view('header_dashboard', $data);
+        }
     }
+
 
     function hapusakun_pegawai($id_user)
     {
@@ -97,4 +114,4 @@ class Cdashboard extends CI_Controller
 <?php
     }
 }
-?> 
+?>

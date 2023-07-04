@@ -13,7 +13,8 @@ class Ccetakpdf extends CI_Controller
 
         if ($status === 'setuju') {
             // Proses pencetakan PDF
-            $this->load->view('Asesi/halaman_pdf'); // Misalnya, menggunakan library PDF di CodeIgniter
+            $data['NamaLengkap']="Made Pradnyana Ambara";
+            $this->load->view('Asesi/halaman_pdf',$data); // Misalnya, menggunakan library PDF di CodeIgniter
             // Kode untuk menghasilkan PDF
             // ...
 
@@ -37,4 +38,3 @@ class Ccetakpdf extends CI_Controller
         return $status;
     }
 }
-?>

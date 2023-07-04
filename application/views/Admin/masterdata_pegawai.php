@@ -55,7 +55,7 @@
             $('#alamat').focus();
             return false;
         }
-        
+
         var email = $('#email').val();
         if (email == "") {
 
@@ -116,7 +116,7 @@
                                             </div>
 
                                         <?php
-                                        } 
+                                        }
                                         ?>
                                         <form id="masterdata_pegawai" name="masterdata_pegawai" method="post" action="<?php echo base_url('cmasterdata_pegawai/prosesmasterdata_pegawai'); ?>">
 
@@ -144,7 +144,7 @@
                                             <div class="mb-3">
                                                 <label class="form-label">Tanggal Lahir</label>
                                                 <input type="date" class="form-control" id="tgl_lahir" placeholder="Masukkan Tanggal Lahir" name="tgl_lahir">
-                                            </div>                                          
+                                            </div>
                                             <div class="mb-3">
                                                 <label class="form-label">Alamat</label>
                                                 <input type="text" class="form-control" id="alamat" placeholder="Masukkan Alamat" name="alamat">
@@ -152,7 +152,7 @@
                                             <div class="mb-3">
                                                 <label class="form-label">Nomor HP</label>
                                                 <input type="number" class="form-control" id="nomor_hp" placeholder="Masukkan No telepon" name="nomor_hp">
-                                            </div>                                            
+                                            </div>
                                             <div class="mb-3">
                                                 <label class="form-label">Email</label>
                                                 <input type="email" class="form-control" id="email" placeholder="Masukkan email" name="email">
@@ -179,8 +179,3 @@
         </main>
     </main>
 </body>
-
-
-
-
-            

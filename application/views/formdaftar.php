@@ -117,8 +117,19 @@
                                             <label class="form-label">Prodi :</label>
                                             <select id="id_prodi" name="id_prodi" class="form-select" aria-label="Default select example">
                                                 <option value="none" selected>Pilih Prodi</option>
-                                                <option value="4004">Teknologi Rekayasa Perangkat Lunak</option>
-                                                <option value="4003">Managemen informatika</option>
+                                                <?php
+                                                if (empty($hasil)) {
+                                                ?>
+                                                    <option value="">Tidak ada data</option>
+                                                    <?php
+                                                } else {
+                                                    foreach ($hasil as $data) :
+                                                    ?>
+                                                        <option value="<?php echo $data->id_prodi; ?>"><?php echo $data->nama_prodi; ?></option>
+                                                <?php
+                                                    endforeach;
+                                                }
+                                                ?>
                                             </select>
                                         </div>
                                         <div class="mb-3">
