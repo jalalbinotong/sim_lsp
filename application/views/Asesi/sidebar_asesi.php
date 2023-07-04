@@ -90,21 +90,21 @@
                 <span>Cetak Data FR.APL 01</span>
             </a>
         <?php elseif ($status === 'menunggu') : ?>
-            <a class="nav-link collapsed" href="#" id="cetak-link" onclick="return false;" data-status="menunggu">
+            <a class="nav-link collapsed" href="#" id="cetak-link" onclick="return false;" data-status="menunggu" hidden>
                 <i class="bi bi-file-earmark-text"></i>
                 <span>Cetak Data FR.APL 01</span>
             </a>
-        <?php elseif ($status === 'tolak'): ?>
-            <a class="nav-link collapsed" href="#" id="cetak-link" onclick="return false;" data-status="tolak">
+        <?php elseif ($status === 'tolak') : ?>
+            <a class="nav-link collapsed" href="#" id="cetak-link" onclick="return false;" data-status="tolak" hidden>
                 <i class="bi bi-file-earmark-text"></i>
                 <span>Cetak Data FR.APL 01</span>
             </a>
-            <?php elseif (empty($status)): ?>
-            <a class="nav-link collapsed" href="#" id="cetak-link" onclick="return false;" data-status="kosong">
+        <?php elseif (empty($status)) : ?>
+            <a class="nav-link collapsed" href="#" id="cetak-link" onclick="return false;" data-status="kosong" hidden>
                 <i class="bi bi-file-earmark-text"></i>
                 <span>Cetak Data FR.APL 01</span>
             </a>
-            
+
         <?php endif; ?>
         </li><!-- End Dashboard Nav -->
         <script>
@@ -114,14 +114,14 @@
                     cetakLink.addEventListener('click', function(event) {
                         event.preventDefault();
                         var status = this.getAttribute('data-status');
-                    
-                    if (status == 'tolak') {
-                        alert('Tombol tidak dapat diklik karena berkas anda di tolak.');
-                    } else if (status == 'menunggu') {
-                        alert('Tombol tidak dapat diklik karena berkas anda belum di verifikasi.');
-                    } else if (status == 'kosong') {
-                        alert('Tombol tidak dapat diklik karena berkas anda kosong.');
-                    }
+
+                        if (status == 'tolak') {
+                            alert('Tombol tidak dapat diklik karena berkas anda di tolak.');
+                        } else if (status == 'menunggu') {
+                            alert('Tombol tidak dapat diklik karena berkas anda belum di verifikasi.');
+                        } else if (status == 'kosong') {
+                            alert('Tombol tidak dapat diklik karena berkas anda kosong.');
+                        }
                     });
                 }
             });
