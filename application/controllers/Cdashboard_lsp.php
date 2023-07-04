@@ -7,6 +7,7 @@ class Cdashboard_lsp extends CI_Controller
         $this->load->model('mvalidasi');
         $this->load->model('mdata_skema');
         $this->load->model('mdata_kegiatan');
+        $this->load->model('mkompetensi');
         $this->mvalidasi->validasi_lsp();
     }
     function dashboard()
@@ -172,6 +173,44 @@ class Cdashboard_lsp extends CI_Controller
         $this->mdata_kegiatan->simpandata_kegiatan(); //panggil fungsi
 
         redirect('Cdashboard_lsp/data_kegiatan');
+    }
+
+    // function kompetensi
+    function data_kompetensi()
+    {
+        $listskema['hasil'] = $this->mdata_skema->tampildata_skema();
+        $datalist['hasil'] = $this->mkompetensi->tampildata_kompetensi();
+
+        $data['konten'] = $this->load->view('Pegawai/kompetensi', $listskema, TRUE);
+        $data['tabel'] = $this->load->view('Pegawai/tabel_kompetensi', $datalist, TRUE);
+        $data['sidebar'] = $this->load->view('Pegawai/sidebar_lsp', '', TRUE);
+        if (@$this->session->userdata('tipe_user') == '') {
+            $this->load->view('header', $data);
+        }
+        if (@$this->session->userdata('tipe_user') == 'admin') {
+            $data['sidebar'] = $this->load->view('Admin/sidebar', '', TRUE);
+            $this->load->view('header_dashboard', $data);
+        } else {
+            $this->load->view('header_dashboard', $data);
+        }
+    }
+
+    function hapusdata_kompetensi($id_kompetensi)
+    {
+        $this->mkompetensi->hapusdata_kompetensi($id_kompetensi); //panggil fungsi
+        redirect('cdashboard_lsp/data_kompetensi');
+    }
+
+    function editdata_kompetensi($id_kompetensi)
+    {
+        $this->mkompetensi->editdata_kompetensi($id_kompetensi);
+    }
+
+    function simpandata_kompetensi()
+    {
+        $this->mkompetensi->simpandata_kompetensi(); //panggil fungsi
+
+        redirect('Cdashboard_lsp/data_kompetensi');
     }
 }
 ?>
