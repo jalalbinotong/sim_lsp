@@ -11,7 +11,9 @@ class Cdaftar extends CI_Controller
 
     function formdaftar()
     {
-        $data['konten'] = $this->load->view('formdaftar', '', TRUE);
+        $this->load->model('Mdata_prodi');
+        $datalist['hasil'] = $this->Mdata_prodi->listprodi();
+        $data['konten'] = $this->load->view('formdaftar', $datalist, TRUE);
         $this->load->view('header', $data);
     }
 

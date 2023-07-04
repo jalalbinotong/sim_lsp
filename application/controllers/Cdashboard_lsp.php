@@ -60,7 +60,11 @@ class Cdashboard_lsp extends CI_Controller
         $datalist['hasil'] = $this->Mtampil_data_asesi->tampildata($id);
         $data['konten'] = $this->load->view('Pegawai/data_verifikasi_asesi', $datalist, TRUE);
         $data['sidebar'] = $this->load->view('Pegawai/sidebar_lsp', '', TRUE);
-        $this->load->view('header', $data);
+        if (@$this->session->userdata('tipe_user') == '') {
+            $this->load->view('header', $data);
+        } else {
+            $this->load->view('header_dashboard', $data);
+        }
     }
 
     function tolak_verifdataasesi($id)
@@ -70,7 +74,11 @@ class Cdashboard_lsp extends CI_Controller
         $datalist['hasil'] = $this->Mtampil_data_asesi->tampildata($id);
         $data['konten'] = $this->load->view('Pegawai/data_verifikasi_asesi', $datalist, TRUE);
         $data['sidebar'] = $this->load->view('Pegawai/sidebar_lsp', '', TRUE);
-        $this->load->view('header', $data);
+        if (@$this->session->userdata('tipe_user') == '') {
+            $this->load->view('header', $data);
+        } else {
+            $this->load->view('header_dashboard', $data);
+        }
     }
 
     // function verifdataasesi()
@@ -92,9 +100,11 @@ class Cdashboard_lsp extends CI_Controller
     //Kode Untuk data skema
     function data_skema()
     {
+        $this->load->model('Mdata_jurusan');
+        $listjurusan['hasil'] = $this->Mdata_jurusan->listjurusan();
 
         $datalist['hasil'] = $this->mdata_skema->tampildata_skema();
-        $data['konten'] = $this->load->view('Pegawai/data_skema', '', TRUE);
+        $data['konten'] = $this->load->view('Pegawai/data_skema', $listjurusan, TRUE);
         $data['tabel'] = $this->load->view('Pegawai/tabeldata_skema', $datalist, TRUE);
         $data['sidebar'] = $this->load->view('Pegawai/sidebar_lsp', '', TRUE);
         if (@$this->session->userdata('tipe_user') == '') {
@@ -129,10 +139,10 @@ class Cdashboard_lsp extends CI_Controller
     //Kode Untuk data kegiatan
     function data_kegiatan()
     {
-
+        $listskema['hasil'] = $this->mdata_skema->tampildata_skema();
         $datalist['hasil'] = $this->mdata_kegiatan->tampildata_kegiatan();
 
-        $data['konten'] = $this->load->view('Pegawai/data_kegiatan', '', TRUE);
+        $data['konten'] = $this->load->view('Pegawai/data_kegiatan', $listskema, TRUE);
         $data['tabel'] = $this->load->view('Pegawai/tabeldata_kegiatan', $datalist, TRUE);
         $data['sidebar'] = $this->load->view('Pegawai/sidebar_lsp', '', TRUE);
         if (@$this->session->userdata('tipe_user') == '') {

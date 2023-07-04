@@ -8,18 +8,6 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="card mb-4">
-                    <div class="card text-bg-warning">
-                        <img src="https://cdn-icons-png.flaticon.com/512/4168/4168988.png" class="card-img-top" alt="...">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Data Pegawai</h5>
-                        <p class="card-text">Mengatur Akun-Akun Pegawai LSP</p>
-                        <a href="<?php echo base_url("Cdashboard/tabelakun_pegawai") ?>" class="btn btn-primary">Kelola</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card mb-4">
                     <div class="card text-bg-success">
                         <img src="https://cdn-icons-png.flaticon.com/512/1415/1415345.png" class="card-img-top" alt="...">
                     </div>
@@ -51,6 +39,30 @@
                         <h5 class="card-title">Buat Akun Pegawai</h5>
                         <p class="card-text">Menambahkan akun pegawai</p>
                         <a href="<?php echo base_url("Cdashboard/tambah_akun_pegawai") ?>" class="btn btn-primary">Kelola</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card text-bg-warning">
+                        <img src="https://cdn-icons-png.flaticon.com/512/4168/4168988.png" class="card-img-top" alt="...">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Kelola Akun Pegawai</h5>
+                        <p class="card-text">Mengatur Akun-Akun Pegawai LSP</p>
+                        <a href="<?php echo base_url("Cdashboard/tabelakun_pegawai") ?>" class="btn btn-primary">Kelola</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card text-bg-info">
+                        <img src="https://cdn-icons-png.flaticon.com/512/10306/10306783.png " class="card-img-top" alt="...">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Kelola Data Pegawai</h5>
+                        <p class="card-text">Mengatur Data Pegawai LSP</p>
+                        <a href="<?php echo base_url("Cdashboard/list_data_pegawai") ?>" class="btn btn-primary">Kelola</a>
                     </div>
                 </div>
             </div>

@@ -16,6 +16,7 @@
           <th>Nama Lengkap</th>
           <th>Prodi</th>
           <th>Skema</th>
+          <th>Status</th>
           <th>Aksi</th>
 
         </tr>
@@ -41,6 +42,9 @@
               </td>
               <td>
                 <?php echo $data->nama_skema; ?>
+              </td>
+              <td>
+                <?php echo $data->status; ?>
               </td>
               <td>
                 <button type="button" class="btn btn-primary btn-sm" onclick="pilihdata('<?php echo $data->id; ?>')">Lihat Berkas</button>

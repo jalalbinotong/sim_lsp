@@ -63,7 +63,7 @@
             <div class="row mb-3 offset-sm-1">
               <label class="col-sm-4 col-form-label">Tanggal Lahir</label>
               <div class="col-sm-6">
-                <input type="text" class="form-control" value=" <?php echo $hasil->tgl_lahir; ?>" disabled>
+                <input type="date" class="form-control" id="tgl_lahir" name="tgl_lahir" value="<?php echo date('Y-m-d', strtotime($hasil->tgl_lahir)); ?>" disabled>
               </div>
             </div>
 

@@ -57,6 +57,7 @@
             //simpan
             $this->db->insert('tb_user', $data);
             $this->session->set_flashdata('pesan', 'Data sudah disimpan');
+            
         } else {
             //edit	
             // $update = array(
@@ -67,4 +68,5 @@
             // $this->session->set_flashdata('pesan', 'Data sudah diedit');
         }
     }
+
 }
