@@ -8,13 +8,15 @@ class Ccetakpdf extends CI_Controller
     }
 
     public function pdf()
-	{
-    $status = $this->cekStatusFromDatabase();
+    {
+        $status = $this->cekStatusFromDatabase();
 
         if ($status === 'setuju') {
             // Proses pencetakan PDF
-            $data['NamaLengkap']="Made Pradnyana Ambara";
-            $this->load->view('Asesi/halaman_pdf',$data); // Misalnya, menggunakan library PDF di CodeIgniter
+
+            $this->load->model('Mdata_pdf_asesi');
+            $datalist['hasil'] = $this->Mdata_pdf_asesi->tampildata();
+            $this->load->view('Asesi/halaman_pdf', $datalist); // Misalnya, menggunakan library PDF di CodeIgniter
             // Kode untuk menghasilkan PDF
             // ...
 
