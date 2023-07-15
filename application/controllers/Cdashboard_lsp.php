@@ -29,10 +29,36 @@ class Cdashboard_lsp extends CI_Controller
 <?php
     }
 
-    function listdataasesi()
+    function listdataasesi_disetujui()
     {
         $this->load->model('Mtampil_data_asesi');
-        $datalist['hasil'] = $this->Mtampil_data_asesi->tampildata_user();
+        $datalist['hasil'] = $this->Mtampil_data_asesi->tampildata_user_disetujui();
+        $data['konten'] = $this->load->view('Pegawai/list_asesi', $datalist, TRUE);
+        $data['sidebar'] = $this->load->view('Pegawai/sidebar_lsp', '', TRUE);
+        if (@$this->session->userdata('tipe_user') == '') {
+            $this->load->view('header', $data);
+        } else {
+            $this->load->view('header_dashboard', $data);
+        }
+    }
+
+    function listdataasesi_ditolak()
+    {
+        $this->load->model('Mtampil_data_asesi');
+        $datalist['hasil'] = $this->Mtampil_data_asesi->tampildata_user_ditolak();
+        $data['konten'] = $this->load->view('Pegawai/list_asesi', $datalist, TRUE);
+        $data['sidebar'] = $this->load->view('Pegawai/sidebar_lsp', '', TRUE);
+        if (@$this->session->userdata('tipe_user') == '') {
+            $this->load->view('header', $data);
+        } else {
+            $this->load->view('header_dashboard', $data);
+        }
+    }
+
+    function listdataasesi_menunggu()
+    {
+        $this->load->model('Mtampil_data_asesi');
+        $datalist['hasil'] = $this->Mtampil_data_asesi->tampildata_user_menunggu();
         $data['konten'] = $this->load->view('Pegawai/list_asesi', $datalist, TRUE);
         $data['sidebar'] = $this->load->view('Pegawai/sidebar_lsp', '', TRUE);
         if (@$this->session->userdata('tipe_user') == '') {

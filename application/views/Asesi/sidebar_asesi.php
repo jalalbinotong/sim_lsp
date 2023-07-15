@@ -70,12 +70,13 @@
         </li><!-- End Dashboard Nav -->
 
 
-        <li class="nav-item">
+        <!-- <li class="nav-item">
             <a class="nav-link collapsed" href="<?php echo base_url('Cdashboard_asesi/listskema'); ?>">
                 <i class="bi bi-journal-text"></i>
                 <span>Pilih Skema</span>
             </a>
-        </li><!-- End Dashboard Nav -->
+        </li> -->
+        <!-- End Dashboard Nav -->
 
         <li class="nav-item">
             <a class="nav-link collapsed" href="<?php echo base_url('Cdashboard_asesi/listjadwal'); ?>">

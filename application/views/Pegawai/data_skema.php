@@ -106,6 +106,11 @@
           ?>
         </select>
       </div>
+      <div class="mb-3 mt-3">
+        <label class="form-label">Biaya :</label>
+        <input type="text" class="form-control" id="biaya" name="biaya">
+      </div>
+
       <br>
 
       <button type="button" class="btn btn-primary" onClick="simpandata()">Simpan</button>

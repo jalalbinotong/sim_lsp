@@ -63,7 +63,7 @@ class Cdashboard_asesi extends CI_Controller
         $this->load->model('Mdata_skema_asesi');
         $datalist['hasil'] = $this->Mdata_skema_asesi->pilihskema($id);
         $this->Mstatus_frapl->tampildata();
-        redirect('Cdashboard_asesi/listskema');
+        redirect('Cdashboard_asesi/FRAPL');
     }
 
     function listjadwal()

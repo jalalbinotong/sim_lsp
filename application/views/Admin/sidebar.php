@@ -25,6 +25,12 @@
             </a>
         </li><!-- End Dashboard Nav -->
         <li class="nav-item">
+            <a class="nav-link collapsed" href="<?php echo base_url('Cdashboard_lsp/data_kompetensi'); ?>">
+                <i class="bi bi-journal-medical"></i>
+                <span>Data Kompetensi</span>
+            </a>
+        </li><!-- End Dashboard Nav -->
+        <li class="nav-item">
             <a class="nav-link collapsed" href="<?php echo base_url('Cdashboard_lsp/data_kegiatan'); ?>">
                 <i class="bi bi-calendar-event"></i>
                 <span>Data Kegiatan</span>

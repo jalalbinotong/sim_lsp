@@ -24,7 +24,8 @@
       <tbody>
         <?php
         if (empty($hasil)) {
-          echo "List Asesi Akan Muncul Disini Ketika Asesi Sudah Mengirim Berkas FR APL.01 <hr>";
+          // echo "List Asesi Akan Muncul Disini Ketika Asesi Sudah Mengirim Berkas FR APL.01 <hr>";
+          echo "Data Kosong <hr>";
         } else {
           $no = 1;
           foreach ($hasil as $data) :
