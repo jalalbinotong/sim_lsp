@@ -63,9 +63,9 @@
         </li><!-- End Dashboard Nav -->
 
         <li class="nav-item">
-            <a class="nav-link collapsed" href="<?php echo base_url('Cdashboard_asesi/FRAPL'); ?>">
+            <a class="nav-link collapsed" href="<?php echo base_url('Cdashboard_asesi/listskema'); ?>">
                 <i class="bi bi-file-earmark-text"></i>
-                <span>Lengkapi Data Pendaftaran</span>
+                <span>Pilih Skema & Upload Berkas</span>
             </a>
         </li><!-- End Dashboard Nav -->
 
