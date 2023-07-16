@@ -142,9 +142,37 @@
             </div>
 
             <div class="row mb-3 offset-sm-1">
+              <label class="col-sm-4 col-form-label">Tujuan</label>
+              <div class="col-sm-6">
+                <input type="text" class="form-control" value=" <?php echo $hasil->tujuan; ?>" disabled>
+              </div>
+            </div>
+
+            <div class="row mb-3 offset-sm-1">
               <label class="col-sm-4 col-form-label">Status</label>
               <div class="col-sm-6">
                 <input type="text" class="form-control" value="<?php echo $hasil->status; ?>" disabled>
+              </div>
+            </div>
+
+            <div class="row mb-3 offset-sm-1">
+              <label class="col-sm-4 col-form-label">KTM</label>
+              <div class="col-sm-6">
+                <img src="<?php echo base_url(); ?>assets/gambar/<?php echo $hasil->ktm; ?>" width="200" height="110" disabled>
+              </div>
+            </div>
+
+            <div class="row mb-3 offset-sm-1">
+              <label class="col-sm-4 col-form-label">Transkrip Nilai</label>
+              <div class="col-sm-6">
+                <img src="<?php echo base_url(); ?>assets/gambar/<?php echo $hasil->transkrip_nilai; ?>" width="200" height="110" disabled>
+              </div>
+            </div>
+
+            <div class="row mb-3 offset-sm-1">
+              <label class="col-sm-4 col-form-label">Sertifikat</label>
+              <div class="col-sm-6">
+                <img src="<?php echo base_url(); ?>assets/gambar/<?php echo $hasil->sertifikat; ?>" width="200" height="110" disabled>
               </div>
             </div>
 

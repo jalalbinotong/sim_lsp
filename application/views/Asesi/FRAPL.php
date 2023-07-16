@@ -219,6 +219,22 @@
                                                 <label class="form-label">Alamat Kantor</label>
                                                 <input type="teks" class="form-control" id="alamat_kantor" placeholder="Masukkan Alamat Kantor Anda" name="alamat_kantor">
                                             </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Tujuan</label>
+                                                <input type="text" class="form-control" id="tujuan" placeholder="Masukkan Tujuan Anda" name="tujuan">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">KTM</label>
+                                                <input type="file" class="form-control" id="ktm" placeholder="Upload KTM" name="ktm">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Transkrip Nilai</label>
+                                                <input type="file" class="form-control" id="transkrip_nilai" placeholder="Upload Transkrip Nilai" name="transkrip_nilai">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Sertifikat</label>
+                                                <input type="file" class="form-control" id="sertifikat" placeholder="Upload Sertifikat" name="sertifikat">
+                                            </div>
                                             <div class="text-center mt-3">
                                                 <button type="button" class="btn btn-lg btn-primary" onclick="prosesdaftarasesi();">Upload Berkas</button>
                                             </div>

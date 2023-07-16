@@ -87,7 +87,7 @@
       <div class="mb-3 mt-3">
         <label class="form-label">Jadwal :</label>
         <!-- <time datetime="YYYY-MM-DDThh:mm:ssTZD" id="jadwal" name="jadwal"></time> -->
-        <input type="datetime-local" id="jadwal" name="jadwal">
+        <input type="datetime-local" class="form-control" id="jadwal" name="jadwal">
       </div>
 
       <div class="mb-3 mt-3">
