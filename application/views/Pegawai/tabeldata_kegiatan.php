@@ -19,6 +19,7 @@
         <th>Nama Skema</th>
         <th>Jadwal</th>
         <th>Lokasi</th>
+        <th>Kuota</th>
         <th>Aksi</th>
       </tr>
     </thead>
@@ -36,6 +37,7 @@
             <td><?php echo $data->nama_skema; ?></td>
             <td><?php echo $data->jadwal; ?></td>
             <td><?php echo $data->lokasi; ?></td>
+            <td><?php echo $data->kuota; ?></td>
             <td>
               <button type="button" class="btn btn-primary btn-sm" onclick="editdata_kegiatan('<?php echo $data->id_jadwal; ?>');">Edit</button>
 

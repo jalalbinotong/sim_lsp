@@ -92,6 +92,7 @@ class Mdata_kegiatan extends CI_Model
             echo "<script>$('#id_skema').val('" . $data->id_skema . "');</script>";
             echo "<script>$('#jadwal').val('" . $data->jadwal . "');</script>";
             echo "<script>$('#lokasi').val('" . $data->lokasi . "');</script>";
+            echo "<script>$('#kuota').val('" . $data->kuota . "');</script>";
         }
     }
 }

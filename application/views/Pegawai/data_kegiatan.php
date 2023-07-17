@@ -19,6 +19,12 @@
       $('#lokasi').focus();
       return false;
     }
+    var kuota = $('#kuota').val();
+    if (kuota == "") {
+      alert("kuota masih kosong");
+      $('#kuota').focus();
+      return false;
+    }
 
 
     $('#data_kegiatan').submit();
@@ -94,6 +100,11 @@
         <label class="form-label">Lokasi :</label>
         <input type="text" class="form-control" id="lokasi" name="lokasi">
       </div>
+      <div class="mb-3 mt-3">
+        <label class="form-label">Kuota :</label>
+        <input type="text" class="form-control" id="kuota" name="kuota">
+      </div>
+      
       <br>
 
       <button type="button" class="btn btn-primary" onClick="simpandata_kegiatan()">Simpan</button>

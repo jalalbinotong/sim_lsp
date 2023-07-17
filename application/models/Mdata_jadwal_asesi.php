@@ -40,7 +40,9 @@ class Mdata_jadwal_asesi extends CI_Model
                 $sql = "UPDATE tb_asesi 
                 SET id_jadwal = '$id'
                 WHERE id_asesi = '$id_asesi'";
-                $this->session->set_flashdata('pesan', 'Anda telah memilih jadwal');
+                $this->db->query($sql);
+
+                $sql = "UPDATE tb_jadwal_skema SET kuota = kuota - 1 WHERE id_jadwal = $id";
                 $this->db->query($sql);
             }
         }

@@ -69,6 +69,7 @@ class Cdashboard_asesi extends CI_Controller
     function listjadwal()
     {
         $this->Mstatus_frapl->tampildata();
+
         $status = $this->Statusmodel->getStatus();
         $data['status'] = $status;
         $this->load->model('Mdata_jadwal_asesi');
