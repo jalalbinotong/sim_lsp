@@ -29,12 +29,21 @@ class Cdaftar extends CI_Controller
         $this->load->model('Memail');
     }
 
+    // function input_FRAPL()
+    // {
+    //     $this->load->model('mfrapl');
+    //     $this->mfrapl->input_FRAPL();
+    //     redirect('Cdashboard_asesi/FRAPL');
+    // }
+
     function input_FRAPL()
     {
         $this->load->model('mfrapl');
         $this->mfrapl->input_FRAPL();
         redirect('Cdashboard_asesi/FRAPL');
     }
+
+
 
     function verifikasi()
     {

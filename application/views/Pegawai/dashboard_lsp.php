@@ -20,6 +20,18 @@
                 </div>
                 <div class="col-md-4">
                     <div class="card">
+                        <div class="card text-bg-danger">
+                            <img src="   https://cdn-icons-png.flaticon.com/512/10782/10782060.png " class="card-img-top" alt="...">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Kompetensi</h5>
+                            <p class="card-text">Mengatur Kompetensi Dalam Skema</p>
+                            <a href="<?php echo base_url("cdashboard_lsp/data_kompetensi") ?>" class="btn btn-primary">Kelola</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
                         <div class="card text-bg-warning">
                             <img src="https://cdn-icons-png.flaticon.com/512/3652/3652267.png" class="card-img-top" alt="...">
                         </div>
@@ -37,8 +49,8 @@
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">Data Pendaftaran Asesi</h5>
-                            <p class="card-text">Mengatur Data Asesi</p>
-                            <a href="<?php echo base_url("cdashboard_lsp/listdataasesi") ?>" class="btn btn-primary">Kelola</a>
+                            <p class="card-text">Verifikasi Data Pendaftaran Asesi</p>
+                            <a href="<?php echo base_url("cdashboard_lsp/listdataasesi_menunggu") ?>" class="btn btn-primary">Kelola</a>
                         </div>
                     </div>
                 </div>

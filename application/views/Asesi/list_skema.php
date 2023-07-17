@@ -8,15 +8,15 @@
 
 <main id="main" class="main">
   <?php
-    $pesan = $this->session->flashdata('pesan');
-    if ($pesan == "") {
-        echo "";
-    } else {
-    ?>
-        <div class="alert alert-success alert-dismissible">
-            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-            <strong><?php echo $pesan; ?></strong>
-        </div>
+  $pesan = $this->session->flashdata('pesan');
+  if ($pesan == "") {
+    echo "";
+  } else {
+  ?>
+    <div class="alert alert-success alert-dismissible">
+      <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+      <strong><?php echo $pesan; ?></strong>
+    </div>
 
   <?php
   }
@@ -30,6 +30,7 @@
           <th>Nama Skema</th>
           <th>Informasi Skema</th>
           <th>Prodi</th>
+          <th style="width: 15%;">Biaya</th>
           <th>Aksi</th>
 
         </tr>
@@ -52,6 +53,14 @@
               </td>
               <td>
                 <?php echo $data->nama_jurusan; ?>
+              </td>
+
+              <?php
+              $biaya_formatted = "Rp. " . number_format($data->biaya, 0, ',', '.');
+              ?>
+
+              <td>
+                <?php echo $biaya_formatted; ?>
               </td>
               <td>
                 <button type="button" class="btn btn-primary btn-sm" onclick="pilihdata('<?php echo $data->id_skema; ?>')">Pilih Skema</button>

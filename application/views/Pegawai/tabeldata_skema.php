@@ -1,17 +1,14 @@
 <script language="javascript">
-  function hapusdata(id_skema)
-  {
-    if (confirm("Apakah anda yakin menghapus data ini"))
-    {
-      window.open("<?php echo base_url()?>cdashboard_lsp/hapusdata/"+id_skema,"_self");
-    } 
+  function hapusdata(id_skema) {
+    if (confirm("Apakah anda yakin menghapus data ini")) {
+      window.open("<?php echo base_url() ?>cdashboard_lsp/hapusdata/" + id_skema, "_self");
+    }
   }
 
-  function editdata(id_skema)
-  {
-    load("cdashboard_lsp/editdata/"+id_skema,"#script");  
+  function editdata(id_skema) {
+    load("cdashboard_lsp/editdata/" + id_skema, "#script");
   }
-  </script> 
+</script>
 
 <div class="container mt-3">
   <h4>Data Skema</h4>
@@ -23,7 +20,8 @@
         <th>Nama Skema</th>
         <th>Deskripsi</th>
         <th>Id Jurusan</th>
-        <th>Aksi</th>
+        <th style="width: 15%;">Biaya</th>
+        <th style="width: 15%;">Aksi</th>
       </tr>
     </thead>
     <tbody>
@@ -41,6 +39,11 @@
             <td><?php echo $data->nama_skema; ?></td>
             <td><?php echo $data->deskripsi; ?></td>
             <td><?php echo $data->id_jurusan; ?></td>
+            <?php
+            $biaya_formatted = "Rp. " . number_format($data->biaya, 0, ',', '.');
+            ?>
+
+            <td><?php echo $biaya_formatted; ?></td>
             <td>
               <button type="button" class="btn btn-primary btn-sm" onclick="editdata('<?php echo $data->id_skema; ?>')">Edit</button>
 

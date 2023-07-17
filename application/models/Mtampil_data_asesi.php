@@ -2,7 +2,7 @@
 class Mtampil_data_asesi extends CI_MODEL
 {
 
-    function tampildata_user()
+    function tampildata_user_disetujui()
     {
         $sql = "SELECT *
         FROM tb_user INNER JOIN tb_asesi 
@@ -13,7 +13,57 @@ class Mtampil_data_asesi extends CI_MODEL
         ON tb_asesi.id_asesi = tb_data_asesi.id_asesi
         RIGHT JOIN tb_skema
         ON tb_skema.id_skema = tb_asesi.id_skema
-        WHERE tipe_user = 'asesi'
+        WHERE tipe_user = 'asesi' AND tb_data_asesi.status = 'setuju'
+        ORDER BY tb_data_asesi.id DESC";
+
+        $query = $this->db->query($sql);
+        if ($query->num_rows() > 0) {
+            foreach ($query->result() as $data) {
+                $hasil[] = $data;
+            }
+        } else {
+            $hasil = "";
+        }
+        return $hasil;
+    }
+
+    function tampildata_user_ditolak()
+    {
+        $sql = "SELECT *
+        FROM tb_user INNER JOIN tb_asesi 
+        ON tb_user.id_user = tb_asesi.id_user
+        INNER JOIN tb_prodi
+        ON tb_asesi.id_prodi = tb_prodi.id_prodi
+        INNER JOIN tb_data_asesi
+        ON tb_asesi.id_asesi = tb_data_asesi.id_asesi
+        RIGHT JOIN tb_skema
+        ON tb_skema.id_skema = tb_asesi.id_skema
+        WHERE tipe_user = 'asesi' AND tb_data_asesi.status = 'tolak'
+        ORDER BY tb_data_asesi.id DESC";
+
+        $query = $this->db->query($sql);
+        if ($query->num_rows() > 0) {
+            foreach ($query->result() as $data) {
+                $hasil[] = $data;
+            }
+        } else {
+            $hasil = "";
+        }
+        return $hasil;
+    }
+
+    function tampildata_user_menunggu()
+    {
+        $sql = "SELECT *
+        FROM tb_user INNER JOIN tb_asesi 
+        ON tb_user.id_user = tb_asesi.id_user
+        INNER JOIN tb_prodi
+        ON tb_asesi.id_prodi = tb_prodi.id_prodi
+        INNER JOIN tb_data_asesi
+        ON tb_asesi.id_asesi = tb_data_asesi.id_asesi
+        RIGHT JOIN tb_skema
+        ON tb_skema.id_skema = tb_asesi.id_skema
+        WHERE tipe_user = 'asesi' AND tb_data_asesi.status = 'menunggu'
         ORDER BY tb_data_asesi.id DESC";
 
         $query = $this->db->query($sql);

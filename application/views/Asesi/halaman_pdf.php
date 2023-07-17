@@ -75,7 +75,7 @@ saat ini.<br>
 <br>
 <b> A. Data Pribadi </b><br>
 <br>
-Nama Lengkap : $NamaLengkap<br>
+Nama Lengkap : $hasil->nama_lengkap <br>
 <br>
 No.KTP/NIK/Paspor : <br>
 <br>
