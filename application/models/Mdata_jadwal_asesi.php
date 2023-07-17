@@ -47,4 +47,30 @@ class Mdata_jadwal_asesi extends CI_Model
             }
         }
     }
+    function gantijadwal($id)
+    {
+        $id_user = $this->session->userdata('id_user');
+        $id_asesi_arr = $this->db->get_where('tb_asesi', array('id_user' => $id_user));
+
+        if ($id_asesi_arr->num_rows() > 0) {
+            foreach ($id_asesi_arr->result_array() as $data) {
+                $id_asesi = $data['id_asesi'];
+
+                // Simpan nilai id_jadwal sebelum perubahan
+                $old_jadwal = $data['id_jadwal'];
+
+                // Update id_jadwal pada tb_asesi menjadi NULL
+                $sql = "UPDATE tb_asesi 
+                    SET id_jadwal = NULL
+                    WHERE id_asesi = '$id_asesi'";
+                $this->db->query($sql);
+
+                // Tambahkan kuota pada tb_jadwal_skema
+                $sql = "UPDATE tb_jadwal_skema 
+                    SET kuota = kuota + 1
+                    WHERE id_jadwal = $old_jadwal";
+                $this->db->query($sql);
+            }
+        }
+    }
 }

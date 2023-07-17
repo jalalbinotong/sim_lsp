@@ -7,6 +7,7 @@ class Cdashboard_asesi extends CI_Controller
         $this->load->model('mvalidasi');
         $this->load->model('Mstatus_frapl');
         $this->load->model('Statusmodel');
+        $this->load->model('idjadwalmodel');
         $this->mvalidasi->validasi_asesi();
     }
     function dashboard()
@@ -71,10 +72,12 @@ class Cdashboard_asesi extends CI_Controller
         $this->Mstatus_frapl->tampildata();
 
         $status = $this->Statusmodel->getStatus();
+        $id_jadwal = $this->idjadwalmodel->getidjadwal();
+        $data['id_jadwal'] = $id_jadwal;
         $data['status'] = $status;
         $this->load->model('Mdata_jadwal_asesi');
         $datalist['hasil'] = $this->Mdata_jadwal_asesi->tampildata_jadwal();
-        $data['konten'] = $this->load->view('Asesi/list_jadwal', $datalist, TRUE);
+        $data['konten'] = $this->load->view('Asesi/list_jadwal', array_merge($datalist, $data), TRUE);
         $data['sidebar'] = $this->load->view('Asesi/sidebar_asesi', $data, TRUE);
         $this->Mstatus_frapl->tampildata();
         $this->load->view('header_dashboard', $data);
@@ -84,6 +87,13 @@ class Cdashboard_asesi extends CI_Controller
     {
         $this->load->model('Mdata_jadwal_asesi');
         $datalist['hasil'] = $this->Mdata_jadwal_asesi->pilihjadwal($id);
+        $this->Mstatus_frapl->tampildata();
+        redirect('Cdashboard_asesi/listjadwal');
+    }
+    function gantijadwal($id)
+    {
+        $this->load->model('Mdata_jadwal_asesi');
+        $datalist['hasil'] = $this->Mdata_jadwal_asesi->gantijadwal($id);
         $this->Mstatus_frapl->tampildata();
         redirect('Cdashboard_asesi/listjadwal');
     }
