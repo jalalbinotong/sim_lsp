@@ -1,38 +1,8 @@
 <script language="javascript">
   function pilihdata(id_jadwal, tombol) {
-    // Mengubah teks tombol yang dipilih menjadi "Anda Memilih Jadwal"
-    tombol.textContent = "Pilih Jadwal";
-
-    // Mengubah status tombol yang dipilih menjadi disabled
     tombol.disabled = true;
-
-    // Melakukan tindakan lainnya (misalnya, membuka URL atau mengirim permintaan AJAX)
     window.open("<?php echo base_url() ?>cdashboard_asesi/pilihjadwal/" + id_jadwal, "_self");
-
-    // Menyimpan status tombol yang dipilih ke dalam localStorage
-    localStorage.setItem('tombolDisabled', 'true');
   }
-
-  window.onload = function() {
-    var tombolDisabled = localStorage.getItem('tombolDisabled');
-    var tombol = document.getElementById('btnPilih');
-
-    if (tombolDisabled && tombolDisabled === 'true') {
-      // Mengubah teks tombol yang dipilih menjadi "Anda Memilih Jadwal"
-      tombol.textContent = "Pilih Jadwal";
-
-      // Mengubah status tombol yang dipilih menjadi disabled
-      tombol.disabled = true;
-    } else {
-      // Mengubah teks tombol yang tidak dipilih menjadi "Pilih Jadwal"
-      tombol.textContent = "Pilih Jadwal";
-
-      // Mengubah status tombol yang tidak dipilih menjadi enabled
-      tombol.disabled = false;
-    }
-  }
-
-
 
   function gantiJadwal(id_jadwal) {
     window.open("<?php echo base_url() ?>cdashboard_asesi/gantijadwal/" + id_jadwal, "_self");
