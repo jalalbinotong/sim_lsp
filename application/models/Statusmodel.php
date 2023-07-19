@@ -20,5 +20,3 @@ class Statusmodel extends CI_Model
         }
     }
 }
-    
-?>

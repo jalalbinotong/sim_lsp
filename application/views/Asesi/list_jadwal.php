@@ -1,20 +1,38 @@
 <script language="javascript">
   function pilihdata(id_jadwal, tombol) {
+    // Mengubah teks tombol yang dipilih menjadi "Anda Memilih Jadwal"
+    tombol.textContent = "Anda Memilih Jadwal";
+
+    // Mengubah status tombol yang dipilih menjadi disabled
     tombol.disabled = true;
-    tombol.textContent = "Jadwal ";
-    // Lakukan tindakan lainnya (misalnya, buka URL atau kirim permintaan AJAX)
+
+    // Melakukan tindakan lainnya (misalnya, membuka URL atau mengirim permintaan AJAX)
     window.open("<?php echo base_url() ?>cdashboard_asesi/pilihjadwal/" + id_jadwal, "_self");
+
+    // Menyimpan status tombol yang dipilih ke dalam localStorage
     localStorage.setItem('tombolDisabled', 'true');
   }
 
   window.onload = function() {
     var tombolDisabled = localStorage.getItem('tombolDisabled');
+    var tombol = document.getElementById('btnPilih');
+
     if (tombolDisabled && tombolDisabled === 'true') {
-      var tombol = document.getElementById('btnPilih');
+      // Mengubah teks tombol yang dipilih menjadi "Anda Memilih Jadwal"
+      tombol.textContent = "Anda Memilih Jadwal";
+
+      // Mengubah status tombol yang dipilih menjadi disabled
       tombol.disabled = true;
-      tombol.textContent = "Jadwal Dipilih";
+    } else {
+      // Mengubah teks tombol yang tidak dipilih menjadi "Pilih Jadwal"
+      tombol.textContent = "Pilih Jadwal";
+
+      // Mengubah status tombol yang tidak dipilih menjadi enabled
+      tombol.disabled = false;
     }
   }
+
+
 
   function gantiJadwal(id_jadwal) {
     window.open("<?php echo base_url() ?>cdashboard_asesi/gantijadwal/" + id_jadwal, "_self");
@@ -45,7 +63,7 @@
           <th>Waktu Ujian</th>
           <th>Lokasi</th>
           <th>Kuota Yang Tersisa</th>
-          <th>Status</th>
+
           <th>Aksi</th>
 
 
@@ -66,28 +84,19 @@
               <td><?php echo $data->lokasi; ?></td>
               <td><?php echo $data->kuota; ?></td>
               <td>
-                <?php
-                if ($id_jadwal !== null && $id_jadwal !== '') {
-                  echo "Anda Sudah Memilih Jadwal";
-                } else if ($data->kuota == 0) {
-                  echo "Anda Sudah Memilih Jadwal";
-                } else {
-                  echo "Anda Belum Memilih Jadwal";
-                }
-                ?>
-              </td>
-              <td>
+
+
                 <?php if ($data->kuota == 0) { ?>
                   <button type="button" class="btn btn-primary btn-sm" id="<?php echo $id_tombol; ?>" disabled>Kuota Tidak Tersedia</button>
-                <?php } else if ($id_jadwal !== null && $id_jadwal !== '') { ?>
-                  <button type="button" class="btn btn-primary btn-sm" id="<?php echo $id_tombol; ?>" disabled>Anda Sudah Memilih Jadwal</button>
-                  <button type="button" class="btn btn-danger btn-sm" id="<?php echo $id_tombol; ?>" onclick="gantiJadwal()">Ganti Jadwal</button>
-
+                <?php } else if ($id_jadwal == $data->id_jadwal) { ?>
+                  <button type="button" class="btn btn-success btn-sm" id="<?php echo $id_tombol; ?>" disabled>Jadwal Terpilih</button>
                 <?php } else { ?>
-                  <button type="button" class="btn btn-primary btn-sm" id="<?php echo $id_tombol; ?>" onclick="pilihdata('<?php echo $data->id_jadwal; ?>', this)">Pilih Jadwal</button>
+                  <button type="button" class="btn btn-primary btn-sm" id="<?php echo $id_tombol; ?>" onclick="pilihdata('<?php echo $data->id_jadwal; ?>', this)" <?php echo ($id_jadwal !== null && $id_jadwal !== '') ? 'disabled' : ''; ?>>Pilih Jadwal</button>
                 <?php } ?>
 
+
               </td>
+
             </tr>
         <?php
             $no++;
@@ -96,5 +105,8 @@
         ?>
       </tbody>
     </table>
+    <?php if ($id_jadwal !== null && $id_jadwal !== '') { ?>
+      <button type="button" class="btn btn-danger btn-sm" id="<?php echo $id_tombol; ?>" onclick="gantiJadwal()">Ganti Jadwal</button>
+    <?php } ?>
   </div>
 </main>

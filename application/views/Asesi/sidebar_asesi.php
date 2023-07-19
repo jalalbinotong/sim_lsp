@@ -51,7 +51,19 @@
 
         <?php
         }
+
+
+        $pesan_sidebar = 'Terima Kasih Anda Sudah Memilih Jadwal Dan Skema ';
+        if (!empty($id_jadwal) && $pesan_sidebar !== '') {
         ?>
+            <div class="alert alert-success">
+                <strong><?php echo $pesan_sidebar; ?></strong>
+            </div>
+        <?php
+        }
+        ?>
+
+
 
         <li class="nav-heading">Menu</li>
 
