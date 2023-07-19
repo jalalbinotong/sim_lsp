@@ -1,7 +1,7 @@
 <script language="javascript">
   function pilihdata(id_jadwal, tombol) {
     // Mengubah teks tombol yang dipilih menjadi "Anda Memilih Jadwal"
-    tombol.textContent = "Anda Memilih Jadwal";
+    tombol.textContent = "Pilih Jadwal";
 
     // Mengubah status tombol yang dipilih menjadi disabled
     tombol.disabled = true;
@@ -19,7 +19,7 @@
 
     if (tombolDisabled && tombolDisabled === 'true') {
       // Mengubah teks tombol yang dipilih menjadi "Anda Memilih Jadwal"
-      tombol.textContent = "Anda Memilih Jadwal";
+      tombol.textContent = "Pilih Jadwal";
 
       // Mengubah status tombol yang dipilih menjadi disabled
       tombol.disabled = true;
@@ -86,13 +86,17 @@
               <td>
 
 
-                <?php if ($data->kuota == 0) { ?>
+                <?php if ($data->kuota == 0 && $id_jadwal == $data->id_jadwal) { ?>
+                  <button type="button" class="btn btn-success btn-sm" id="<?php echo $id_tombol; ?>" disabled>Jadwal Terpilih</button>
+                <?php } else if ($data->kuota == 0) { ?>
                   <button type="button" class="btn btn-primary btn-sm" id="<?php echo $id_tombol; ?>" disabled>Kuota Tidak Tersedia</button>
                 <?php } else if ($id_jadwal == $data->id_jadwal) { ?>
                   <button type="button" class="btn btn-success btn-sm" id="<?php echo $id_tombol; ?>" disabled>Jadwal Terpilih</button>
                 <?php } else { ?>
                   <button type="button" class="btn btn-primary btn-sm" id="<?php echo $id_tombol; ?>" onclick="pilihdata('<?php echo $data->id_jadwal; ?>', this)" <?php echo ($id_jadwal !== null && $id_jadwal !== '') ? 'disabled' : ''; ?>>Pilih Jadwal</button>
                 <?php } ?>
+
+
 
 
               </td>
