@@ -75,37 +75,35 @@ saat ini.<br>
 <br>
 <b> A. Data Pribadi </b><br>
 <br>
-Nama Lengkap : $hasil->nama_lengkap <br>
+Nama Lengkap : <b>$hasil->nama_lengkap </b> <br>
 <br>
-No.KTP/NIK/Paspor : <br>
+No.KTP/NIK/Paspor :  <b>$hasil->no_ktp </b><br>
 <br>
-Tempat/Tgl Lahir : <br>
+Tempat/Tgl Lahir : <b>$hasil->tgl_lahir </b><br>
 <br>
-Jenis Kelamin : 	Laki-laki/Wanita *) <br>
+Jenis Kelamin : <b>$hasil->jenis_kelamin </b><br>
 <br>
-Kebangsaan : <br>
+Kebangsaan : <b>$hasil->kebangsaan </b><br>
 <br>
-Alamat Rumah : <br>
+Alamat Rumah : <b>$hasil->alamat </b><br>
 <br>
 Kode Pos : <br>
 <br>
-No. Telepon/HP : <br>
+No. Telepon/HP : <b>$hasil->telpon_hp </b><br>
 <br>
-Email : <br>
+Email : <b>$hasil->email </b><br>
 <br>
-Kantor : <br>
+Kantor : <b>$hasil->telpon_kantor </b><br>
 <br>
-Kualifikasi pendidikan : <br>
-<br>
-*Coret Yang Tidak Perlu<br>
+Kualifikasi pendidikan : <b>$hasil->kualifikasi_pendidikan </b><br>
 <br>
 <b> B. Data Pekerjaan Sekarang </b><br>
 <br>
-Nama Institusi/Perusahaan : <br>
+Nama Institusi/Perusahaan : <b>$hasil->nama_institusi  </b><br>
 <br>
-jabatan : <br>
+jabatan : <b>$hasil->jabatan </b><br>
 <br>
-Alamat Kantor : <br>
+Alamat Kantor : <b>$hasil->alamat_kantor </b><br>
 <br>
 Kode Pos : <br>
 <br>
@@ -114,23 +112,6 @@ No. Telp/fax/E-mail : <br>
 Email : <br>
 <br>
 <b> A. Bagian 2 : Data Sertifikasi </b><br>
-<table border='1'>
-<tr>
-<th> No. </th>
-<th> email </th>
-<th> Kantor </th>
-</tr>
-<tr>
-<td> 1 </td>
-<td> user@example.com </td>
-<td> Company A </td>
-</tr>
-<tr>
-<td> 2 </td>
-<td> test@example.com </td>
-<td> Company B </td>
-</tr>
-</table>
 ";
 
 
