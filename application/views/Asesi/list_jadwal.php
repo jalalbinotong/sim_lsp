@@ -30,7 +30,8 @@
       <thead>
         <tr>
           <th>Nama Skema</th>
-          <th>Waktu Ujian</th>
+          <th>Pembukaan Pendaftaran</th>
+          <th>Penutupan Pendaftaran</th>
           <th>Lokasi</th>
           <th>Kuota Yang Tersisa</th>
 
@@ -50,7 +51,8 @@
         ?>
             <tr>
               <td><?php echo $data->nama_skema; ?></td>
-              <td><?php echo $data->jadwal; ?></td>
+              <td><?php echo $data->pembukaan_pendaftaran; ?></td>
+              <td><?php echo $data->penutupan_pendaftaran; ?></td>
               <td><?php echo $data->lokasi; ?></td>
               <td><?php echo $data->kuota; ?></td>
               <td>

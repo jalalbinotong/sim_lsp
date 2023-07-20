@@ -53,15 +53,24 @@
         }
 
 
-        $pesan_sidebar = 'Terima Kasih Anda Sudah Memilih Jadwal Dan Skema ';
-        if (!empty($id_jadwal) && $pesan_sidebar !== '') {
-        ?>
-            <div class="alert alert-success">
-                <strong><?php echo $pesan_sidebar; ?></strong>
-            </div>
-        <?php
+
+        $pesan_sidebar = '';
+
+        if (!empty($id_jadwal)) {
+            $pesan_sidebar = 'Terima Kasih Anda Sudah Memilih Jadwal Dan Skema';
+            $alert_class = 'alert-success';
+        } else {
+            $pesan_sidebar = 'Anda Belum Memilih Jadwal Dan Skema';
+            $alert_class = 'alert-danger';
         }
         ?>
+
+        <div class="alert <?php echo $alert_class; ?>">
+            <strong><?php echo $pesan_sidebar; ?></strong>
+        </div>
+
+
+
 
 
 
@@ -74,12 +83,18 @@
             </a>
         </li><!-- End Dashboard Nav -->
 
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="<?php echo base_url('Cdashboard_asesi/listskema'); ?>">
-                <i class="bi bi-file-earmark-text"></i>
-                <span>Pilih Skema & Upload Berkas</span>
-            </a>
-        </li><!-- End Dashboard Nav -->
+        <?php $sembunyikan_tombol = ($status === "setuju") ? true : false;
+        ?>
+
+        <!-- Elemen navigasi -->
+        <?php if (!$sembunyikan_tombol) : ?>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="<?php echo base_url('Cdashboard_asesi/listskema'); ?>">
+                    <i class="bi bi-file-earmark-text"></i>
+                    <span>Pilih Skema & Upload Berkas</span>
+                </a>
+            </li>
+        <?php endif; ?><!-- End Dashboard Nav -->
 
 
         <!-- <li class="nav-item">
@@ -89,12 +104,18 @@
             </a>
         </li> -->
         <!-- End Dashboard Nav -->
+        <?php $kondisi = ($status === "tolak" || $status === "menunggu" || $status === "") ? true : false;
+        ?>
 
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="<?php echo base_url('Cdashboard_asesi/listjadwal'); ?>">
-                <i class="bi bi-calendar-event"></i>
-                <span>Pilih Jadwal </span>
-            </a>
+        <!-- Elemen navigasi -->
+        <?php if (!$kondisi) : ?>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="<?php echo base_url('Cdashboard_asesi/listjadwal'); ?>">
+                    <i class="bi bi-calendar-event"></i>
+                    <span>Pilih Jadwal</span>
+                </a>
+            </li>
+        <?php endif; ?>
         </li><!-- End Dashboard Nav -->
 
         <?php if ($status === 'setuju') : ?>

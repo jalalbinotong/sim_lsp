@@ -73,7 +73,7 @@ $html = "
 Pada bagian ini, cantumkan data pribadi, data pendidikan formal serta data pekerjaan anda pada
 saat ini.<br>
 <br>
-<b> A. Data Pribadi </b><br>
+<b>A. Data Pribadi </b><br>
 <br>
 Nama Lengkap : <b>$hasil->nama_lengkap </b> <br>
 <br>
@@ -87,8 +87,6 @@ Kebangsaan : <b>$hasil->kebangsaan </b><br>
 <br>
 Alamat Rumah : <b>$hasil->alamat </b><br>
 <br>
-Kode Pos : <br>
-<br>
 No. Telepon/HP : <b>$hasil->telpon_hp </b><br>
 <br>
 Email : <b>$hasil->email </b><br>
@@ -97,7 +95,7 @@ Kantor : <b>$hasil->telpon_kantor </b><br>
 <br>
 Kualifikasi pendidikan : <b>$hasil->kualifikasi_pendidikan </b><br>
 <br>
-<b> B. Data Pekerjaan Sekarang </b><br>
+<b>B. Data Pekerjaan Sekarang </b><br>
 <br>
 Nama Institusi/Perusahaan : <b>$hasil->nama_institusi  </b><br>
 <br>
@@ -105,13 +103,11 @@ jabatan : <b>$hasil->jabatan </b><br>
 <br>
 Alamat Kantor : <b>$hasil->alamat_kantor </b><br>
 <br>
-Kode Pos : <br>
+No. Telp : <b> +62 (0361)701981 </b>    <br>
 <br>
-No. Telp/fax/E-mail : <br>
+Email : <b> poltek@pnb.ac.id </b> <br>
 <br>
-Email : <br>
-<br>
-<b> A. Bagian 2 : Data Sertifikasi </b><br>
+<b>A. Bagian 2 : Data Sertifikasi </b><br>
 ";
 
 

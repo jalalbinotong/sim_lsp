@@ -5,6 +5,9 @@
                 Dashboard
                 <?php echo $this->session->userdata('tipe_user'); ?>
             </p>
+
+            <?php $is_disabled = ($status === "setuju") ? true : false;
+            ?>
             <div class="row">
                 <div class="col-md-4">
                     <div class="card">
@@ -14,9 +17,15 @@
                         <div class="card-body">
                             <h5 class="card-title">Pilih Skema & Data FR APL.01</h5>
                             <p class="card-text">Pilih Skema & Melengkapi Data FR APL.01</p>
-                            <a href="<?php echo base_url("Cdashboard_asesi/listskema") ?>" class="btn btn-primary">Pilih Skema & Lengkapi Berkas</a>
+                            <?php if ($is_disabled) : ?>
+                                <button class="btn btn-primary" disabled>Pilih Skema & Lengkapi Berkas</button>
+                            <?php else : ?>
+                                <a href="<?php echo base_url("Cdashboard_asesi/listskema") ?>" class="btn btn-primary">Pilih Skema & Lengkapi Berkas</a>
+                            <?php endif; ?>
                         </div>
+
                     </div>
+
                 </div>
                 <!-- <div class="col-md-4">
                     <div class="card">
@@ -30,6 +39,10 @@
                         </div>
                     </div>
                 </div> -->
+                <?php $is_disabled = ($status == "tolak" || $status == "menunggu" || $status == null) ? true : false;
+                ?>
+
+                <!-- Card -->
                 <div class="col-md-4">
                     <div class="card">
                         <div class="card text-bg-warning">
@@ -38,7 +51,12 @@
                         <div class="card-body">
                             <h5 class="card-title">Pilih Jadwal</h5>
                             <p class="card-text">Pilih Jadwal Ujian Anda Disini</p>
-                            <a href="<?php echo base_url("Cdashboard_asesi/listjadwal") ?>" class="btn btn-primary">Lihat Jadwal Yang Tersedia</a>
+                            <?php if ($is_disabled) : ?>
+                                <button class="btn btn-primary" disabled>Lihat Jadwal Yang Tersedia</button>
+                            <?php else : ?>
+                                <a href="<?php echo base_url("Cdashboard_asesi/listjadwal") ?>" class="btn btn-primary">Lihat Jadwal Yang Tersedia</a>
+                            <?php endif; ?>
+
                         </div>
                     </div>
                 </div>

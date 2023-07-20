@@ -15,6 +15,8 @@ class Cdashboard_asesi extends CI_Controller
         $this->Mstatus_frapl->tampildata();
         $status = $this->Statusmodel->getStatus();
         $data['status'] = $status;
+        $id_jadwal = $this->idjadwalmodel->getidjadwal();
+        $data['id_jadwal'] = $id_jadwal;
 
         $data['sidebar'] = $this->load->view('Asesi/sidebar_asesi', $data, TRUE);
         $data['konten'] = $this->load->view('Asesi/dashboard_asesi', '', TRUE);
@@ -50,6 +52,8 @@ class Cdashboard_asesi extends CI_Controller
     {
         $this->Mstatus_frapl->tampildata();
         $status = $this->Statusmodel->getStatus();
+        $id_jadwal = $this->idjadwalmodel->getidjadwal();
+        $data['id_jadwal'] = $id_jadwal;
         $data['status'] = $status;
         $this->load->model('Mdata_skema_asesi');
         $datalist['hasil'] = $this->Mdata_skema_asesi->tampildata_skema();
@@ -70,7 +74,6 @@ class Cdashboard_asesi extends CI_Controller
     function listjadwal()
     {
         $this->Mstatus_frapl->tampildata();
-
         $status = $this->Statusmodel->getStatus();
         $id_jadwal = $this->idjadwalmodel->getidjadwal();
         $data['id_jadwal'] = $id_jadwal;
