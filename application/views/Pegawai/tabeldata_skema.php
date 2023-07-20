@@ -19,7 +19,7 @@
         <th>Id Skema</th>
         <th>Nama Skema</th>
         <th>Deskripsi</th>
-        <th>Id Jurusan</th>
+        <th>Nama Jurusan</th>
         <th style="width: 15%;">Biaya</th>
         <th style="width: 15%;">Aksi</th>
       </tr>
@@ -38,7 +38,7 @@
             <td><?php echo $data->id_skema; ?></td>
             <td><?php echo $data->nama_skema; ?></td>
             <td><?php echo $data->deskripsi; ?></td>
-            <td><?php echo $data->id_jurusan; ?></td>
+            <td><?php echo $data->nama_jurusan; ?></td>
             <?php
             $biaya_formatted = "Rp. " . number_format($data->biaya, 0, ',', '.');
             ?>

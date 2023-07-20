@@ -107,7 +107,72 @@ No. Telp : <b> +62 (0361)701981 </b>    <br>
 <br>
 Email : <b> poltek@pnb.ac.id </b> <br>
 <br>
-<b>A. Bagian 2 : Data Sertifikasi </b><br>
+<br>
+<b>Bagian 2 : Data Sertifikasi </b><br>
+<br>
+Skema Sertifikasi : <b>  </b>    <br>
+<br>
+Judul : <b></b><br>
+<br>
+Nomor : <b></b><br>
+<br>
+Tujuan Asesmen : <b>$hasil->tujuan</b><br>
+<br>
+<br><br><br><br><br>
+<b>Data Unit Kompetensi Sesuai Keamanan : Sesuai Kemasan </b><br>
+<br>
+nama (SKKNI) KODE UNIT aaa102312903<br>
+<br>
+nama (SKKNI) KODE UNIT aaa102312903<br>
+<br>
+nama (SKKNI) KODE UNIT aaa102312903<br>
+<br>
+nama (SKKNI) KODE UNIT aaa102312903<br>
+<br>
+nama (SKKNI) KODE UNIT aaa102312903<br>
+<br>
+nama (SKKNI) KODE UNIT aaa102312903<br>
+<br>
+nama (SKKNI) KODE UNIT aaa102312903<br>
+<br>
+nama (SKKNI) KODE UNIT aaa102312903<br>
+<br>
+<br>
+<b>Bagian 3 : Bukti Kelengkapan Pemohon </b><br>
+<br>
+Bukti Persyaratan Dasar Pemohon <br>
+<br>
+Bukti Persyaratan Dasar KTP, Status Kelengkapan ()<br>
+<br>
+Bukti Persyaratan Dasar KTM, Status Kelengkapan ()<br>
+<br>
+Bukti Persyaratan Dasar Foto, Status Kelengkapan ()<br>
+<br>
+Bukti Persyaratan Dasar Transkrip Nilai, Status Kelengkapan ()<br>
+<br>
+
+
+Berdasarkan ketentuan persyaratan dasar, maka  pemohon <b>Diterima</b> sebagai peserta sertifikasi <br>
+<br>
+<p>Bukit Jimbaran, 07-21-2023</p>
+<br>
+<br>
+<br>
+<b>Pemohon / Kandidat</b> <br>
+<br>
+Nama Asesi : <b>$hasil->nama_lengkap</b><br>
+<br>
+Status : <b></b><br>
+<br>
+<br>
+<b>Admin LSP</b> <br>
+<br>
+Nama Pegawai LSP : <b>  </b><br>
+<br>
+No. Reg : <b></b><br>
+<br>
+Status : <b></b><br>
+<br>
 ";
 
 

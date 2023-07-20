@@ -3,7 +3,10 @@ class Mdata_skema extends CI_Model
 {
 	function tampildata_skema()
 	{
-		$sql = "select * from tb_skema order by id_skema";
+		// $sql = "select * from tb_skema order by id_skema";
+		$sql="SELECT * FROM tb_skema INNER JOIN tb_jurusan
+		ON tb_skema.id_jurusan = tb_jurusan.id_jurusan
+		order by id_skema";
 		$query = $this->db->query($sql);
 		if ($query->num_rows() > 0) {
 			foreach ($query->result() as $data) {
