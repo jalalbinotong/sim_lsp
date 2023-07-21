@@ -65,7 +65,7 @@ $pdf->Image($imageFile1, $x1, $y1, $imageWidth, 0, '', '', 'R', false, 300, '', 
 
 
 $html = "
-		
+<b>! DOKUMEN PDF BERIKUT MASIH DALAM PROSES PENGEMBANGAN !</b> <br>
 <b>FR.APL.01. PERMOHONAN SERTIFIKASI KOMPETENSI </b><br>
 <br>
 
@@ -119,60 +119,6 @@ Judul : <b></b><br>
 Nomor : <b></b><br>
 <br>
 Tujuan Asesmen : <b>$hasil->tujuan</b><br>
-<br>
-<br><br><br><br><br>
-<b>Data Unit Kompetensi Sesuai Keamanan : Sesuai Kemasan </b><br>
-<br>
-nama (SKKNI) KODE UNIT aaa102312903<br>
-<br>
-nama (SKKNI) KODE UNIT aaa102312903<br>
-<br>
-nama (SKKNI) KODE UNIT aaa102312903<br>
-<br>
-nama (SKKNI) KODE UNIT aaa102312903<br>
-<br>
-nama (SKKNI) KODE UNIT aaa102312903<br>
-<br>
-nama (SKKNI) KODE UNIT aaa102312903<br>
-<br>
-nama (SKKNI) KODE UNIT aaa102312903<br>
-<br>
-<br>
-<b>Bagian 3 : Bukti Kelengkapan Pemohon </b><br>
-<br>
-Bukti Persyaratan Dasar Pemohon <br>
-<br>
-Bukti Persyaratan Dasar KTP, Status Kelengkapan ()<br>
-<br>
-Bukti Persyaratan Dasar KTM, Status Kelengkapan ()<br>
-<br>
-Bukti Persyaratan Dasar Foto, Status Kelengkapan ()<br>
-<br>
-Bukti Persyaratan Dasar Transkrip Nilai, Status Kelengkapan ()<br>
-<br>
-
-
-Berdasarkan ketentuan persyaratan dasar, maka  pemohon <b>Diterima</b> sebagai peserta sertifikasi <br>
-<br>
-<p>Bukit Jimbaran, 07-21-2023</p>
-<br>
-<br>
-<br>
-<b>Pemohon / Kandidat</b> <br>
-<br>
-Nama Asesi : <b>$hasil->nama_lengkap</b><br>
-<br>
-Status : <b></b><br>
-<br>
-<br>
-<b>Admin LSP</b> <br>
-<br>
-Nama Pegawai LSP : <b>  </b><br>
-<br>
-No. Reg : <b></b><br>
-<br>
-Status : <b></b><br>
-<br>
 ";
 
 
