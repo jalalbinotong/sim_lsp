@@ -16,6 +16,7 @@ class Ccetakpdf extends CI_Controller
 
             $this->load->model('Mdata_pdf_asesi');
             $datalist['hasil'] = $this->Mdata_pdf_asesi->tampildata();
+            $datalist['hasil2'] = $this->Mdata_pdf_asesi->tampildata_2();
             $this->load->view('Asesi/halaman_pdf', $datalist); // Misalnya, menggunakan library PDF di CodeIgniter
             // Kode untuk menghasilkan PDF
             // ...

@@ -7,10 +7,16 @@
       $('#nama_skema').focus();
       return false;
     }
-    var jadwal = $('#jadwal').val();
-    if (jadwal == "") {
-      alert("Jadwal masih kosong");
-      $('#jadwal').focus();
+    var pembukaan_pendaftaran = $('#pembukaan_pendaftaran').val();
+    if (pembukaan_pendaftaran == "") {
+      alert("pembukaan pendaftaran masih kosong");
+      $('#pembukaan_pendaftaran').focus();
+      return false;
+    }
+    var penutupan_pendaftaran = $('#penutupan_pendaftaran').val();
+    if (penutupan_pendaftaran == "") {
+      alert("penutupan pendaftaran masih kosong");
+      $('#penutupan_pendaftaran').focus();
       return false;
     }
     var lokasi = $('#lokasi').val();
@@ -91,9 +97,15 @@
       </div>
 
       <div class="mb-3 mt-3">
-        <label class="form-label">Jadwal :</label>
+        <label class="form-label">pembukaan pendaftaran :</label>
         <!-- <time datetime="YYYY-MM-DDThh:mm:ssTZD" id="jadwal" name="jadwal"></time> -->
-        <input type="datetime-local" class="form-control" id="jadwal" name="jadwal">
+        <input type="date" class="form-control" id="pembukaan_pendaftaran" name="pembukaan_pendaftaran">
+      </div>
+
+      <div class="mb-3 mt-3">
+        <label class="form-label">Penutupan pendaftaran :</label>
+        <!-- <time datetime="YYYY-MM-DDThh:mm:ssTZD" id="jadwal" name="jadwal"></time> -->
+        <input type="date" class="form-control" id="penutupan_pendaftaran" name="penutupan_pendaftaran">
       </div>
 
       <div class="mb-3 mt-3">

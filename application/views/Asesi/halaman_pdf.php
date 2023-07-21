@@ -108,6 +108,8 @@ No. Telp : <b> +62 (0361)701981 </b>    <br>
 Email : <b> poltek@pnb.ac.id </b> <br>
 <br>
 <br>
+<b>! CONTOH DATA DI BAWAH MASIH DALAM PENGEMBANGAN !<b>
+<br>
 <b>Bagian 2 : Data Sertifikasi </b><br>
 <br>
 Skema Sertifikasi : <b>  </b>    <br>
@@ -120,8 +122,6 @@ Tujuan Asesmen : <b>$hasil->tujuan</b><br>
 <br>
 <br><br><br><br><br>
 <b>Data Unit Kompetensi Sesuai Keamanan : Sesuai Kemasan </b><br>
-<br>
-nama (SKKNI) KODE UNIT aaa102312903<br>
 <br>
 nama (SKKNI) KODE UNIT aaa102312903<br>
 <br>

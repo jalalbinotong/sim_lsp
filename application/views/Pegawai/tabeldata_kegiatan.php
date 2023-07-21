@@ -17,7 +17,8 @@
       <tr>
         <th>No</th>
         <th>Nama Skema</th>
-        <th>Jadwal</th>
+        <th>pembukaan pendaftaran</th>
+        <th>penutupan pendaftaran</th>
         <th>Lokasi</th>
         <th>Kuota</th>
         <th>Aksi</th>
@@ -35,7 +36,8 @@
           <tr>
             <td><?php echo $no; ?></td>
             <td><?php echo $data->nama_skema; ?></td>
-            <td><?php echo $data->jadwal; ?></td>
+            <td><?php echo $data->pembukaan_pendaftaran; ?></td>
+            <td><?php echo $data->penutupan_pendaftaran; ?></td>
             <td><?php echo $data->lokasi; ?></td>
             <td><?php echo $data->kuota; ?></td>
             <td>
