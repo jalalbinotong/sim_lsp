@@ -56,9 +56,7 @@ class Mdata_pegawai extends CI_Model
   {
     $data = $_POST;
     $id_user = $data['id_user'];
-    var_dump($data); // Mencetak isi array dengan informasi yang lebih detail (termasuk tipe data)
 
-    echo $id_user;
     //Data di delete dulu agar dapat mengedit NIM yang primary key -Rio
     $this->db->where('id_user', $id_user);
     $this->db->delete('tb_data_pegawai');
@@ -69,11 +67,15 @@ class Mdata_pegawai extends CI_Model
     return $id_user;
   }
 
-  function hapusakun_pegawai($id_user)
-  {
-    $sql = "delete from tb_user where id_user='" . $id_user . "'";
-    $this->db->query($sql);
-  }
+  // function hapusakun_pegawai($id_user)
+  // {
+  //   $sql = "delete from tb_data_pegawai where id_user='" . $id_user . "'";
+  //   $query = $this->db->query($sql);
+  //   if ($query->num_rows() > 0) {
+  //     $sql = "delete from tb_user where id_user='" . $id_user . "'";
+  //     $this->db->query($sql);
+  //   }
+  // }
 
   function hapusdata($NIP)
   {
