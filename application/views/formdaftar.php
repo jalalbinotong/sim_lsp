@@ -45,15 +45,16 @@
     }
 </script>
 
+<link rel="stylesheet" href="<?php echo base_url('assets/css/style_sidebar.css'); ?>">
 
 <body>
     <main class="d-flex w-100">
-        <div class="container d-flex flex-column">
+        <div class="container d-flex flex-column mt-5">
             <div class="row vh-100">
                 <div class="col-sm-10 col-md-8 col-lg-6 mx-auto d-table h-100">
                     <div class="d-table-cell align-middle">
 
-                        <div class="text-center mt-4">
+                        <div class="text-center mt-5">
                             <h1 class="h2">Daftar akun</h1>
                             <p class="lead">
                                 Silahkan daftar untuk membuat akun anda
@@ -70,7 +71,7 @@
                                     if ($pesan == "") {
                                         echo "";
                                     } else {
-                                        ?>
+                                    ?>
                                         <div class="alert alert-success alert-dismissible">
                                             <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
                                             <strong>
@@ -78,13 +79,13 @@
                                             </strong>
                                         </div>
 
-                                        <?php
+                                    <?php
                                     }
                                     $pesan_danger = $this->session->flashdata('pesan_danger');
                                     if ($pesan_danger == "") {
                                         echo "";
                                     } else {
-                                        ?>
+                                    ?>
                                         <div class="alert alert-danger alert-dismissible">
                                             <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
                                             <strong>
@@ -92,48 +93,53 @@
                                             </strong>
                                         </div>
 
-                                        <?php
+                                    <?php
                                     }
                                     ?>
-                                    <form id="formdaftar" name="formdaftar" method="post"
-                                        action="<?php echo base_url('cdaftar/prosesdaftar'); ?>">
+                                    <form id="formdaftar" name="formdaftar" method="post" action="<?php echo base_url('cdaftar/prosesdaftar'); ?>">
                                         <div class="mb-3">
                                             <input type="hidden" name="id_user" id="id_user" />
                                             <input type="hidden" name="tipe_user" id="tipe_user" value="asesi" />
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label">NIM :</label>
-                                            <input type="number" class="form-control" id="nim"
-                                                placeholder="Masukkan NIM" name="nim">
+                                            <input type="number" class="form-control" id="nim" placeholder="Masukkan NIM" name="nim">
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label">Nama Lengkap :</label>
-                                            <input type="text" class="form-control" id="nama_lengkap"
-                                                placeholder="Masukkan nama lengkap" name="nama_lengkap">
+                                            <input type="text" class="form-control" id="nama_lengkap" placeholder="Masukkan nama lengkap" name="nama_lengkap">
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label">Email :</label>
-                                            <input type="email" class="form-control" id="email"
-                                                placeholder="Masukkan Email" name="email">
+                                            <input type="email" class="form-control" id="email" placeholder="Masukkan Email" name="email">
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label">Prodi :</label>
                                             <select id="id_prodi" name="id_prodi" class="form-select" aria-label="Default select example">
                                                 <option value="none" selected>Pilih Prodi</option>
-                                                <option value="4004">Teknologi Rekayasa Perangkat Lunak</option>
-                                                <option value="4003">Managemen informatika</option>
+                                                <?php
+                                                if (empty($hasil)) {
+                                                ?>
+                                                    <option value="">Tidak ada data</option>
+                                                    <?php
+                                                } else {
+                                                    foreach ($hasil as $data) :
+                                                    ?>
+                                                        <option value="<?php echo $data->id_prodi; ?>"><?php echo $data->nama_prodi; ?></option>
+                                                <?php
+                                                    endforeach;
+                                                }
+                                                ?>
                                             </select>
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label">Password:</label>
-                                            <input type="password" class="form-control" id="password"
-                                                placeholder="Masukkan password" name="password">
+                                            <input type="password" class="form-control" id="password" placeholder="Masukkan password" name="password">
                                         </div>
 
                                         <div class="text-center mt-3">
                                             <!-- <a href="index.html" class="btn btn-lg btn-primary">Masuk</a> -->
-                                            <button type="button" class="btn btn-lg btn-primary"
-                                                onclick="prosesdaftar();">Daftar</button>
+                                            <button type="button" class="btn btn-lg btn-primary" onclick="prosesdaftar();">Daftar</button>
                                             <!-- <button type="submit" class="btn btn-lg btn-primary">Sign in</button> -->
                                         </div>
                                     </form>

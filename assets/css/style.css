@@ -1931,3 +1931,6 @@ th {
         width: 40%;
         text-align: left;
     } */
+	.selected-row {
+		background-color: yellow;
+	  }
